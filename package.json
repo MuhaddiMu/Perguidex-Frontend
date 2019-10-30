@@ -1,0 +1,51 @@
+{
+  "name": "perguidex",
+  "version": "1.0.0",
+  "description": "Perguidex Frontend & Backend View",
+  "author": "Muhammad Muhaddis",
+  "private": true,
+  "scripts": {
+    "Main:dev": "nuxt --config-file Perguidex/nuxt.config.js -p=3000",
+    "App:dev": "nuxt --config-file Perguidex-App/nuxt.config.js -p=4000",
+    "dev": "concurrently \"npm run Main:dev\" \"npm run App:dev\"",
+    "Main:build": "nuxt build --config-file Perguidex/nuxt.config.js",
+    "App:build": "nuxt build --config-file Perguidex-App/nuxt.config.js",
+    "Main:start": "nuxt start --config-file Perguidex/nuxt.config.js",
+    "App:start": "nuxt start --config-file Perguidex-App/nuxt.config.js",
+    "Main:generate": "nuxt generate --config-file Perguidex/nuxt.config.js",
+    "App:generate": "nuxt generate --config-file Perguidex-App/nuxt.config.js",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/vuetify": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "concurrently": "^5.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^2.6.0",
+    "jest": "^24.1.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.16.4",
+    "vue-jest": "^4.0.0-0"
+  }
+}
