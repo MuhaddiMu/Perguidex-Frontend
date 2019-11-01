@@ -1,6 +1,6 @@
 # Perguidex Frontend
 
-> Perguidex frontend repository 
+> Perguidex Frontend
 
 ## Build Setup
 
