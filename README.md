@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # Install Dependencies
 $ npm run install
 
@@ -27,6 +27,12 @@ $ npm run App:start
 # Generate Static Project
 $ npm run Main:generate
 $ npm run App:generate
+
+# Tests
+$ npm run test
+
+# Linting
+$ npm run lint
 
 ```
 
