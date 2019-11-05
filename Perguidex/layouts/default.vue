@@ -9,7 +9,7 @@
         app
       >
         <v-container py-3 pa-0 d-flex>
-          <v-btn text>
+          <v-btn nuxt="/" text>
             <v-toolbar-title class="font-weight-bold white--text" v-text="title"
           /></v-btn>
           <v-spacer />

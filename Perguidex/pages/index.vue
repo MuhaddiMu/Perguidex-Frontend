@@ -1,7 +1,7 @@
 <template>
   <v-layout class="red lighten-1" column justify-center align-center>
     <v-container>
-      <v-layout py-3 row align-center justify-space-around="">
+      <v-layout py-3 row justify-space-around="">
         <v-flex xs12 md4>
           <div class="white--text font-weight-medium display-3">
             It's All About Managing Yourself
