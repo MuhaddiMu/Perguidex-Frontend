@@ -2,14 +2,16 @@
   <section>
     <v-app light>
       <v-app-bar
-        class="red"
+        class="red lighten-1"
         elevate-on-scroll
         :clipped-left="clipped"
         fixed
         app
       >
-        <v-container pa-0 d-flex>
-          <v-toolbar-title v-text="title" />
+        <v-container py-3 pa-0 d-flex>
+          <v-btn text>
+            <v-toolbar-title class="font-weight-bold white--text" v-text="title"
+          /></v-btn>
           <v-spacer />
           Login & SignUp
         </v-container>
