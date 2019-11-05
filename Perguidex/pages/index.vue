@@ -1,5 +1,11 @@
 <template>
-  <v-layout column justify-center align-center> </v-layout>
+  <v-layout class="red" column justify-center align-center>
+    <v-container>
+      <v-layout row wrap align-center>
+        <v-flex xs12></v-flex>
+      </v-layout>
+    </v-container>
+  </v-layout>
 </template>
 
 <script>

@@ -1,22 +1,31 @@
 <template>
-  <v-app>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn icon>
-        <v-icon>mdi-login</v-icon>
-      </v-btn>
-    </v-app-bar>
-    <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
+  <section>
+    <v-app light>
+      <v-app-bar
+        class="red"
+        elevate-on-scroll
+        :clipped-left="clipped"
+        fixed
+        app
+      >
+        <v-container pa-0 d-flex>
+          <v-toolbar-title v-text="title" />
+          <v-spacer />
+          Login & SignUp
+        </v-container>
+      </v-app-bar>
 
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2019</span>
-    </v-footer>
-  </v-app>
+      <v-content>
+        <v-container pa-0 fluid>
+          <nuxt />
+        </v-container>
+      </v-content>
+
+      <v-footer :fixed="fixed" app>
+        <span>&copy; 2019</span>
+      </v-footer>
+    </v-app>
+  </section>
 </template>
 
 <script>
