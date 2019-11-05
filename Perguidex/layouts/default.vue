@@ -9,11 +9,17 @@
         app
       >
         <v-container py-3 pa-0 d-flex>
-          <v-btn nuxt="/" text>
+          <v-btn nuxt href="/" text>
             <v-toolbar-title class="font-weight-bold white--text" v-text="title"
           /></v-btn>
           <v-spacer />
-          Login & SignUp
+          <v-btn text class="d-none d-sm-flex white--text">
+            <div>Login</div>
+          </v-btn>
+
+          <v-btn rounded depressed class="red--text">
+            <div>Signup</div>
+          </v-btn>
         </v-container>
       </v-app-bar>
 
