@@ -9,8 +9,14 @@
         app
       >
         <v-container py-3 pa-0 d-flex>
-          <v-btn nuxt href="/" text>
-            <v-toolbar-title class="font-weight-bold white--text" v-text="title"
+          <v-btn
+            depressed
+            nuxt
+            href="/"
+            text
+            class="font-weight-bold text-capitalize white--text"
+          >
+            <v-toolbar-title v-text="title"
           /></v-btn>
           <v-spacer />
           <v-btn text class="d-none d-sm-flex white--text">
