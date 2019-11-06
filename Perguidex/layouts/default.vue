@@ -35,8 +35,9 @@
         </v-container>
       </v-content>
 
-      <v-footer :fixed="fixed" app>
-        <span>&copy; 2019</span>
+      <v-footer>
+        <v-spacer></v-spacer>
+        <div>&copy; {{ new Date().getFullYear() }}</div>
       </v-footer>
     </v-app>
   </section>
