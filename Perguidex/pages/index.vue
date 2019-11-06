@@ -11,10 +11,10 @@
             you keep track of everything in one place, so you can get it all
             done and enjoy more peace of mind along the way.
           </div>
-          <v-btn class="mt-5 red--text" large rounded>
+          <v-btn class="mt-5 red--text" x-large rounded>
             Get Started — It's Free
           </v-btn>
-          <div class="mb-5 white--text caption">
+          <div class="mb-5 white--text caption pl-5">
             Wondering how it works? Watch a video
           </div>
         </v-flex>
