@@ -28,29 +28,11 @@
     <v-layout column justify-center align-center>
       <v-container fluid grid-list-xl>
         <v-card
-          :elevation="12"
           class="RoundCorner mx-auto"
           max-width="100%"
           style="margin-top: -64px;"
+          raised
         >
-          <v-toolbar flat>
-            <v-toolbar-title class="grey--text">Title</v-toolbar-title>
-
-            <v-spacer></v-spacer>
-
-            <v-btn icon> <v-icon>mdi-magnify</v-icon> </v-btn>
-
-            <v-btn icon>
-              <v-icon>mdi-apps</v-icon>
-            </v-btn>
-
-            <v-btn icon>
-              <v-icon>mdi-dots-vertical</v-icon>
-            </v-btn>
-          </v-toolbar>
-
-          <v-divider></v-divider>
-
           <v-card-text style="height: 200px;"></v-card-text>
         </v-card>
       </v-container>
