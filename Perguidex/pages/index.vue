@@ -28,7 +28,7 @@
     <v-layout column justify-center align-center>
       <v-container fluid grid-list-xl>
         <v-card
-          class="RoundCorner mx-auto"
+          class="RoundCorner Shadow mx-auto"
           max-width="100%"
           style="margin-top: -64px;"
           raised
