@@ -16,8 +16,8 @@
             text
             class="font-weight-bold text-capitalize white--text"
           >
-            <v-toolbar-title v-text="title"
-          /></v-btn>
+            <v-toolbar-title v-text="title" />
+          </v-btn>
           <v-spacer />
           <v-btn text class="d-none d-sm-flex white--text">
             <div>Login</div>
