@@ -31,7 +31,6 @@
           class="RoundCorner Shadow mx-auto"
           max-width="100%"
           style="margin-top: -64px;"
-          raised
         >
           <v-card-text style="height: 200px;"></v-card-text>
         </v-card>
@@ -53,5 +52,9 @@ export default {
 <style>
 .RoundCorner {
   border-radius: 10px !important;
+}
+.Shadow {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 </style>

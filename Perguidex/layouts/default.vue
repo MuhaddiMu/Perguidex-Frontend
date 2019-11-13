@@ -35,10 +35,10 @@
         </v-container>
       </v-content>
 
-      <v-footer>
+      <!-- <v-footer>
         <v-spacer></v-spacer>
         <div>&copy; {{ new Date().getFullYear() }}</div>
-      </v-footer>
+      </v-footer> -->
     </v-app>
   </section>
 </template>
