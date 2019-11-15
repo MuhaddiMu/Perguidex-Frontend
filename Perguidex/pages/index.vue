@@ -33,7 +33,7 @@
           style="margin-top: -64px;"
         >
           <v-card-text style="height: 200px;">
-            <div class="mt-10 display-1 text-center">
+            <div class="grey--text text--darken-4 mt-10 display-1 text-center">
               Everything in One Place
             </div>
           </v-card-text>
