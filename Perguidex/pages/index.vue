@@ -32,7 +32,11 @@
           max-width="100%"
           style="margin-top: -64px;"
         >
-          <v-card-text style="height: 200px;"></v-card-text>
+          <v-card-text style="height: 200px;">
+            <div class="mt-10 display-1 text-center">
+              Everything in One Place
+            </div>
+          </v-card-text>
         </v-card>
       </v-container>
     </v-layout>
@@ -49,12 +53,12 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .RoundCorner {
   border-radius: 10px !important;
 }
 .Shadow {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10, px -5px rgba(0, 0, 0, 0.2);
 }
 </style>
