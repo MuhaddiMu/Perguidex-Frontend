@@ -36,6 +36,7 @@
             <div class="grey--text text--darken-4 mt-10 display-1 text-center">
               Everything in One Place
             </div>
+            <v-container> </v-container>
           </v-card-text>
         </v-card>
       </v-container>
