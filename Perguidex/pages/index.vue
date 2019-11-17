@@ -33,10 +33,13 @@
           style="margin-top: -64px;"
         >
           <v-card-text style="height: 200px;">
-            <div class="grey--text text--darken-4 mt-10 display-1 text-center">
-              Everything in One Place
-            </div>
-            <v-container> </v-container>
+            <v-layout column wrap align-center>
+              <v-flex my-6 xs12 sm4>
+                <div class="grey--text text--darken-4 display-1 text-center">
+                  Everything in One Place
+                </div>
+              </v-flex>
+            </v-layout>
           </v-card-text>
         </v-card>
       </v-container>
