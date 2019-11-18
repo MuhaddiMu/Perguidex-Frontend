@@ -55,7 +55,7 @@
                         >
                           <div class="headline text-center">
                             Activities
-                            <v-chip small color="primary">
+                            <v-chip label x-small color="primary">
                               New
                             </v-chip>
                           </div>
@@ -85,7 +85,7 @@
                         >
                           <div class="headline text-center">
                             Daily Progress
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -115,7 +115,7 @@
                         >
                           <div class="headline text-center">
                             Life Roadmap
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -145,7 +145,7 @@
                         >
                           <div class="headline text-center">
                             Track Cashflow
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -175,7 +175,7 @@
                         >
                           <div class="headline text-center">
                             Circles
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -205,7 +205,7 @@
                         >
                           <div class="headline text-center">
                             Ideation
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -235,7 +235,7 @@
                         >
                           <div class="headline text-center">
                             Daily Gratitude
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -265,7 +265,7 @@
                         >
                           <div class="headline text-center">
                             Fitness
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -295,7 +295,7 @@
                         >
                           <div class="headline text-center">
                             Wardrobe
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -325,7 +325,7 @@
                         >
                           <div class="headline text-center">
                             Notes
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -355,7 +355,7 @@
                         >
                           <div class="headline text-center">
                             Achievements
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
@@ -385,7 +385,7 @@
                         >
                           <div class="headline text-center">
                             Calendar
-                            <v-chip dark small color="pink lighten-1">
+                            <v-chip dark label x-small color="pink lighten-1">
                               Soon
                             </v-chip>
                           </div>
