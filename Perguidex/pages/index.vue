@@ -15,7 +15,7 @@
             <v-btn class="mt-5 red--text" x-large rounded>
               Get Started — It's Free
             </v-btn>
-            <div class="mb-5 white--text caption pl-7">
+            <div class="mb-5 white--text caption pl-6">
               Wondering how it works? Watch a video
             </div>
           </v-flex>
