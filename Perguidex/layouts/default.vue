@@ -36,9 +36,10 @@
         </v-container>
       </v-content>
 
-      <v-footer class="mt-5">
-        <v-spacer></v-spacer>
-        <div>&copy; {{ new Date().getFullYear() }}</div>
+      <v-footer class="my-5">
+        <v-container
+          ><div>&copy; {{ new Date().getFullYear() }}</div></v-container
+        >
       </v-footer>
     </v-app>
   </section>

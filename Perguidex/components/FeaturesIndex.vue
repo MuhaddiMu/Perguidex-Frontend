@@ -351,8 +351,8 @@
           </v-layout>
           <v-row>
             <v-col cols="12">
-              <v-row class="text-center" align="center" justify="center">
-                <v-flex xs12 sm2>
+              <v-row class="d-flex text-center" align="center" justify="center">
+                <v-col cols="12" md="2" sm="6" xs="12">
                   <img height="45px" src="Google.png" />
                   <div class="text-center">
                     <v-rating
@@ -363,8 +363,8 @@
                       readonly
                     ></v-rating>
                   </div>
-                </v-flex>
-                <v-flex xs12 sm2>
+                </v-col>
+                <v-col cols="12" md="2" sm="6" xs="12">
                   <img height="45px" src="Facebook.png" />
                   <div class="text-center">
                     <v-rating
@@ -375,7 +375,7 @@
                       readonly
                     ></v-rating>
                   </div>
-                </v-flex>
+                </v-col>
               </v-row>
             </v-col>
           </v-row>
