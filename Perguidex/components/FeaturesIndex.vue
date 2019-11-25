@@ -336,19 +336,10 @@
         <v-card-text>
           <v-layout wrap column align-center>
             <v-flex my-6 xs12 sm4>
-              <div
-                data-aos="fade-up"
-                class="grey--text text--darken-4 display-1 text-center"
-              >
-                Unclutter your mind with Perguidex
+              <div class="grey--text text--darken-4 display-1 text-center">
+                Ready to be more productive?
               </div>
-              <v-btn
-                data-aos="fade-up"
-                class="red mt-5 white--text"
-                text
-                x-large
-                block
-              >
+              <v-btn class="red mt-5 white--text" text x-large block>
                 Get Started — It's Free
               </v-btn>
             </v-flex>

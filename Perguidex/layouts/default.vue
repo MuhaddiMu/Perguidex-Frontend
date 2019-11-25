@@ -25,7 +25,7 @@
           </v-btn>
 
           <v-btn rounded depressed class="red--text">
-            <div>Signup</div>
+            <div>Get Started — It's Free</div>
           </v-btn>
         </v-container>
       </v-app-bar>

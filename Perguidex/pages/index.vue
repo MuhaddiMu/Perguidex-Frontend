@@ -43,7 +43,8 @@ export default {
   },
   head() {
     return {
-      titleTemplate: '%s | Track Productivity, Be The Best ',
+      titleTemplate:
+        '%s | Your Personal Digital Mentor – Manage Everything at One Place',
       title: 'Perguidex'
     }
   }
