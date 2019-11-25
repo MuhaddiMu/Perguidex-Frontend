@@ -1,4 +1,7 @@
 import Vue from 'vue'
-import Parallax from 'vue-parallaxy'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
-Vue.component('Parallax', Parallax)
+if (process.client) {
+  Vue.use(AOS.init({}))
+}
