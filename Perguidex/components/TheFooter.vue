@@ -1,23 +1,28 @@
 <template>
   <v-footer class="my-7 grey lighten-5">
     <v-container>
-      <v-row class="my-5" no-gutters justify="space-between" align="start">
-        <v-col cols="12" sm="2" xs="6">
+      <v-row
+        class="my-5 text-center text-md-left text-sm-left"
+        no-gutters
+        align="start"
+        justify="space-between"
+      >
+        <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Product</div>
           <div class="my-2 grey--text text--darken-2">Get Started</div>
         </v-col>
-        <v-col cols="12" sm="2" xs="6">
+        <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Support</div>
           <div class="my-2 grey--text text--darken-2">Help Center</div>
           <div class="my-2 grey--text text--darken-2">FAQ</div>
           <div class="my-2 grey--text text--darken-2">Translations</div>
         </v-col>
-        <v-col cols="12" sm="2" xs="6">
+        <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">About</div>
           <div class="my-2 grey--text text--darken-2">About Us</div>
           <div class="my-2 grey--text text--darken-2">Contact Us</div>
         </v-col>
-        <v-col cols="12" sm="2" xs="6">
+        <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Legal</div>
           <div class="my-2 grey--text text--darken-2">Terms</div>
           <div class="my-2 grey--text text--darken-2">
@@ -25,7 +30,13 @@
             <div class="my-2 grey--text text--darken-2">Security</div>
           </div>
         </v-col>
-        <v-col cols="12" sm="2" xs="6">
+        <v-col
+          cols="12"
+          md="2"
+          sm="12"
+          xs="12"
+          class="order-first order-sm-first order-xl-last order-md-last"
+        >
           <div>
             <v-select
               dense
@@ -58,3 +69,12 @@
     </v-container>
   </v-footer>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      Lang: ['English']
+    }
+  }
+}
+</script>

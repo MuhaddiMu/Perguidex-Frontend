@@ -48,7 +48,6 @@ export default {
   },
   data() {
     return {
-      Lang: ['English'],
       clipped: false,
       fixed: false,
       items: [
