@@ -326,21 +326,21 @@
           </v-row>
         </v-card-text>
         <v-card-text>
-          <v-layout wrap column align-center>
-            <v-flex my-6 xs12 sm4 class="text-center">
+          <v-row align="center" justify="center" align-center>
+            <v-col cols="12" sm="10" my-6 class="text-center">
               <div class="grey--text text--darken-4 display-2 text-center">
                 Ready to be more productive?
               </div>
               <v-btn class="red mt-5 white--text" text x-large>
                 Get Started — It's Free
               </v-btn>
-            </v-flex>
-          </v-layout>
-          <v-layout row align-center justify-center>
-            <v-flex mb-6 xs12 sm10>
+            </v-col>
+          </v-row>
+          <v-row align="center" justify="center">
+            <v-col cols="12" sm="10" mb-6>
               <hr class="Gradient" />
-            </v-flex>
-          </v-layout>
+            </v-col>
+          </v-row>
           <v-row>
             <v-col cols="12">
               <v-row class="d-flex text-center" align="center" justify="center">
