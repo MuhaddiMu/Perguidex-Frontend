@@ -2,13 +2,18 @@
   <section>
     <v-layout class="red lighten-1" column justify-center align-center>
       <v-container mb-12 grid-list-xl>
-        <v-layout mb-12 row justify-space-around>
-          <v-flex
+        <v-row
+          mb-12
+          justify="space-around"
+          class="text-center text-md-left text-sm-left"
+        >
+          <v-col
+            align-self="center"
+            cols="12"
+            md="6"
+            sm="12"
             data-aos="zoom-in-right"
             data-aos-duration="1000"
-            align-self-center
-            xs12
-            md6
           >
             <div class="white--text font-weight-bold display-3">
               It's All About Managing Yourself
@@ -24,17 +29,18 @@
             <div class="mb-5 white--text caption">
               Wondering how it works? Watch a video
             </div>
-          </v-flex>
-          <v-flex
+          </v-col>
+          <v-col
+            cols="12"
+            md="6"
+            sm="12"
             class="d-none d-sm-flex"
             data-aos="zoom-in-left"
             data-aos-duration="1000"
-            xs12
-            md6
           >
             <img draggable="false" alt="Goals" width="100%" src="Goals.svg" />
-          </v-flex>
-        </v-layout>
+          </v-col>
+        </v-row>
       </v-container>
     </v-layout>
     <FeaturesIndex />
