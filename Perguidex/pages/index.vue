@@ -18,7 +18,7 @@
               you keep track of everything in one place, so you can get it all
               done and enjoy more peace of mind along the way.
             </div>
-            <v-btn class="mt-5 red--text" x-large block>
+            <v-btn class="white mt-5 red--text" x-large block>
               Get Started — It's Free
             </v-btn>
             <div class="mb-5 white--text caption">

@@ -24,7 +24,7 @@
             <div>Login</div>
           </v-btn>
 
-          <v-btn rounded depressed class="red--text">
+          <v-btn rounded depressed class="white red--text">
             <div>Get Started — It's Free</div>
           </v-btn>
         </v-container>
