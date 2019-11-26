@@ -25,7 +25,13 @@
               Wondering how it works? Watch a video
             </div>
           </v-flex>
-          <v-flex data-aos="zoom-in-left" data-aos-duration="1000" xs12 md6>
+          <v-flex
+            class="d-none d-sm-flex"
+            data-aos="zoom-in-left"
+            data-aos-duration="1000"
+            xs12
+            md6
+          >
             <img draggable="false" alt="Goals" width="100%" src="Goals.svg" />
           </v-flex>
         </v-layout>

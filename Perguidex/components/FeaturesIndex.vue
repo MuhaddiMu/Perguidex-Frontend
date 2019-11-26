@@ -9,7 +9,7 @@
         <v-card-text class="svg-background">
           <v-layout column wrap align-center>
             <v-flex my-6 xs12 sm4>
-              <div class="grey--text text--darken-4 display-1 text-center">
+              <div class="grey--text text--darken-4 display-2 text-center">
                 Your Best Benefit
               </div>
             </v-flex>
@@ -335,11 +335,11 @@
         </v-card-text>
         <v-card-text>
           <v-layout wrap column align-center>
-            <v-flex my-6 xs12 sm4>
-              <div class="grey--text text--darken-4 display-1 text-center">
+            <v-flex my-6 xs12 sm4 class="text-center">
+              <div class="grey--text text--darken-4 display-2 text-center">
                 Ready to be more productive?
               </div>
-              <v-btn class="red mt-5 white--text" text x-large block>
+              <v-btn class="red mt-5 white--text" text x-large>
                 Get Started — It's Free
               </v-btn>
             </v-flex>
