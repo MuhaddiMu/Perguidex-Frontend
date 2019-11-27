@@ -9,25 +9,41 @@
       >
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Product</div>
-          <div class="my-2 grey--text text--darken-2">Get Started</div>
+          <div class="my-2 grey--text text--darken-2">
+            <a class="URL" href="#">Get Started</a>
+          </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Support</div>
-          <div class="my-2 grey--text text--darken-2">Help Center</div>
-          <div class="my-2 grey--text text--darken-2">FAQ</div>
-          <div class="my-2 grey--text text--darken-2">Translations</div>
+          <div class="my-2 grey--text text--darken-2">
+            <a class="URL" href="#">Help Center</a>
+          </div>
+          <div class="my-2 grey--text text--darken-2">
+            <a class="URL" href="#">FAQ</a>
+          </div>
+          <div class="my-2 grey--text text--darken-2">
+            <a class="URL" href="#">Translations</a>
+          </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">About</div>
-          <div class="my-2 grey--text text--darken-2">About Us</div>
-          <div class="my-2 grey--text text--darken-2">Contact Us</div>
+          <div class="my-2 grey--text text--darken-2">
+            <a class="URL" href="#">About Us</a>
+          </div>
+          <div class="my-2 grey--text text--darken-2">
+            <a class="URL" href="#">Contact Us</a>
+          </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Legal</div>
-          <div class="my-2 grey--text text--darken-2">Terms</div>
           <div class="my-2 grey--text text--darken-2">
-            Privacy
-            <div class="my-2 grey--text text--darken-2">Security</div>
+            <a class="URL" href="#">Terms</a>
+          </div>
+          <div class="my-2 grey--text text--darken-2">
+            <a class="URL" href="#">Privacy</a>
+            <div class="my-2 grey--text text--darken-2">
+              <a class="URL" href="#">Security</a>
+            </div>
           </div>
         </v-col>
         <v-col
@@ -78,3 +94,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.URL {
+  color: #616161 !important;
+  text-decoration: none;
+}
+.URL:hover,
+.URL:focus,
+.URL:active {
+  color: #424242 !important;
+  text-decoration: underline;
+}
+</style>
