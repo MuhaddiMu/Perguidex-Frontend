@@ -1,14 +1,14 @@
 <template>
   <div class="text-center">
     <img width="10%" src="Logo.png" class="mb-5" />
-    <v-card max-width="400px" outlined class="mx-auto">
+    <v-card tile max-width="400px" outlined class="mx-auto">
       <v-card-text>
         <v-btn tile block depressed
-          ><img width="16px" class="mr-2" src="FacebookIco.png" /> Sign up with
+          ><img width="16px" class="mr-2" src="FacebookIco.png" /> Signup with
           Facebook Account</v-btn
         >
         <v-btn tile class="mt-2" block depressed
-          ><img width="16px" class="mr-2" src="GoogleIco.png" /> Sign up with
+          ><img width="16px" class="mr-2" src="GoogleIco.png" /> Signup with
           Google Account</v-btn
         >
         <div class="Half-Seperator caption my-3">OR</div>
@@ -34,13 +34,16 @@
             prepend-inner-icon="mdi-lock"
             @click:append="TogglePassword = !TogglePassword"
           ></v-text-field>
-          <div class="caption">
+          <div class="caption text-left">
             By creating an account, you agree to the Perguidex
             <a href="#" target="_blank">Terms of Service</a> and
             <a href="#">Privacy Policy</a>.
           </div>
-          <v-btn text class="red mt-3" dark block>Create My Account</v-btn>
+          <v-btn tile text class="red mt-3" dark block>Create My Account</v-btn>
         </v-form>
+        <div class="caption mt-2 text-left">
+          Already have an account? <nuxt-link to="Login">Login here</nuxt-link>
+        </div>
       </v-card-text>
     </v-card>
   </div>
