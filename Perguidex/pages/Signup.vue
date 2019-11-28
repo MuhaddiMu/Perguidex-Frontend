@@ -34,14 +34,14 @@
             prepend-inner-icon="mdi-lock"
             @click:append="TogglePassword = !TogglePassword"
           ></v-text-field>
-          <div class="caption text-left">
+          <div class="text-left mt-n5">
             By creating an account, you agree to the Perguidex
             <a href="#" target="_blank">Terms of Service</a> and
             <a href="#">Privacy Policy</a>.
           </div>
           <v-btn tile text class="red mt-3" dark block>Create My Account</v-btn>
         </v-form>
-        <div class="caption mt-2 text-left">
+        <div class="mt-2 text-left">
           Already have an account? <nuxt-link to="Login">Login here</nuxt-link>
         </div>
       </v-card-text>
