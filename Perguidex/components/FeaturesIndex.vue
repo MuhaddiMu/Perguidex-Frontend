@@ -34,7 +34,7 @@
                       width="20%"
                       class="red darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Keep record of your daily activities which help you better
                       understand yourself
                     </v-card-text>
@@ -59,7 +59,7 @@
                       width="20%"
                       class="blue darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Track your everyday progress towards your goals,
                       objectives and mission
                     </v-card-text>
@@ -86,7 +86,7 @@
                       width="20%"
                       class="blue-grey darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Creating a roadmap will help you get a practical grasp on
                       what it is going to take
                     </v-card-text>
@@ -111,7 +111,7 @@
                       width="20%"
                       class="pink darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Monitoring accurate finance statements can help you expand
                       your business
                     </v-card-text>
@@ -136,7 +136,7 @@
                       width="20%"
                       class="purple darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Creating a rundown of your connections helps you improve
                       relationship and circle
                     </v-card-text>
@@ -161,7 +161,7 @@
                       width="20%"
                       class="yellow darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Write down your ideas daily, structure them in an
                       intuitive way, share and improve them with time
                     </v-card-text>
@@ -186,7 +186,7 @@
                       width="20%"
                       class="green darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Writing daily gratitude boost happiness. Magic will unfurl
                       once you begin doing it
                     </v-card-text>
@@ -211,7 +211,7 @@
                       width="20%"
                       class="amber darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Keeping your own personal health record can help improve
                       the quality of care you recieve
                     </v-card-text>
@@ -236,7 +236,7 @@
                       width="20%"
                       class="brown darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Digital wardrobe helps you stay organaized by managing all
                       of wearings at one place
                     </v-card-text>
@@ -263,7 +263,7 @@
                       width="20%"
                       class="light-blue darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Perguidex allows you to take notes. Access them from
                       anywhere and share them with your co workers
                     </v-card-text>
@@ -288,7 +288,7 @@
                       width="20%"
                       class="indigo darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Tracking records of your accomplishments helps you set
                       your personal and professional goals
                     </v-card-text>
@@ -315,7 +315,7 @@
                       width="20%"
                       class="light-green darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center">
+                    <v-card-text class="text-center grey--text text--darken-3">
                       Simple online calendar helps you stay organized with
                       powerful features and customization tools
                     </v-card-text>
