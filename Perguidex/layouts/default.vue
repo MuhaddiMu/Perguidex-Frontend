@@ -20,12 +20,18 @@
             <v-toolbar-title v-text="title" />
           </v-btn>
           <v-spacer />
-          <v-btn rounded text class="d-none d-sm-flex white--text">
+          <v-btn
+            nuxt
+            to="Login"
+            rounded
+            text
+            class="d-none d-sm-flex white--text"
+          >
             <div>Login</div>
           </v-btn>
 
-          <v-btn rounded depressed class="white red--text">
-            <div>Get Started — It's Free</div>
+          <v-btn nuxt to="Signup" rounded depressed class="white red--text">
+            <div>Get Started</div>
           </v-btn>
         </v-container>
       </v-app-bar>
