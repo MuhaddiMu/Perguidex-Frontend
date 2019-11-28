@@ -28,11 +28,11 @@
             prepend-inner-icon="mdi-lock"
             @click:append="TogglePassword = !TogglePassword"
           ></v-text-field>
-          <v-btn tile text class="red mt-n4" dark block>Log Me In</v-btn>
+          <div class="text-left mt-n3 grey--text text--darken-3">
+            <nuxt-link to="Forgot">Forgot Password?</nuxt-link>
+          </div>
+          <v-btn tile text class="red my-3" dark block>Log Me In</v-btn>
         </v-form>
-        <div class="text-left mt-3 grey--text text--darken-3">
-          <nuxt-link to="Forgot">Forgot Password?</nuxt-link>
-        </div>
         <div class="text-left grey--text text--darken-3">
           Don't have an account?
           <nuxt-link to="Signup">Signup here</nuxt-link>

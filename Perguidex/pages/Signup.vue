@@ -34,7 +34,7 @@
             prepend-inner-icon="mdi-lock"
             @click:append="TogglePassword = !TogglePassword"
           ></v-text-field>
-          <div class="text-left mt-n5 grey--text text--darken-3">
+          <div class="text-left mt-n3 grey--text text--darken-3">
             By creating an account, you agree to the Perguidex
             <a href="#" target="_blank">Terms of Service</a> and
             <a href="#" target="_blank">Privacy Policy</a>.
