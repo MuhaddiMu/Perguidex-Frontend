@@ -19,11 +19,11 @@
           >
         </v-form>
         <div class="mt-2 text-left grey--text text--darken-3">
-          Already have an account? <nuxt-link to="Login">Login here</nuxt-link>
+          Already have an account? <nuxt-link to="Login">Log in here</nuxt-link>
         </div>
         <div class="text-left grey--text text--darken-3">
           Don't have an account?
-          <nuxt-link to="Signup">Signup here</nuxt-link>
+          <nuxt-link to="Signup">Sign up here</nuxt-link>
         </div>
       </v-card-text>
     </v-card>
@@ -31,6 +31,11 @@
 </template>
 <script>
 export default {
-  layout: 'Auth'
+  layout: 'Auth',
+  head() {
+    return {
+      title: 'Forgot Password?'
+    }
+  }
 }
 </script>

@@ -4,11 +4,11 @@
     <v-card tile max-width="400px" outlined class="mx-auto">
       <v-card-text>
         <v-btn tile block depressed
-          ><img width="16px" class="mr-2" src="FacebookIco.png" /> Login with
+          ><img width="16px" class="mr-2" src="FacebookIco.png" /> Log In with
           Facebook Account</v-btn
         >
         <v-btn tile class="mt-2" block depressed
-          ><img width="16px" class="mr-2" src="GoogleIco.png" /> Login with
+          ><img width="16px" class="mr-2" src="GoogleIco.png" /> Log In with
           Google Account</v-btn
         >
         <div class="Half-Seperator caption my-3">OR</div>
@@ -35,7 +35,7 @@
         </v-form>
         <div class="text-left grey--text text--darken-3">
           Don't have an account?
-          <nuxt-link to="Signup">Signup here</nuxt-link>
+          <nuxt-link to="Signup">Sign up here</nuxt-link>
         </div>
       </v-card-text>
     </v-card>
@@ -47,6 +47,11 @@ export default {
   data() {
     return {
       TogglePassword: false
+    }
+  },
+  head() {
+    return {
+      title: 'Log In'
     }
   }
 }
