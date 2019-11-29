@@ -42,15 +42,19 @@
         </v-container>
       </v-content>
       <TheFooter />
+      <ScrollToTop />
     </v-app>
   </section>
 </template>
 
 <script>
 import TheFooter from '@/components/TheFooter'
+import ScrollToTop from '@/components/ScrollToTop'
+
 export default {
   components: {
-    TheFooter
+    TheFooter,
+    ScrollToTop
   },
   data() {
     return {
