@@ -342,29 +342,25 @@
             </v-col>
           </v-row>
           <v-row class="d-flex text-center" align="center" justify="center">
-            <v-col cols="12" md="2" sm="6" xs="12">
+            <v-col cols="12" md="2" sm="6" xs="12" class="text-center">
               <img height="45px" src="Google.png" />
-              <div class="text-center">
-                <v-rating
-                  :value="5"
-                  color="#e3e6ed"
-                  background-color="gray lighten-4"
-                  dense
-                  readonly
-                ></v-rating>
-              </div>
+              <v-rating
+                :value="5"
+                color="#e3e6ed"
+                background-color="gray lighten-4"
+                dense
+                readonly
+              ></v-rating>
             </v-col>
-            <v-col cols="12" md="2" sm="6" xs="12">
+            <v-col cols="12" md="2" sm="6" xs="12" class="text-center">
               <img height="45px" src="Facebook.png" />
-              <div class="text-center">
-                <v-rating
-                  :value="5"
-                  color="#e3e6ed"
-                  background-color="gray lighten-4"
-                  dense
-                  readonly
-                ></v-rating>
-              </div>
+              <v-rating
+                :value="5"
+                color="#e3e6ed"
+                background-color="gray lighten-4"
+                dense
+                readonly
+              ></v-rating>
             </v-col>
           </v-row>
         </v-card-text>
