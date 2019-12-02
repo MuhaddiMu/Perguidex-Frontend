@@ -16,10 +16,10 @@
             data-aos-duration="1000"
           >
             <div class="white--text font-weight-bold display-3">
-              It's All About Managing Yourself
+              It’s All About Managing Yourself
             </div>
             <div class="white--text py-3">
-              Life can feel ovefwhelming, but it doesn't have to. Perguidex lets
+              Life can feel overwhelming, but it doesn't have to. Perguidex lets
               you keep track of everything in one place, so you can get it all
               done and enjoy more peace of mind along the way.
             </div>
