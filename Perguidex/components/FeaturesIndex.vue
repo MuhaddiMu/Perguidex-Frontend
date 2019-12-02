@@ -332,7 +332,7 @@
                 Ready to be more productive?
               </div>
               <v-btn class="red mt-5 white--text font-weight-bold" text x-large>
-                Get Started — It's Free
+                Get Started — It’s Free
               </v-btn>
             </v-col>
           </v-row>

@@ -34,7 +34,7 @@
           <v-btn tile text class="red my-3" dark block>Log Me In</v-btn>
         </v-form>
         <div class="text-left grey--text text--darken-3">
-          Don't have an account?
+          Don’t have an account?
           <nuxt-link to="Signup">Sign up here</nuxt-link>
         </div>
       </v-card-text>

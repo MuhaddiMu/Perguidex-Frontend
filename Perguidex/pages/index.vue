@@ -23,12 +23,12 @@
               It’s All About Managing Yourself
             </div>
             <div class="white--text py-3">
-              Life can feel overwhelming, but it doesn't have to. Perguidex lets
+              Life can feel overwhelming, but it doesn’t have to. Perguidex lets
               you keep track of everything in one place, so you can get it all
               done and enjoy more peace of mind along the way.
             </div>
             <v-btn class="white mt-5 red--text font-weight-bold" x-large>
-              Get Started — It's Free
+              Get Started — It’s Free
             </v-btn>
             <div class="mb-5 white--text caption">
               Wondering how it works? Watch a video

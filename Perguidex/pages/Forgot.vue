@@ -22,7 +22,7 @@
           Already have an account? <nuxt-link to="Login">Log in here</nuxt-link>
         </div>
         <div class="text-left grey--text text--darken-3">
-          Don't have an account?
+          Don’t have an account?
           <nuxt-link to="Signup">Sign up here</nuxt-link>
         </div>
       </v-card-text>
