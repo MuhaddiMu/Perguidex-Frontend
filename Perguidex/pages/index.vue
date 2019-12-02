@@ -67,16 +67,6 @@ export default {
 }
 </script>
 <style scoped>
-@media (min-width: 641px) {
-  .HeightMax {
-    height: 80vh;
-  }
-}
-@media (min-width: 961px) {
-  .HeightMax {
-    height: 80vh;
-  }
-}
 @media (min-width: 1025px) {
   .HeightMax {
     height: 80vh;
