@@ -1,9 +1,13 @@
 <template>
   <section>
-    <v-layout class="red lighten-1" column justify-center align-center>
+    <v-layout
+      class="red lighten-1 HeightMax"
+      column
+      justify-center
+      align-center
+    >
       <v-container mb-12 grid-list-xl>
         <v-row
-          mb-12
           justify="space-around"
           class="text-center text-md-left text-sm-left"
         >
@@ -23,7 +27,7 @@
               you keep track of everything in one place, so you can get it all
               done and enjoy more peace of mind along the way.
             </div>
-            <v-btn class="white mt-5 red--text" x-large block>
+            <v-btn class="white mt-5 red--text font-weight-bold" x-large>
               Get Started — It's Free
             </v-btn>
             <div class="mb-5 white--text caption">
@@ -69,5 +73,25 @@ export default {
 .Shadow {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 641px) {
+  .HeightMax {
+    height: 80vh;
+  }
+}
+@media (min-width: 961px) {
+  .HeightMax {
+    height: 80vh;
+  }
+}
+@media (min-width: 1025px) {
+  .HeightMax {
+    height: 80vh;
+  }
+}
+@media (min-width: 1281px) {
+  .HeightMax {
+    height: 80vh;
+  }
 }
 </style>

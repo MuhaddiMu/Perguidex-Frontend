@@ -11,7 +11,6 @@
         <v-container py-3 pa-0 d-flex>
           <v-btn
             depressed
-            rounded
             nuxt
             href="/"
             text
@@ -20,17 +19,16 @@
             <v-toolbar-title v-text="title" />
           </v-btn>
           <v-spacer />
-          <v-btn
-            nuxt
-            to="Login"
-            rounded
-            text
-            class="d-none d-sm-flex white--text"
-          >
+          <v-btn nuxt to="Login" text class="d-none d-sm-flex white--text">
             <div>Login</div>
           </v-btn>
 
-          <v-btn nuxt to="Signup" rounded depressed class="white red--text">
+          <v-btn
+            nuxt
+            to="Signup"
+            depressed
+            class="white red--text font-weight-bold"
+          >
             <div>Get Started</div>
           </v-btn>
         </v-container>

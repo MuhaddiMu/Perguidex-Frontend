@@ -13,7 +13,7 @@
                 Your Best Benefit
               </div>
             </v-col>
-            <v-container grid-list-xl>
+            <v-container>
               <v-row align="start" justify="center">
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
@@ -331,7 +331,7 @@
               <div class="grey--text text--darken-4 display-2 text-center">
                 Ready to be more productive?
               </div>
-              <v-btn class="red mt-5 white--text" text x-large>
+              <v-btn class="red mt-5 white--text font-weight-bold" text x-large>
                 Get Started — It's Free
               </v-btn>
             </v-col>
