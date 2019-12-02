@@ -31,7 +31,7 @@
               Get Started — It’s Free
             </v-btn>
             <div class="mb-5 white--text caption">
-              Wondering how it works? Watch a video
+              Wondering how it works? <a href="#">Watch a video</a>
             </div>
           </v-col>
           <v-col
@@ -93,5 +93,8 @@ export default {
   .HeightMax {
     height: 80vh;
   }
+}
+a {
+  color: #fff !important;
 }
 </style>

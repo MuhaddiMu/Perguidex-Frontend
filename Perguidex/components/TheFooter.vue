@@ -10,39 +10,39 @@
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Product</div>
           <div class="my-2 grey--text text--darken-2">
-            <a class="URL" href="#">Get Started</a>
+            <a href="#">Get Started</a>
           </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Support</div>
           <div class="my-2 grey--text text--darken-2">
-            <a class="URL" href="#">Help Center</a>
+            <a href="#">Help Center</a>
           </div>
           <div class="my-2 grey--text text--darken-2">
-            <a class="URL" href="#">FAQ</a>
+            <a href="#">FAQ</a>
           </div>
           <div class="my-2 grey--text text--darken-2">
-            <a class="URL" href="#">Translations</a>
+            <a href="#">Translations</a>
           </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">About</div>
           <div class="my-2 grey--text text--darken-2">
-            <a class="URL" href="#">About Us</a>
+            <a href="#">About Us</a>
           </div>
           <div class="my-2 grey--text text--darken-2">
-            <a class="URL" href="#">Contact Us</a>
+            <a href="#">Contact Us</a>
           </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Legal</div>
           <div class="my-2 grey--text text--darken-2">
-            <a class="URL" href="#">Terms</a>
+            <a href="#">Terms</a>
           </div>
           <div class="my-2 grey--text text--darken-2">
-            <a class="URL" href="#">Privacy</a>
+            <a href="#">Privacy</a>
             <div class="my-2 grey--text text--darken-2">
-              <a class="URL" href="#">Security</a>
+              <a href="#">Security</a>
             </div>
           </div>
         </v-col>
@@ -95,15 +95,13 @@ export default {
 }
 </script>
 
-<style>
-.URL {
+<style scoped>
+a {
   color: #616161 !important;
-  text-decoration: none;
 }
-.URL:hover,
-.URL:focus,
-.URL:active {
+a:hover,
+a:focus,
+a:active {
   color: #424242 !important;
-  text-decoration: underline;
 }
 </style>
