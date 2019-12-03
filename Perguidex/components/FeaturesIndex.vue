@@ -9,7 +9,9 @@
         <v-card-text class="svg-background">
           <v-row column wrap align-center>
             <v-col class="text-center" my-6 cols="12" sm="12" xl="12">
-              <div class="grey--text text--darken-4 display-2">
+              <div
+                class="grey--text text--darken-4 font-weight-medium display-2"
+              >
                 Your Best Benefit
               </div>
             </v-col>
@@ -328,7 +330,9 @@
         <v-card-text>
           <v-row align="center" justify="center" align-center>
             <v-col cols="12" sm="10" my-6 class="text-center">
-              <div class="grey--text text--darken-4 display-2 text-center">
+              <div
+                class="grey--text text--darken-4 font-weight-medium display-2 text-center"
+              >
                 Ready to be more productive?
               </div>
               <v-btn class="red mt-5 white--text font-weight-bold" text x-large>

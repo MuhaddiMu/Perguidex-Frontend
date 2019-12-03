@@ -10,7 +10,7 @@
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Product</div>
           <div class="my-2 grey--text text--darken-2">
-            <a href="#">Get Started</a>
+            <nuxt-link to="Signup">Get Started</nuxt-link>
           </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
