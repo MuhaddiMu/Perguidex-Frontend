@@ -1,5 +1,5 @@
 <template>
-  <v-row no-gutters column justify-center align-center>
+  <v-row no-gutters column justify-center>
     <v-container fluid grid-list-xl>
       <v-card
         class="Shadow RoundCorner mx-auto"
@@ -7,8 +7,8 @@
         style="margin-top: -64px;"
       >
         <v-card-text class="svg-background">
-          <v-row column wrap align-center>
-            <v-col class="text-center" my-6 cols="12" sm="12" xl="12">
+          <v-row column wrap>
+            <v-col class="text-center my-5" cols="12" sm="12" xl="12">
               <div
                 class="grey--text text--darken-4 font-weight-medium display-2"
               >
@@ -33,6 +33,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="red darken-1 mx-auto"
                     ></v-divider>
@@ -58,6 +59,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="blue darken-1 mx-auto"
                     ></v-divider>
@@ -85,6 +87,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="blue-grey darken-1 mx-auto"
                     ></v-divider>
@@ -110,6 +113,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="pink darken-1 mx-auto"
                     ></v-divider>
@@ -135,6 +139,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="purple darken-1 mx-auto"
                     ></v-divider>
@@ -160,6 +165,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="yellow darken-1 mx-auto"
                     ></v-divider>
@@ -185,6 +191,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="green darken-1 mx-auto"
                     ></v-divider>
@@ -210,6 +217,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="amber darken-1 mx-auto"
                     ></v-divider>
@@ -235,6 +243,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="brown darken-1 mx-auto"
                     ></v-divider>
@@ -262,6 +271,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="light-blue darken-1 mx-auto"
                     ></v-divider>
@@ -287,6 +297,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="indigo darken-1 mx-auto"
                     ></v-divider>
@@ -314,6 +325,7 @@
                       </div>
                     </v-card-title>
                     <v-divider
+                      role="presentation"
                       width="20%"
                       class="light-green darken-1 mx-auto"
                     ></v-divider>
@@ -328,8 +340,24 @@
           </v-row>
         </v-card-text>
         <v-card-text>
-          <v-row align="center" justify="center" align-center>
-            <v-col cols="12" sm="10" my-6 class="text-center">
+          <v-row align="center" justify="center" class="my-5">
+            <v-col cols="12" sm="10" class="text-center">
+              <div
+                class="grey--text text--darken-4 font-weight-medium display-2 text-center"
+              >
+                Sync Perguidex with your life
+              </div>
+            </v-col>
+            <v-col cols="12" sm="12" class="text-center">
+              <center>
+                <v-img src="CoverIllustration.png" width="1050px"></v-img>
+              </center>
+            </v-col>
+          </v-row>
+        </v-card-text>
+        <v-card-text>
+          <v-row align="center" justify="center">
+            <v-col cols="12" sm="10" class="text-center">
               <div
                 class="grey--text text--darken-4 font-weight-medium display-2 text-center"
               >
@@ -341,11 +369,15 @@
             </v-col>
           </v-row>
           <v-row align="center" justify="center">
-            <v-col cols="12" sm="10" mb-6>
-              <hr class="Gradient" />
+            <v-col cols="12" sm="10">
+              <hr role="presentation" class="Gradient" />
             </v-col>
           </v-row>
-          <v-row class="d-flex text-center" align="center" justify="center">
+          <v-row
+            class="d-flex text-center mb-5"
+            align="center"
+            justify="center"
+          >
             <v-col cols="12" md="2" sm="6" xs="12" class="text-center">
               <img height="45px" src="Google.png" />
               <v-rating

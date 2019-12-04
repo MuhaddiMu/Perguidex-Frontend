@@ -1,7 +1,7 @@
 <template>
-  <div class="text-center">
-    <img width="10%" src="Logo.png" class="mb-5" />
-    <v-card tile width="400px" outlined class="mx-auto">
+  <v-container class="text-center">
+    <img width="5%" src="Logo.png" class="mb-5" />
+    <v-card tile width="480px" outlined class="mx-auto">
       <v-card-text>
         <div class="mb-3 grey--text text--darken-3">
           To reset your password, please enter the email address of your
@@ -27,7 +27,7 @@
         </div>
       </v-card-text>
     </v-card>
-  </div>
+  </v-container>
 </template>
 <script>
 export default {
