@@ -5,8 +5,8 @@
   "author": "Muhammad Muhaddis",
   "private": true,
   "scripts": {
-    "Main:dev": "nuxt --config-file Perguidex/nuxt.config.js -p=3000",
-    "App:dev": "nuxt --config-file Perguidex-App/nuxt.config.js -p=4000",
+    "Main:dev": "nuxt --config-file Perguidex/nuxt.config.js -p=3000 --hostname 0.0.0.0",
+    "App:dev": "nuxt --config-file Perguidex-App/nuxt.config.js -p=4000 --hostname 0.0.0.0",
     "dev": "concurrently \"npm run Main:dev\" \"npm run App:dev\"",
     "Main:build": "nuxt build --config-file Perguidex/nuxt.config.js",
     "App:build": "nuxt build --config-file Perguidex-App/nuxt.config.js",
