@@ -347,6 +347,10 @@
               >
                 Sync Perguidex with your life
               </div>
+              <div class="mt-5 grey--text text--darken-3 body-1">
+                50+ features work seamlessly across platforms. Getting things
+                done has never been this easy.
+              </div>
             </v-col>
             <v-col cols="12" sm="12" class="text-center">
               <center>
