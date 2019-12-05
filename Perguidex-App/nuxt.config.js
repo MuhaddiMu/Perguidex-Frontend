@@ -19,13 +19,7 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Nunito&display=swap'
-      }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/app/favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color
@@ -66,7 +60,7 @@ export default {
    */
   vuetify: {
     customVariables: ['assets/variables.scss'],
-    treeShake: true,
+    treeShake: false,
     theme: {
       dark: false,
       themes: {
