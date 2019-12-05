@@ -1,6 +1,6 @@
 <template>
   <v-container class="text-center">
-    <img width="5%" src="Logo.png" class="mb-5" />
+    <img width="60px" src="Logo.png" class="mb-5" />
     <v-card tile max-width="480px" outlined class="mx-auto">
       <v-card-text>
         <v-btn tile block depressed
