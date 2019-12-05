@@ -378,8 +378,8 @@
             align="center"
             justify="center"
           >
-            <v-col cols="12" md="2" sm="6" xs="12" class="text-center">
-              <img height="45px" src="Google.png" />
+            <v-col cols="12" md="2" sm="6" xs="12">
+              <img draggable="false" height="45px" src="Google.svg" />
               <v-rating
                 :value="5"
                 color="#e3e6ed"
@@ -389,7 +389,7 @@
               ></v-rating>
             </v-col>
             <v-col cols="12" md="2" sm="6" xs="12" class="text-center">
-              <img height="45px" src="Facebook.png" />
+              <img draggable="false" height="45px" src="Facebook.svg" />
               <v-rating
                 :value="5"
                 color="#e3e6ed"
