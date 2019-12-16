@@ -20,7 +20,9 @@
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
                     <v-card-text class="text-center">
-                      <v-icon x-large class="red--text text--darken-1 mb-n4"
+                      <v-icon
+                        x-large
+                        class="Icon-Shadow red--text text--darken-1 mb-n4"
                         >mdi-run</v-icon
                       >
                     </v-card-text>
@@ -37,7 +39,7 @@
                       width="20%"
                       class="red darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Keep record of your daily activities which help you better
                       understand yourself
                     </v-card-text>
@@ -46,7 +48,9 @@
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
                     <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--darken-1 mb-n4"
+                      <v-icon
+                        x-large
+                        class="Icon-Shadow blue--text text--darken-1 mb-n4"
                         >mdi-format-list-checkbox</v-icon
                       >
                     </v-card-text>
@@ -63,7 +67,7 @@
                       width="20%"
                       class="blue darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Track your everyday progress towards your goals,
                       objectives and mission
                     </v-card-text>
@@ -74,7 +78,7 @@
                     <v-card-text class="text-center">
                       <v-icon
                         x-large
-                        class="blue-grey--text text--darken-1 mb-n4"
+                        class="Icon-Shadow blue-grey--text text--darken-1 mb-n4"
                         >mdi-chart-timeline-variant</v-icon
                       >
                     </v-card-text>
@@ -91,7 +95,7 @@
                       width="20%"
                       class="blue-grey darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Creating a roadmap will help you get a practical grasp on
                       what it is going to take
                     </v-card-text>
@@ -100,7 +104,9 @@
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
                     <v-card-text class="text-center">
-                      <v-icon x-large class="pink--text text--darken-1 mb-n4"
+                      <v-icon
+                        x-large
+                        class="Icon-Shadow pink--text text--darken-1 mb-n4"
                         >mdi-cash</v-icon
                       >
                     </v-card-text>
@@ -117,7 +123,7 @@
                       width="20%"
                       class="pink darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Monitoring accurate finance statements can help you expand
                       your business
                     </v-card-text>
@@ -126,7 +132,9 @@
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
                     <v-card-text class="text-center">
-                      <v-icon x-large class="purple--text text--darken-1 mb-n4"
+                      <v-icon
+                        x-large
+                        class="Icon-Shadow purple--text text--darken-1 mb-n4"
                         >mdi-cash</v-icon
                       >
                     </v-card-text>
@@ -143,7 +151,7 @@
                       width="20%"
                       class="purple darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Creating a rundown of your connections helps you improve
                       relationship and circle
                     </v-card-text>
@@ -152,7 +160,9 @@
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
                     <v-card-text class="text-center">
-                      <v-icon x-large class="yellow--text text--darken-1 mb-n4"
+                      <v-icon
+                        x-large
+                        class="Icon-Shadow yellow--text text--darken-1 mb-n4"
                         >mdi-lightbulb-on</v-icon
                       >
                     </v-card-text>
@@ -169,7 +179,7 @@
                       width="20%"
                       class="yellow darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Write down your ideas daily, structure them in an
                       intuitive way, share and improve them with time
                     </v-card-text>
@@ -178,7 +188,9 @@
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
                     <v-card-text class="text-center">
-                      <v-icon x-large class="green--text text--darken-1 mb-n4"
+                      <v-icon
+                        x-large
+                        class="Icon-Shadow green--text text--darken-1 mb-n4"
                         >mdi-emoticon</v-icon
                       >
                     </v-card-text>
@@ -195,7 +207,7 @@
                       width="20%"
                       class="green darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Writing daily gratitude boost happiness. Magic will unfurl
                       once you begin doing it
                     </v-card-text>
@@ -204,7 +216,9 @@
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
                     <v-card-text class="text-center">
-                      <v-icon x-large class="amber--text text--darken-1 mb-n4"
+                      <v-icon
+                        x-large
+                        class="Icon-Shadow amber--text text--darken-1 mb-n4"
                         >mdi-weight-lifter</v-icon
                       >
                     </v-card-text>
@@ -221,7 +235,7 @@
                       width="20%"
                       class="amber darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Keeping your own personal health record can help improve
                       the quality of care you recieve
                     </v-card-text>
@@ -230,7 +244,9 @@
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
                     <v-card-text class="text-center">
-                      <v-icon x-large class="brown--text text--darken-1 mb-n4"
+                      <v-icon
+                        x-large
+                        class="Icon-Shadow brown--text text--darken-1 mb-n4"
                         >mdi-wardrobe</v-icon
                       >
                     </v-card-text>
@@ -247,7 +263,7 @@
                       width="20%"
                       class="brown darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Digital wardrobe helps you stay organaized by managing all
                       of wearings at one place
                     </v-card-text>
@@ -258,7 +274,7 @@
                     <v-card-text class="text-center">
                       <v-icon
                         x-large
-                        class="light-blue--text text--darken-1 mb-n4"
+                        class="Icon-Shadow light-blue--text text--darken-1 mb-n4"
                         >mdi-clipboard-text</v-icon
                       >
                     </v-card-text>
@@ -275,7 +291,7 @@
                       width="20%"
                       class="light-blue darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Perguidex allows you to take notes. Access them from
                       anywhere and share them with your co workers
                     </v-card-text>
@@ -284,7 +300,9 @@
                 <v-col cols="12" md="3" sm="12" data-aos="fade-up">
                   <v-card flat class="transparent">
                     <v-card-text class="text-center">
-                      <v-icon x-large class="indigo--text text--darken-1 mb-n4"
+                      <v-icon
+                        x-large
+                        class="Icon-Shadow indigo--text text--darken-1 mb-n4"
                         >mdi-trophy</v-icon
                       >
                     </v-card-text>
@@ -301,7 +319,7 @@
                       width="20%"
                       class="indigo darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Tracking records of your accomplishments helps you set
                       your personal and professional goals
                     </v-card-text>
@@ -312,7 +330,7 @@
                     <v-card-text class="text-center">
                       <v-icon
                         x-large
-                        class="light-green--text text--darken-1 mb-n4"
+                        class="Icon-Shadow light-green--text text--darken-1 mb-n4"
                         >mdi-calendar</v-icon
                       >
                     </v-card-text>
@@ -329,7 +347,7 @@
                       width="20%"
                       class="light-green darken-1 mx-auto"
                     ></v-divider>
-                    <v-card-text class="text-center grey--text text--darken-3">
+                    <v-card-text class="text-center grey--text text--darken-4">
                       Simple online calendar helps you stay organized with
                       powerful features and customization tools
                     </v-card-text>
@@ -347,7 +365,7 @@
               >
                 Sync Perguidex with your life
               </div>
-              <div class="mt-5 grey--text text--darken-3 body-1">
+              <div class="mt-5 grey--text text--darken-4 body-1">
                 50+ features work seamlessly across platforms. Getting things
                 done has never been this easy.
               </div>
@@ -427,5 +445,8 @@
     rgba(158, 158, 158, 0.75),
     rgba(158, 158, 158, 0)
   );
+}
+.Icon-Shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 </style>
