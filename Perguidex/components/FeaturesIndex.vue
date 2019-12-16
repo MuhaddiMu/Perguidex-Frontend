@@ -385,7 +385,13 @@
               >
                 Ready to be more productive?
               </div>
-              <v-btn class="red mt-5 white--text font-weight-bold" text x-large>
+              <v-btn
+                nuxt
+                to="Signup"
+                class="red mt-5 white--text font-weight-bold"
+                text
+                x-large
+              >
                 Get Started — It’s Free
               </v-btn>
             </v-col>
@@ -448,5 +454,9 @@
 }
 .Icon-Shadow {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+a {
+  color: #fff !important;
+  text-decoration: none;
 }
 </style>
