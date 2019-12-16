@@ -1,45 +1,40 @@
 <template>
   <v-app light>
     <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
+      v-model="ToggleDrawer"
+      bottom
+      :clipped="true"
       fixed
       app
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(Item, i) in Items"
           :key="i"
-          :to="item.to"
+          :to="Item.To"
           router
           exact
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon> {{ Item.Icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title v-text="Item.Title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
-      :clipped-left="clipped"
+      dense
+      :clipped-left="true"
       fixed
       app
       class="red lighten-1 white--text"
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
+      <v-app-bar-nav-icon
+        class="white--text"
+        @click.stop="ToggleDrawer = !ToggleDrawer"
+      />
       <v-toolbar-title v-text="title" />
     </v-app-bar>
     <v-content>
@@ -54,21 +49,21 @@
 export default {
   data() {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
+      ToggleDrawer: false,
+      Items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
+          Icon: 'mdi-apps',
+          Title: 'Welcome',
+          To: '/'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Perguidex'
     }
   }
 }
 </script>
+<style>
+html {
+  overflow-y: auto;
+}
+</style>
