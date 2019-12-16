@@ -55,7 +55,7 @@
             single-line
             clearable
             clear-icon="mdi-close"
-            @click.stop="ChangeColor(true)"
+            @mousedown.stop="ChangeColor(true)"
             @blur.stop="ChangeColor(false)"
           ></v-text-field>
         </v-slide-x-reverse-transition>
