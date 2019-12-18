@@ -23,6 +23,12 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <template v-slot:append>
+        <v-divider></v-divider>
+        <div class="text-center pa-2 grey--text text--darken-1 caption">
+          Perguidex Beta
+        </div>
+      </template>
     </v-navigation-drawer>
     <v-app-bar
       flat
