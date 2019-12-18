@@ -8,8 +8,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - Perguidex',
-    title: 'Perguidex' || '',
+    titleTemplate: '%s: Perguidex',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

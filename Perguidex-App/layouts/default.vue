@@ -99,8 +99,7 @@ export default {
           Title: 'Welcome',
           To: '/'
         }
-      ],
-      title: 'Perguidex'
+      ]
     }
   },
   methods: {
