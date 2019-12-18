@@ -15,6 +15,7 @@
     "Main:generate": "nuxt generate --config-file Perguidex/nuxt.config.js",
     "App:generate": "nuxt generate --config-file Perguidex-App/nuxt.config.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
   "lint-staged": {
