@@ -7,21 +7,29 @@
       fixed
       app
     >
-      <v-list>
-        <v-list-item
-          v-for="(Item, i) in Items"
-          :key="i"
-          :to="Item.To"
-          router
-          exact
+      <v-list nav dense>
+        <v-list-group
+          v-for="Item in Items"
+          :key="Item.Title"
+          v-model="Item.Active"
+          :prepend-icon="Item.Action"
+          no-action
         >
-          <v-list-item-action>
-            <v-icon> {{ Item.Icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="Item.Title" />
-          </v-list-item-content>
-        </v-list-item>
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title v-text="Item.Title"></v-list-item-title>
+            </v-list-item-content>
+          </template>
+
+          <v-list-item v-for="SubItem in Item.Items" :key="SubItem.Title">
+            <v-list-item-content>
+              <v-list-item-title>
+                <v-icon small v-text="SubItem.Icon"></v-icon>
+                {{ SubItem.Title }}</v-list-item-title
+              >
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-group>
       </v-list>
       <template v-slot:append>
         <v-divider></v-divider>
@@ -30,6 +38,7 @@
         </div>
       </template>
     </v-navigation-drawer>
+
     <v-app-bar
       flat
       dense
@@ -81,9 +90,44 @@ export default {
       ToggleDrawer: false,
       Items: [
         {
-          Icon: 'mdi-apps',
-          Title: 'Welcome',
-          To: '/'
+          Action: 'mdi-run-fast',
+          Title: 'Activities',
+          Active: true,
+          Items: [
+            { Title: 'Tasks', Icon: 'mdi-playlist-check' },
+            { Title: 'Next 7 Days', Icon: 'mdi-calendar-week' },
+            { Title: 'All Activities', Icon: 'mdi-calendar-check' }
+          ]
+        },
+        {
+          Action: 'mdi-bell',
+          Title: 'Attractions',
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+        },
+        {
+          Action: 'mdi-bell',
+          Title: 'Education',
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+        },
+        {
+          Action: 'mdi-bell',
+          Title: 'Family',
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+        },
+        {
+          Action: 'mdi-bell',
+          Title: 'Health',
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+        },
+        {
+          Action: 'mdi-bell',
+          Title: 'Office',
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+        },
+        {
+          Action: 'mdi-bell',
+          Title: 'Promotions',
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
         }
       ]
     }
