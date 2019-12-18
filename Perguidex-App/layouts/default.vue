@@ -37,28 +37,31 @@
         @click.stop="ToggleDrawer = !ToggleDrawer"
       />
       <v-container class="px-12" d-flex>
-        <v-toolbar-title class="pt-1 d-none d-sm-flex" v-text="title" />
+        <v-toolbar-title class="pt-1 d-none d-sm-flex" v-text="'Perguidex'" />
 
         <v-spacer></v-spacer>
         <v-slide-x-reverse-transition>
-          <v-text-field
+          <v-autocomplete
             v-if="ToggleSearch"
-            class="mr-6"
-            dense
-            :background-color="SearchBarBGColor"
-            :color="SearchBarColor"
-            flat
-            filled
-            placeholder="Quick Search"
+            v-model="SearchModel"
+            dark
+            class="mr-6 w-40"
+            :loading="SearchLoading"
+            :items="SearchItems"
+            :search-input.sync="Search"
+            cache-items
+            autofocus
             prepend-inner-icon="mdi-magnify"
+            dense
+            flat
             hide-details
             single-line
-            clearable
-            clear-icon="mdi-close"
-            @mousedown.stop="ChangeColor(true)"
-            @focus="ChangeColor(true)"
-            @blur.stop="ChangeColor(false)"
-          ></v-text-field>
+            hide-selected
+            hide-no-data
+            label="Quick Search"
+            solo-inverted
+            color="black"
+          ></v-autocomplete>
         </v-slide-x-reverse-transition>
         <v-btn
           color="white"
@@ -89,10 +92,13 @@
 export default {
   data() {
     return {
-      ToggleDrawer: false,
-      SearchBarBGColor: '',
-      SearchBarColor: 'white',
+      SearchModel: null,
+      Search: null,
+      SearchLoading: false,
+      SearchItems: [],
+      SearchBGColor: '',
       ToggleSearch: false,
+      ToggleDrawer: false,
       Items: [
         {
           Icon: 'mdi-apps',
@@ -102,15 +108,24 @@ export default {
       ]
     }
   },
+  watch: {
+    Search(val) {
+      val && val !== this.SearchModel && this.querySelections(val)
+    }
+  },
   methods: {
-    ChangeColor(Result) {
-      if (Result === true) {
-        this.SearchBarBGColor = 'white'
-        this.SearchBarColor = 'black'
-      } else {
-        this.SearchBarBGColor = ''
-        this.SearchBarColor = ''
-      }
+    ChangeColors() {
+      this.SearchBGColor = 'white'
+    },
+    querySelections(v) {
+      this.SearchLoading = true
+      const States = ['Alaska', 'New York', 'Arizona', 'California', 'Colorado']
+      setTimeout(() => {
+        this.SearchItems = States.filter((e) => {
+          return (e || '').toLowerCase().includes((v || '').toLowerCase()) > -1
+        })
+        this.SearchLoading = false
+      }, 500)
     }
   }
 }
@@ -121,5 +136,8 @@ html {
 }
 .v-toolbar__content {
   border-bottom: 1px solid #e53935;
+}
+.w-40 {
+  width: 40px;
 }
 </style>
