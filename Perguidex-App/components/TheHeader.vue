@@ -21,7 +21,7 @@
             </v-list-item-content>
           </template>
 
-          <v-list-item v-for="SubItem in Item.Items" :key="SubItem.Title">
+          <v-list-item v-for="SubItem in Item.Items" :key="SubItem.Title" link>
             <v-list-item-content>
               <v-list-item-title>
                 <v-icon small v-text="SubItem.Icon"></v-icon>
