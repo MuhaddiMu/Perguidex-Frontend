@@ -1,6 +1,13 @@
 <template>
   <div class="text-center">
-    <v-menu v-model="Menu" close-on-content-click offset-y nudge-width="200">
+    <v-menu
+      v-model="Menu"
+      transition="scale-transition"
+      close-on-content-click
+      offset-y
+      origin="top center"
+      nudge-width="200"
+    >
       <template v-slot:activator="{ on }">
         <div>
           <v-btn color="white" fab text small icon v-on="on"
