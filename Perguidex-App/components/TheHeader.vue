@@ -149,7 +149,4 @@ export default {
 .v-toolbar__content {
   border-bottom: 1px solid #e53935;
 }
-a {
-  text-decoration: none;
-}
 </style>
