@@ -21,7 +21,13 @@
             </v-list-item-content>
           </template>
 
-          <v-list-item v-for="SubItem in Item.Items" :key="SubItem.Title" link>
+          <v-list-item
+            v-for="SubItem in Item.Items"
+            :key="SubItem.Title"
+            link
+            nuxt
+            to="/"
+          >
             <v-list-item-content>
               <v-list-item-title>
                 <v-icon small v-text="SubItem.Icon"></v-icon>
@@ -94,40 +100,40 @@ export default {
           Title: 'Activities',
           Active: true,
           Items: [
-            { Title: 'Tasks', Icon: 'mdi-playlist-check' },
-            { Title: 'Next 7 Days', Icon: 'mdi-calendar-week' },
-            { Title: 'All Activities', Icon: 'mdi-calendar-check' }
+            { Title: 'Tasks', Icon: 'mdi-playlist-check', Route: '' },
+            { Title: 'Next 7 Days', Icon: 'mdi-calendar-week', Route: '' },
+            { Title: 'All Activities', Icon: 'mdi-calendar-check', Route: '' }
           ]
         },
         {
           Action: 'mdi-bell',
           Title: 'Attractions',
-          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell', Route: '' }]
         },
         {
           Action: 'mdi-bell',
           Title: 'Education',
-          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell', Route: '' }]
         },
         {
           Action: 'mdi-bell',
           Title: 'Family',
-          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell', Route: '' }]
         },
         {
           Action: 'mdi-bell',
           Title: 'Health',
-          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell', Route: '' }]
         },
         {
           Action: 'mdi-bell',
           Title: 'Office',
-          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell', Route: '' }]
         },
         {
           Action: 'mdi-bell',
           Title: 'Promotions',
-          Items: [{ Title: 'List Item', Icon: 'mdi-bell' }]
+          Items: [{ Title: 'List Item', Icon: 'mdi-bell', Route: '' }]
         }
       ]
     }
