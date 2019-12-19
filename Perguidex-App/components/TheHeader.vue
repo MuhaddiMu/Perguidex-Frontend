@@ -30,7 +30,7 @@
           >
             <v-list-item-content>
               <v-list-item-title>
-                <v-icon small v-text="SubItem.Icon"></v-icon>
+                <v-icon left small v-text="SubItem.Icon"></v-icon>
                 {{ SubItem.Title }}</v-list-item-title
               >
             </v-list-item-content>
@@ -39,7 +39,7 @@
       </v-list>
       <template v-slot:append>
         <v-divider></v-divider>
-        <div class="text-center pa-2 grey--text text--darken-1 caption">
+        <div class="text-center pa-2 grey--text caption">
           Perguidex Beta
         </div>
       </template>
@@ -76,18 +76,18 @@
         <v-btn color="white" fab text small icon
           ><v-icon>mdi-bell</v-icon></v-btn
         >
-        <v-btn color="white" fab text small icon
-          ><v-icon>mdi-settings</v-icon></v-btn
-        >
+        <SettingsMenu />
       </v-container>
     </v-app-bar>
   </div>
 </template>
 <script>
 import Search from '@/components/Search'
+import SettingsMenu from '@/components/SettingsMenu'
 export default {
   components: {
-    Search
+    Search,
+    SettingsMenu
   },
   data() {
     return {
@@ -148,5 +148,8 @@ export default {
 <style scoped>
 .v-toolbar__content {
   border-bottom: 1px solid #e53935;
+}
+a {
+  text-decoration: none;
 }
 </style>
