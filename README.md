@@ -34,6 +34,9 @@ $ npm run test
 # Linting
 $ npm run lint
 
+# Lint Fix
+$ npm run lintfix
+
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
