@@ -6,7 +6,7 @@
       close-on-content-click
       offset-y
       origin="top center"
-      nudge-width="200"
+      right
     >
       <template v-slot:activator="{ on }">
         <div>
@@ -17,8 +17,6 @@
       </template>
 
       <v-card>
-        <v-divider class="pt-1"></v-divider>
-
         <v-list dense nav>
           <v-list-item nuxt link to="">
             <v-list-item-icon><v-icon left>mdi-sync</v-icon></v-list-item-icon>

@@ -74,9 +74,7 @@
           @click.stop="ToggleSearch = !ToggleSearch"
           ><v-icon>mdi-magnify</v-icon></v-btn
         >
-        <v-btn color="white" fab text small icon
-          ><v-icon>mdi-bell</v-icon></v-btn
-        >
+        <Notifications />
         <SettingsMenu />
       </v-container>
     </v-app-bar>
@@ -84,11 +82,13 @@
 </template>
 <script>
 import Search from '@/components/Search'
+import Notifications from '@/components/Notifications'
 import SettingsMenu from '@/components/SettingsMenu'
 export default {
   components: {
     Search,
-    SettingsMenu
+    SettingsMenu,
+    Notifications
   },
   data() {
     return {
