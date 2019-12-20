@@ -62,9 +62,10 @@
 
         <v-spacer></v-spacer>
         <v-slide-x-reverse-transition>
-          <Search v-if="ToggleSearch" />
+          <Search v-if="ToggleSearch" class="d-none d-sm-flex" />
         </v-slide-x-reverse-transition>
         <v-btn
+          class="d-none d-sm-flex"
           color="white"
           fab
           text
