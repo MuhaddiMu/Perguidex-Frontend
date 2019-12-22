@@ -9,7 +9,7 @@
   </v-app>
 </template>
 <script>
-import TheHeader from '@/components/TheHeader'
+import TheHeader from '@/components/Header/TheHeader'
 export default {
   components: {
     TheHeader

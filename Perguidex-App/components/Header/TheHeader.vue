@@ -81,9 +81,9 @@
   </div>
 </template>
 <script>
-import Search from '@/components/Search'
-import Notifications from '@/components/Notifications'
-import SettingsMenu from '@/components/SettingsMenu'
+import Search from '@/components/Header/Search'
+import Notifications from '@/components/Header/Notifications'
+import SettingsMenu from '@/components/Header/SettingsMenu'
 export default {
   components: {
     Search,
