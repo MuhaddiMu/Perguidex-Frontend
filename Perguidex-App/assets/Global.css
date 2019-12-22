@@ -6,4 +6,5 @@ a {
 .Link:focus,
 .Link:active {
   text-decoration: underline;
+  cursor: pointer;
 }

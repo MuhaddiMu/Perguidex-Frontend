@@ -19,7 +19,8 @@
       <v-card>
         <v-list two-line max-width="450" dense nav subheader>
           <v-subheader class="text-uppercase"
-            >Notifications <v-spacer></v-spacer>Mark all as read</v-subheader
+            ><span class="Link">Notifications</span><v-spacer></v-spacer
+            ><span class="Link">Mark all as read</span></v-subheader
           >
           <template v-for="(Notification, index) in Notifications">
             <v-list-item :key="Notification.Title" link>
