@@ -80,7 +80,7 @@
         class="mt-4 mb-12
            grey--text text--darken-2"
       >
-        &copy; 2019 Perguidex
+        &copy; <span>{{ new Date().getFullYear() }}</span> Perguidex
       </div>
     </v-container>
   </v-footer>
