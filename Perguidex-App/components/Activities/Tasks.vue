@@ -5,7 +5,7 @@
         <v-card class="mx-auto" width="900">
           <v-card-title class="red lighten-1 white--text subtitle-2">
             <div class="W33 text-left ">
-              <v-icon color="white">mdi-printer</v-icon>
+              <v-icon class="Cursor" color="white">mdi-printer</v-icon>
             </div>
             <div class="W33 text-center font-weight-bold">
               Tasks<small class="font-weight-regular">
@@ -13,7 +13,7 @@
               >
             </div>
             <div class="W33 text-right">
-              <v-icon color="white">mdi-sync</v-icon>
+              <v-icon class="Cursor" color="white">mdi-sync</v-icon>
             </div>
           </v-card-title>
         </v-card>
