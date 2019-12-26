@@ -23,24 +23,22 @@
 
 <script>
 export default {
-  data() {
-    return {
-      SearchModel: null,
-      Search: null,
-      SearchLoading: false,
-      SearchItems: [],
-      SearchBGColor: '',
-      ToggleSearch: false,
-      ToggleDrawer: false,
-      Items: [
-        {
-          Icon: 'mdi-apps',
-          Title: 'Welcome',
-          To: '/'
-        }
-      ]
-    }
-  },
+  data: () => ({
+    SearchModel: null,
+    Search: null,
+    SearchLoading: false,
+    SearchItems: [],
+    SearchBGColor: '',
+    ToggleSearch: false,
+    ToggleDrawer: false,
+    Items: [
+      {
+        Icon: 'mdi-apps',
+        Title: 'Welcome',
+        To: '/'
+      }
+    ]
+  }),
   watch: {
     Search(val) {
       val && val !== this.SearchModel && this.querySelections(val)
