@@ -2,8 +2,8 @@
   <div>
     <v-navigation-drawer
       v-model="ToggleDrawer"
-      bottom
       :clipped="true"
+      bottom
       fixed
       app
     >
@@ -30,7 +30,7 @@
           >
             <v-list-item-content>
               <v-list-item-title>
-                <v-icon left small v-text="SubItem.Icon"></v-icon>
+                <v-icon v-text="SubItem.Icon" left small></v-icon>
                 {{ SubItem.Title }}</v-list-item-title
               >
             </v-list-item-content>
@@ -46,32 +46,32 @@
     </v-navigation-drawer>
 
     <v-app-bar
+      :clipped-left="true"
       flat
       dense
-      :clipped-left="true"
       fixed
       app
       class="red lighten-1 white--text"
     >
       <v-app-bar-nav-icon
-        class="white--text"
         @click.stop="ToggleDrawer = !ToggleDrawer"
+        class="white--text"
       />
       <v-container class="px-12" d-flex>
-        <v-toolbar-title class="pt-1 d-none d-sm-flex" v-text="'Perguidex'" />
+        <v-toolbar-title v-text="'Perguidex'" class="pt-1 d-none d-sm-flex" />
 
         <v-spacer></v-spacer>
         <v-slide-x-reverse-transition>
           <Search v-if="ToggleSearch" class="d-none d-sm-flex" />
         </v-slide-x-reverse-transition>
         <v-btn
+          @click.stop="ToggleSearch = !ToggleSearch"
           class="d-none d-sm-flex"
           color="white"
           fab
           text
           small
           icon
-          @click.stop="ToggleSearch = !ToggleSearch"
           ><v-icon>mdi-magnify</v-icon></v-btn
         >
         <Notifications />

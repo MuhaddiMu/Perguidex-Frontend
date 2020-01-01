@@ -1,11 +1,11 @@
 <template>
   <v-autocomplete
     v-model="SearchModel"
-    dark
-    class="mr-6 w-40"
     :loading="SearchLoading"
     :items="SearchItems"
     :search-input.sync="Search"
+    dark
+    class="mr-6 w-40"
     cache-items
     autofocus
     prepend-inner-icon="mdi-magnify"

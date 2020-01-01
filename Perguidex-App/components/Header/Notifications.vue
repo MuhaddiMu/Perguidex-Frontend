@@ -2,15 +2,15 @@
   <div class="text-center">
     <v-menu
       v-model="Menu"
+      :close-on-content-click="false"
       transition="scale-transition"
       offset-y
-      :close-on-content-click="false"
       origin="top center"
       left
     >
       <template v-slot:activator="{ on }">
         <div>
-          <v-btn color="white" fab text small icon v-on="on"
+          <v-btn v-on="on" color="white" fab text small icon
             ><v-icon>mdi-bell</v-icon></v-btn
           >
         </div>
@@ -33,8 +33,8 @@
                 ></v-list-item-title>
 
                 <v-list-item-subtitle
-                  class="font-weight-regular"
                   v-text="Notification.Subtitle"
+                  class="font-weight-regular"
                 ></v-list-item-subtitle>
               </v-list-item-content>
 
@@ -46,18 +46,18 @@
                   <template v-slot:activator="{ on }">
                     <v-icon
                       v-if="Notification.View"
-                      small
-                      color="grey lighten-1"
                       v-on="on"
                       @click="Notification.View = !Notification.View"
+                      small
+                      color="grey lighten-1"
                       >mdi-check-all</v-icon
                     >
                     <v-icon
                       v-else
-                      small
-                      color="grey lighten-1"
                       v-on="on"
                       @click="Notification.View = !Notification.View"
+                      small
+                      color="grey lighten-1"
                       >mdi-check</v-icon
                     >
                   </template>
