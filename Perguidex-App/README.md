@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm run install
 
@@ -17,6 +17,13 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# lint
+$ npm run lint
+
+# lint fix
+$ npm run lintfix
+
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
