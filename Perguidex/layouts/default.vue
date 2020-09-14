@@ -2,11 +2,11 @@
   <section>
     <v-app light>
       <TheHeader />
-      <v-content>
+      <v-main>
         <v-container pa-0 fluid>
           <nuxt />
         </v-container>
-      </v-content>
+      </v-main>
       <TheFooter />
       <ScrollToTop />
     </v-app>
