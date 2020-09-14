@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="my-7 grey lighten-5">
+  <v-footer class="mt-7 grey lighten-5">
     <v-container>
       <v-row
         class="my-5 text-center text-md-left text-sm-left"
