@@ -6,6 +6,7 @@
       :style="{
         bottom: '20px'
       }"
+      @click="toTop"
       aria-label="Scroll to top"
       bottom
       color="red"
@@ -14,7 +15,6 @@
       fixed
       right
       title="Scroll to top"
-      @click="toTop"
     >
       <v-icon>mdi-chevron-up</v-icon>
     </v-btn>

@@ -14,25 +14,25 @@
         <div class="Half-Seperator caption my-3">OR</div>
         <v-form ref="Form">
           <v-text-field
+            :min="0"
             outlined
             label="Full Name"
-            :min="0"
             prepend-inner-icon="mdi-account"
           ></v-text-field>
           <v-text-field
+            :min="0"
             outlined
             label="Email"
-            :min="0"
             prepend-inner-icon="mdi-email"
           ></v-text-field>
           <v-text-field
-            outlined
             :append-icon="TogglePassword ? 'mdi-eye' : 'mdi-eye-off'"
             :type="TogglePassword ? 'text' : 'password'"
-            label="Password"
             :min="0"
-            prepend-inner-icon="mdi-lock"
             @click:append="TogglePassword = !TogglePassword"
+            outlined
+            label="Password"
+            prepend-inner-icon="mdi-lock"
           ></v-text-field>
           <div class="text-left mt-n3 grey--text text--darken-3">
             By creating an account, you agree to the Perguidex

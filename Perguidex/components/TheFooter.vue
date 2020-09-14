@@ -55,9 +55,9 @@
         >
           <div>
             <v-select
+              :items="Lang"
               dense
               value="English"
-              :items="Lang"
               label="Select Language"
               outlined
             ></v-select>

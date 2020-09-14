@@ -9,9 +9,9 @@
         </div>
         <v-form ref="Form">
           <v-text-field
+            :min="0"
             outlined
             label="Email"
-            :min="0"
             prepend-inner-icon="mdi-email"
           ></v-text-field>
           <v-btn tile text class="red mt-n4" dark block

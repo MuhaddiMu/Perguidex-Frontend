@@ -1,8 +1,8 @@
 <template>
   <v-app-bar
+    :clipped-left="clipped"
     class="red lighten-1"
     elevate-on-scroll
-    :clipped-left="clipped"
     fixed
     app
   >
