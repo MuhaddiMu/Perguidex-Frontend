@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  mode: 'spa',
+  ssr: false,
   srcDir: __dirname,
   buildDir: '.nuxt/Perguidex-App',
   /*
@@ -31,7 +31,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['./plugins/Components.js'],
+  plugins: [{ src: './plugins/Components.js', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
