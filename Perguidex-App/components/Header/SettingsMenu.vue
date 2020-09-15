@@ -11,7 +11,7 @@
       <template v-slot:activator="{ on }">
         <div>
           <v-btn v-on="on" color="white" fab text small icon
-            ><v-icon>mdi-settings</v-icon></v-btn
+            ><v-icon>mdi-cog</v-icon></v-btn
           >
         </div>
       </template>
