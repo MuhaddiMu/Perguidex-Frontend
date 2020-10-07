@@ -119,7 +119,10 @@
               <v-list-item :ripple="false">
                 <template v-slot:default="{ active }">
                   <v-list-item-action>
-                    <v-checkbox :input-value="active" color="red"></v-checkbox>
+                    <v-checkbox
+                      :input-value="active"
+                      color="red lighten-1"
+                    ></v-checkbox>
                   </v-list-item-action>
 
                   <v-list-item-content>
@@ -164,6 +167,36 @@
               </v-list-item>
             </v-list-item-group>
           </v-list>
+          <!-- ADD NEW TASK BUTTON -->
+          <v-container>
+            <v-btn
+              v-if="!displayNewTaskForm"
+              @click="displayNewTaskForm = !displayNewTaskForm"
+              class="mx-2"
+              fab
+              dark
+              color="red lighten-1 "
+            >
+              <v-icon dark>
+                mdi-plus
+              </v-icon>
+            </v-btn>
+            <v-form ref="NewTaskForm" v-if="displayNewTaskForm" lazy-validation>
+              <v-text-field
+                v-model="newTask"
+                outlined
+                label="Task"
+                dense
+              ></v-text-field>
+              <v-btn depressed color="primary">Add Task</v-btn>
+              <span
+                @click="displayNewTaskForm = false"
+                class="ml-1 body-2 grey--text cancel-button"
+                >Cancel</span
+              >
+            </v-form>
+          </v-container>
+          <!--  -->
         </v-card>
       </v-row>
     </v-col>
@@ -173,6 +206,11 @@
 <script>
 import moment from 'moment'
 export default {
+  data: () => ({
+    displayNewTaskForm: false,
+    Valid: true,
+    newTask: ''
+  }),
   methods: {
     moment() {
       return moment()
@@ -187,5 +225,13 @@ export default {
 }
 .W20 {
   width: 10%;
+}
+
+.cancel-button {
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  text-decoration: underline;
 }
 </style>
