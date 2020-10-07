@@ -27,11 +27,11 @@
                   <v-list-item-content>
                     <v-list-item-title>Sound</v-list-item-title>
                   </v-list-item-content>
+
                   <v-menu
                     transition="scale-transition"
                     close-on-content-click
                     offset-y
-                    a
                     origin="top right"
                     right
                   >
@@ -42,8 +42,8 @@
                         >
                       </v-list-item-action>
                     </template>
-                    <v-card width="75">
-                      <v-list dense>
+                    <v-card>
+                      <v-list dense outlined>
                         <v-list-item-group>
                           <v-list-item>
                             <v-list-item-content>
@@ -64,7 +64,104 @@
                   </v-menu>
                 </template>
               </v-list-item>
-              <v-divider></v-divider>
+            </v-list-item-group>
+            <v-divider></v-divider>
+            <v-list-item-group>
+              <v-list-item :ripple="false">
+                <template v-slot:default="{ active }">
+                  <v-list-item-action>
+                    <v-checkbox :input-value="active" color="red"></v-checkbox>
+                  </v-list-item-action>
+
+                  <v-list-item-content>
+                    <v-list-item-title>Sound</v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-menu
+                    transition="scale-transition"
+                    close-on-content-click
+                    offset-y
+                    origin="top right"
+                    right
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-list-item-action>
+                        <v-icon v-on="on" color="grey"
+                          >mdi-dots-vertical</v-icon
+                        >
+                      </v-list-item-action>
+                    </template>
+                    <v-card>
+                      <v-list dense outlined>
+                        <v-list-item-group>
+                          <v-list-item>
+                            <v-list-item-content>
+                              <v-list-item-title
+                                v-text="'Edit'"
+                              ></v-list-item-title>
+                            </v-list-item-content>
+                          </v-list-item>
+                          <v-list-item>
+                            <v-list-item-content>
+                              <v-list-item-title
+                                v-text="'Delete'"
+                              ></v-list-item-title>
+                            </v-list-item-content>
+                          </v-list-item> </v-list-item-group
+                      ></v-list>
+                    </v-card>
+                  </v-menu>
+                </template>
+              </v-list-item>
+            </v-list-item-group>
+            <v-divider></v-divider>
+            <v-list-item-group>
+              <v-list-item :ripple="false">
+                <template v-slot:default="{ active }">
+                  <v-list-item-action>
+                    <v-checkbox :input-value="active" color="red"></v-checkbox>
+                  </v-list-item-action>
+
+                  <v-list-item-content>
+                    <v-list-item-title>Sound</v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-menu
+                    transition="scale-transition"
+                    close-on-content-click
+                    offset-y
+                    origin="top right"
+                    right
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-list-item-action>
+                        <v-icon v-on="on" color="grey"
+                          >mdi-dots-vertical</v-icon
+                        >
+                      </v-list-item-action>
+                    </template>
+                    <v-card>
+                      <v-list dense outlined>
+                        <v-list-item-group>
+                          <v-list-item>
+                            <v-list-item-content>
+                              <v-list-item-title
+                                v-text="'Edit'"
+                              ></v-list-item-title>
+                            </v-list-item-content>
+                          </v-list-item>
+                          <v-list-item>
+                            <v-list-item-content>
+                              <v-list-item-title
+                                v-text="'Delete'"
+                              ></v-list-item-title>
+                            </v-list-item-content>
+                          </v-list-item> </v-list-item-group
+                      ></v-list>
+                    </v-card>
+                  </v-menu>
+                </template>
+              </v-list-item>
             </v-list-item-group>
           </v-list>
         </v-card>

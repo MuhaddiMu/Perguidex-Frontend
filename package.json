@@ -28,10 +28,10 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.7",
-    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/pwa": "^3.1.2",
     "aos": "^2.3.4",
-    "moment": "^2.24.0",
-    "nuxt": "^2.12.2"
+    "moment": "^2.29.1",
+    "nuxt": "^2.14.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
@@ -49,6 +49,6 @@
     "jest": "^24.1.0",
     "lint-staged": "^8.2.1",
     "prettier": "^1.16.4",
-    "vue-jest": "^4.0.0-beta.6"
+    "vue-jest": "^4.0.0-rc.0"
   }
 }
