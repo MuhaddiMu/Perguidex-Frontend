@@ -175,7 +175,7 @@
               class="mx-2"
               fab
               dark
-              color="red lighten-1 "
+              color="red"
             >
               <v-icon dark>
                 mdi-plus
@@ -188,13 +188,38 @@
                 label="Task"
                 dense
               ></v-text-field>
-              <v-btn depressed color="primary">Add Task</v-btn>
+              <v-btn tile text depressed dark class="red">Add Task</v-btn>
               <span
                 @click="displayNewTaskForm = false"
                 class="ml-1 body-2 grey--text cancel-button"
                 >Cancel</span
               >
             </v-form>
+          </v-container>
+          <!--  -->
+          <!-- RATE YOUR DAY -->
+          <v-container class="text-center">
+            <div class="text-h5">Rate your day({{ dayRating }})</div>
+            <v-rating
+              v-model="dayRating"
+              color="yellow darken-2"
+              background-color="grey"
+              half-increments
+              hover
+              large
+            ></v-rating>
+            <v-textarea
+              v-if="dayRating > 0"
+              v-model="dayRatingMessage"
+              :counter="250"
+              :label="'Why you felt your day was ' + dayRating + '?'"
+              :prepend-icon="dayRatingPrependIcon"
+              rows="3"
+              autofocus
+              no-resize
+              dense
+              outlined
+            ></v-textarea>
           </v-container>
           <!--  -->
         </v-card>
@@ -209,8 +234,27 @@ export default {
   data: () => ({
     displayNewTaskForm: false,
     Valid: true,
-    newTask: ''
+    newTask: '',
+    dayRating: null,
+    dayRatingMessage: null
   }),
+  computed: {
+    dayRatingPrependIcon() {
+      if (this.dayRating <= 1) {
+        return 'mdi-emoticon-dead'
+      } else if (this.dayRating <= 2) {
+        return 'mdi-emoticon-sad'
+      } else if (this.dayRating <= 3) {
+        return 'mdi-emoticon-neutral'
+      } else if (this.dayRating <= 4) {
+        return 'mdi-emoticon-happy'
+      } else if (this.dayRating <= 5) {
+        return 'mdi-emoticon-excited'
+      } else {
+        return null
+      }
+    }
+  },
   methods: {
     moment() {
       return moment()
