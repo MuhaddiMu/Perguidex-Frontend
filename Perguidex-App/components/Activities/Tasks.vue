@@ -198,28 +198,33 @@
           </v-container>
           <!--  -->
           <!-- RATE YOUR DAY -->
-          <v-container class="text-center">
-            <div class="text-h5">Rate your day({{ dayRating }})</div>
+          <v-container>
+            <div class="text-h5 text-center">
+              Rate your day({{ dayRating }})
+            </div>
             <v-rating
               v-model="dayRating"
+              class="text-center"
               color="yellow darken-2"
               background-color="grey"
               half-increments
               hover
               large
             ></v-rating>
-            <v-textarea
-              v-if="dayRating > 0"
-              v-model="dayRatingMessage"
-              :counter="250"
-              :label="'Why you felt your day was ' + dayRating + '?'"
-              :prepend-icon="dayRatingPrependIcon"
-              rows="3"
-              autofocus
-              no-resize
-              dense
-              outlined
-            ></v-textarea>
+            <div v-if="dayRating > 0">
+              <v-textarea
+                v-model="dayRatingMessage"
+                :counter="250"
+                :label="'Why you felt your day was ' + dayRating + '?'"
+                :prepend-inner-icon="dayRatingPrependIcon"
+                rows="3"
+                autofocus
+                no-resize
+                dense
+                outlined
+              ></v-textarea>
+              <v-btn tile text depressed dark class="red text-left">Save</v-btn>
+            </div>
           </v-container>
           <!--  -->
         </v-card>
