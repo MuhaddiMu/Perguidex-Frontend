@@ -1,11 +1,6 @@
 <template>
   <section>
-    <v-layout
-      class="red lighten-1 HeightMax"
-      column
-      justify-center
-      align-center
-    >
+    <v-row class="red lighten-1 HeightMax" justify="center" align="center">
       <v-container mb-12 grid-list-xl>
         <v-row
           justify="space-around"
@@ -51,7 +46,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-layout>
+    </v-row>
     <FeaturesIndex />
   </section>
 </template>

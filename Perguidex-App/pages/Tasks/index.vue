@@ -1,10 +1,10 @@
 <template>
   <v-container fluid>
-    <v-layout column justify-center align-center>
-      <v-flex xs12 sm8 md6>
+    <v-row align="center" justify="space-between">
+      <v-col cols="12" sm="6">
         <Tasks />
-      </v-flex>
-    </v-layout>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 <script>
