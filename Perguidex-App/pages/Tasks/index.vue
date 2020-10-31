@@ -15,7 +15,7 @@ export default {
   },
   head() {
     return {
-      title: 'Dashboard'
+      title: 'Tasks'
     }
   }
 }
