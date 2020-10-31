@@ -98,16 +98,20 @@ export default {
       Items: [
         {
           Action: 'mdi-run-fast',
-          Title: 'Activities',
+          Title: 'activities',
           Active: true,
           Items: [
-            { Title: 'Tasks', Icon: 'mdi-playlist-check', Route: 'Tasks' },
+            { Title: 'Tasks', Icon: 'mdi-playlist-check', Route: 'tasks' },
             {
               Title: 'Next 7 Days',
               Icon: 'mdi-calendar-week',
-              Route: 'Next7Days'
+              Route: 'next7days'
             },
-            { Title: 'All Activities', Icon: 'mdi-calendar-check', Route: '' }
+            {
+              Title: 'All Activities',
+              Icon: 'mdi-calendar-check',
+              Route: 'activities'
+            }
           ]
         }
       ]

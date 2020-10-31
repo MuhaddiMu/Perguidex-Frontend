@@ -184,7 +184,9 @@
     <!--  -->
     <!-- RATE YOUR DAY -->
     <v-container>
-      <div class="text-h5 text-center">Rate your day({{ dayRating }})</div>
+      <div class="text-h5 grey--text text--darken-3 text-center">
+        Rate your day({{ dayRating }})
+      </div>
       <v-rating
         v-model="dayRating"
         class="text-center"
