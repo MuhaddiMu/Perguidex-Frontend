@@ -176,7 +176,7 @@
         <v-btn tile text depressed dark class="red">Add Task</v-btn>
         <span
           @click="displayNewTaskForm = false"
-          class="ml-1 body-2 grey--text cancel-button"
+          class="ml-1 body-2 grey--text hover-text"
           >Cancel</span
         >
       </v-form>
@@ -256,11 +256,11 @@ export default {
   width: 10%;
 }
 
-.cancel-button {
+.hover-text {
   cursor: pointer;
 }
 
-.cancel-button:hover {
+.hover-text:hover {
   text-decoration: underline;
 }
 </style>
