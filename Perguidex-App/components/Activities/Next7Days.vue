@@ -76,7 +76,7 @@
               mdi-plus
             </v-icon>
           </v-btn>
-          <span class="body-2 grey--text text--darken-2 hover-text"
+          <span class="body-2 grey--text text--darken-1 hover-text"
             >Add Task</span
           >
         </span>
@@ -162,7 +162,7 @@
               mdi-plus
             </v-icon>
           </v-btn>
-          <span class="body-2 grey--text text--darken-2 hover-text"
+          <span class="body-2 grey--text text--darken-1 hover-text"
             >Add Task</span
           >
         </span>
@@ -248,7 +248,7 @@
               mdi-plus
             </v-icon>
           </v-btn>
-          <span class="body-2 grey--text text--darken-2 hover-text"
+          <span class="body-2 grey--text text--darken-1 hover-text"
             >Add Task</span
           >
         </span>
@@ -334,7 +334,7 @@
               mdi-plus
             </v-icon>
           </v-btn>
-          <span class="body-2 grey--text text--darken-2 hover-text"
+          <span class="body-2 grey--text text--darken-1 hover-text"
             >Add Task</span
           >
         </span>
@@ -420,7 +420,7 @@
               mdi-plus
             </v-icon>
           </v-btn>
-          <span class="body-2 grey--text text--darken-2 hover-text"
+          <span class="body-2 grey--text text--darken-1 hover-text"
             >Add Task</span
           >
         </span>
@@ -506,7 +506,7 @@
               mdi-plus
             </v-icon>
           </v-btn>
-          <span class="body-2 grey--text text--darken-2 hover-text"
+          <span class="body-2 grey--text text--darken-1 hover-text"
             >Add Task</span
           >
         </span>
@@ -637,7 +637,7 @@
               mdi-plus
             </v-icon>
           </v-btn>
-          <span class="body-2 grey--text text--darken-2 hover-text"
+          <span class="body-2 grey--text text--darken-1 hover-text"
             >Add Task</span
           >
         </span>
