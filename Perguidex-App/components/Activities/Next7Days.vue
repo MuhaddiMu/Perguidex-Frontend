@@ -20,6 +20,7 @@
             .format('dddd D MMM')
         }}</v-subheader
       >
+      <v-divider />
       <v-list-item-group>
         <v-list-item :ripple="false">
           <template v-slot:default="{ active }">
@@ -96,7 +97,6 @@
       </v-container>
       <!--  -->
     </v-list>
-    <v-divider />
 
     <v-list flat>
       <v-subheader class="font-weight-bold grey--text text--darken-2">
@@ -106,6 +106,7 @@
             .format('dddd D MMM')
         }}</v-subheader
       >
+      <v-divider />
       <v-list-item-group>
         <v-list-item :ripple="false">
           <template v-slot:default="{ active }">
@@ -182,7 +183,6 @@
       </v-container>
       <!--  -->
     </v-list>
-    <v-divider />
 
     <v-list flat>
       <v-subheader class="font-weight-bold grey--text text--darken-2">
@@ -192,6 +192,7 @@
             .format('dddd D MMM')
         }}</v-subheader
       >
+      <v-divider />
       <v-list-item-group>
         <v-list-item :ripple="false">
           <template v-slot:default="{ active }">
@@ -268,7 +269,6 @@
       </v-container>
       <!--  -->
     </v-list>
-    <v-divider />
 
     <v-list flat>
       <v-subheader class="font-weight-bold grey--text text--darken-2">
@@ -278,6 +278,7 @@
             .format('dddd D MMM')
         }}</v-subheader
       >
+      <v-divider />
       <v-list-item-group>
         <v-list-item :ripple="false">
           <template v-slot:default="{ active }">
@@ -354,7 +355,6 @@
       </v-container>
       <!--  -->
     </v-list>
-    <v-divider />
 
     <v-list flat>
       <v-subheader class="font-weight-bold grey--text text--darken-2">
@@ -364,6 +364,7 @@
             .format('dddd D MMM')
         }}</v-subheader
       >
+      <v-divider />
       <v-list-item-group>
         <v-list-item :ripple="false">
           <template v-slot:default="{ active }">
@@ -440,7 +441,6 @@
       </v-container>
       <!--  -->
     </v-list>
-    <v-divider />
 
     <v-list flat>
       <v-subheader class="font-weight-bold grey--text text--darken-2">
@@ -450,6 +450,7 @@
             .format('dddd D MMM')
         }}</v-subheader
       >
+      <v-divider />
       <v-list-item-group>
         <v-list-item :ripple="false">
           <template v-slot:default="{ active }">
@@ -526,7 +527,6 @@
       </v-container>
       <!--  -->
     </v-list>
-    <v-divider />
 
     <v-list flat>
       <v-subheader class="font-weight-bold grey--text text--darken-2">
@@ -536,6 +536,7 @@
             .format('dddd D MMM')
         }}</v-subheader
       >
+      <v-divider />
       <v-list-item-group>
         <v-list-item :ripple="false">
           <template v-slot:default="{ active }">
