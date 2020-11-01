@@ -30,7 +30,25 @@
       >
         All Tasks
       </v-card-title>
-      <v-list v-for="(i, index) in 10" :key="i" subheader flat dense>
+      <v-container>
+        <v-autocomplete
+          v-model="SearchModel"
+          :loading="SearchLoading"
+          :items="SearchItems"
+          :search-input.sync="Search"
+          color="grey"
+          cache-items
+          hide-no-data
+          hide-selected
+          hide-details
+          dense
+          filled
+          flat
+          prepend-inner-icon="mdi-magnify"
+          label="Quick Search"
+        ></v-autocomplete>
+      </v-container>
+      <v-list v-for="(i, index) in 10" :key="i" flat dense subheader>
         <v-list-item :ripple="false">
           <v-list-item-action>
             <v-checkbox input-value="true" readonly color="red"></v-checkbox>
@@ -74,6 +92,24 @@
       >
         Rated Days
       </v-card-title>
+      <v-container>
+        <v-autocomplete
+          v-model="SearchModel"
+          :loading="SearchLoading"
+          :items="SearchItems"
+          :search-input.sync="Search"
+          color="grey"
+          cache-items
+          hide-no-data
+          hide-selected
+          hide-details
+          dense
+          filled
+          flat
+          prepend-inner-icon="mdi-magnify"
+          label="Quick Search"
+        ></v-autocomplete>
+      </v-container>
       <v-list v-for="(i, index) in 10" :key="i" subheader flat dense>
         <v-list-item :ripple="false">
           <v-list-item-avatar>
@@ -138,8 +174,17 @@ export default {
   data: () => ({
     Activities: [{ type: 'All Tasks' }, { type: 'Rated Days' }],
     selectedActivity: 'All Tasks',
-    ratingEmoji: null
+    ratingEmoji: null,
+    SearchModel: null,
+    Search: null,
+    SearchLoading: false,
+    SearchItems: []
   }),
+  watch: {
+    Search(val) {
+      val && val !== this.SearchModel && this.querySelections(val)
+    }
+  },
   methods: {
     getRatingEmoji(e) {
       if (e <= 1) {
@@ -155,6 +200,16 @@ export default {
       } else {
         return null
       }
+    },
+    querySelections(v) {
+      this.SearchLoading = true
+      const States = ['Alaska', 'New York', 'Arizona', 'California', 'Colorado']
+      setTimeout(() => {
+        this.SearchItems = States.filter((e) => {
+          return (e || '').toLowerCase().includes((v || '').toLowerCase()) > -1
+        })
+        this.SearchLoading = false
+      }, 500)
     }
   }
 }

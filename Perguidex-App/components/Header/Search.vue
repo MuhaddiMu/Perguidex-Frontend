@@ -17,7 +17,7 @@
     hide-no-data
     label="Quick Search"
     solo-inverted
-    color="black"
+    color="grey"
   ></v-autocomplete>
 </template>
 
