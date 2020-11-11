@@ -6,41 +6,34 @@
     fixed
     app
   >
-    <v-container py-3 pa-0 d-flex>
-      <v-img
-        class="mx-2"
-        src="logo.png"
-        max-height="40"
-        max-width="40"
-        contain
-      ></v-img>
-      <v-btn
-        depressed
-        nuxt
-        href="/"
-        text
-        class="font-weight-bold text-capitalize white--text"
-      >
-        <v-toolbar-title v-text="'Perguidex'" />
-      </v-btn>
-      <v-spacer />
-      <v-btn
-        nuxt
-        to="Login"
-        text
-        class="font-weight-medium d-none d-sm-flex white--text"
-      >
-        <div>Login</div>
-      </v-btn>
+    <v-container class="mx-auto py-0">
+      <v-row align="center">
+        <v-img
+          class="mx-2"
+          src="logo.svg"
+          width="160"
+          height="40"
+          max-width="160"
+        ></v-img>
+        <v-spacer />
+        <v-btn
+          nuxt
+          to="Login"
+          text
+          class="font-weight-medium d-none d-sm-flex white--text"
+        >
+          <div>Login</div>
+        </v-btn>
 
-      <v-btn
-        nuxt
-        to="Signup"
-        depressed
-        class="white red--text font-weight-bold"
-      >
-        <div>Get Started</div>
-      </v-btn>
+        <v-btn
+          nuxt
+          to="Signup"
+          depressed
+          class="white red--text font-weight-bold"
+        >
+          <div>Get Started</div>
+        </v-btn>
+      </v-row>
     </v-container>
   </v-app-bar>
 </template>
