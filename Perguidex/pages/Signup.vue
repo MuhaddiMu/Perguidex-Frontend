@@ -1,15 +1,19 @@
 <template>
   <v-container class="text-center">
-    <img width="60px" src="Logo.png" class="mb-5" />
+    <img width="60px" src="logo.png" class="mb-5" />
     <v-card tile width="480px" outlined class="mx-auto">
       <v-card-text>
         <v-btn tile block depressed
-          ><img width="16px" class="mr-2" src="FacebookIco.png" /> Sign up with
-          Facebook Account</v-btn
+          ><img
+            width="16px"
+            class="mr-2"
+            src="~/assets/images/FacebookIco.png"
+          />
+          Sign up with Facebook Account</v-btn
         >
         <v-btn tile class="mt-2" block depressed
-          ><img width="16px" class="mr-2" src="GoogleIco.png" /> Sign up with
-          Google Account</v-btn
+          ><img width="16px" class="mr-2" src="~/assets/images/GoogleIco.png" />
+          Sign up with Google Account</v-btn
         >
         <div class="Half-Seperator caption my-3">OR</div>
         <v-form ref="Form">

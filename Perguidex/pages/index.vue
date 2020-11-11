@@ -42,7 +42,12 @@
             data-aos="zoom-in-left"
             data-aos-duration="1000"
           >
-            <img draggable="false" alt="Goals" width="100%" src="Goals.svg" />
+            <img
+              draggable="false"
+              alt="Goals"
+              width="100%"
+              src="~/assets/images/Goals.svg"
+            />
           </v-col>
         </v-row>
       </v-container>

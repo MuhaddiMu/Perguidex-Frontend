@@ -7,6 +7,13 @@
     app
   >
     <v-container py-3 pa-0 d-flex>
+      <v-img
+        class="mx-2"
+        src="logo.png"
+        max-height="40"
+        max-width="40"
+        contain
+      ></v-img>
       <v-btn
         depressed
         nuxt

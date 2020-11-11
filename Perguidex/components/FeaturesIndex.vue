@@ -372,7 +372,10 @@
             </v-col>
             <v-col cols="12" sm="12" class="text-center">
               <center>
-                <v-img src="CoverIllustration.png" width="1050px"></v-img>
+                <v-img
+                  :src="require('~/assets/images/CoverIllustration.png')"
+                  width="1050px"
+                ></v-img>
               </center>
             </v-col>
           </v-row>
@@ -403,7 +406,11 @@
           </v-row>
           <v-row class="text-center mb-5" align="center" justify="center">
             <v-col cols="12" md="3" sm="6" xs="12">
-              <img draggable="false" height="45px" src="Google.svg" />
+              <img
+                draggable="false"
+                height="45px"
+                src="~/assets/images/Google.svg"
+              />
               <v-rating
                 :value="5"
                 color="#e3e6ed"
@@ -413,7 +420,11 @@
               ></v-rating>
             </v-col>
             <v-col cols="12" md="3" sm="6" xs="12" class="text-center">
-              <img draggable="false" height="45px" src="Facebook.svg" />
+              <img
+                draggable="false"
+                height="45px"
+                src="~/assets/images/Facebook.svg"
+              />
               <v-rating
                 :value="5"
                 color="#e3e6ed"
