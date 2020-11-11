@@ -1,5 +1,11 @@
 <template>
-  <v-app-bar :clipped-left="clipped" class="red " elevate-on-scroll fixed app>
+  <v-app-bar
+    :clipped-left="clipped"
+    class="red lighten-1"
+    elevate-on-scroll
+    fixed
+    app
+  >
     <v-container py-3 pa-0 d-flex>
       <v-img
         class="mx-2"
