@@ -9,39 +9,39 @@
       >
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Product</div>
-          <div class="my-2 grey--text text--darken-2">
+          <div class="my-2 grey--text text--darken-2 font-weight-medium">
             <nuxt-link to="Signup">Get Started</nuxt-link>
           </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Support</div>
-          <div class="my-2 grey--text text--darken-2">
+          <div class="my-2 grey--text text--darken-2 font-weight-medium">
             <a href="#">Help Center</a>
           </div>
-          <div class="my-2 grey--text text--darken-2">
-            <a href="#">FAQ</a>
+          <div class="my-2 grey--text text--darken-2 font-weight-medium">
+            <a href="#">FAQs</a>
           </div>
-          <div class="my-2 grey--text text--darken-2">
+          <div class="my-2 grey--text text--darken-2 font-weight-medium">
             <a href="#">Translations</a>
           </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">About</div>
-          <div class="my-2 grey--text text--darken-2">
+          <div class="my-2 grey--text text--darken-2 font-weight-medium">
             <a href="#">About Us</a>
           </div>
-          <div class="my-2 grey--text text--darken-2">
+          <div class="my-2 grey--text text--darken-2 font-weight-medium">
             <a href="#">Contact Us</a>
           </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Legal</div>
-          <div class="my-2 grey--text text--darken-2">
+          <div class="my-2 grey--text text--darken-2 font-weight-medium">
             <a href="#">Terms</a>
           </div>
-          <div class="my-2 grey--text text--darken-2">
+          <div class="my-2 grey--text text--darken-2 font-weight-medium">
             <a href="#">Privacy</a>
-            <div class="my-2 grey--text text--darken-2">
+            <div class="my-2 grey--text text--darken-2 font-weight-medium">
               <a href="#">Security</a>
             </div>
           </div>
@@ -53,7 +53,7 @@
           xs="12"
           class="order-first order-sm-first order-xl-last order-md-last"
         >
-          <div>
+          <div class="font-weight-medium">
             <v-select
               :items="Lang"
               dense
@@ -78,7 +78,7 @@
       <v-divider class="mt-12"></v-divider>
       <div
         class="mt-4 mb-12
-           grey--text text--darken-2"
+           grey--text text--darken-2 font-weight-medium"
       >
         &copy; <span>{{ new Date().getFullYear() }}</span> Perguidex
       </div>

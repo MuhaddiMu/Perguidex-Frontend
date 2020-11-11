@@ -38,14 +38,18 @@
             label="Password"
             prepend-inner-icon="mdi-lock"
           ></v-text-field>
-          <div class="text-left mt-n3 grey--text text--darken-3">
+          <div
+            class="font-weight-medium text-left mt-n3 grey--text text--darken-3"
+          >
             By creating an account, you agree to the Perguidex
             <a href="#" target="_blank">Terms of Service</a> and
             <a href="#" target="_blank">Privacy Policy</a>.
           </div>
           <v-btn tile text class="red mt-3" dark block>Create My Account</v-btn>
         </v-form>
-        <div class="mt-2 text-left grey--text text--darken-3">
+        <div
+          class="font-weight-medium mt-2 text-left grey--text text--darken-3"
+        >
           Already have an account? <nuxt-link to="Login">Log in here</nuxt-link>
         </div>
       </v-card-text>

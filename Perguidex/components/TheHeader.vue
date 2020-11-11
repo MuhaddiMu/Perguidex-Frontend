@@ -1,11 +1,5 @@
 <template>
-  <v-app-bar
-    :clipped-left="clipped"
-    class="red lighten-1"
-    elevate-on-scroll
-    fixed
-    app
-  >
+  <v-app-bar :clipped-left="clipped" class="red " elevate-on-scroll fixed app>
     <v-container py-3 pa-0 d-flex>
       <v-img
         class="mx-2"
@@ -24,7 +18,12 @@
         <v-toolbar-title v-text="'Perguidex'" />
       </v-btn>
       <v-spacer />
-      <v-btn nuxt to="Login" text class="d-none d-sm-flex white--text">
+      <v-btn
+        nuxt
+        to="Login"
+        text
+        class="font-weight-medium d-none d-sm-flex white--text"
+      >
         <div>Login</div>
       </v-btn>
 

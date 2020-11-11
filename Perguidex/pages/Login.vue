@@ -32,12 +32,14 @@
             label="Password"
             prepend-inner-icon="mdi-lock"
           ></v-text-field>
-          <div class="text-left mt-n3 grey--text text--darken-3">
+          <div
+            class="font-weight-medium text-left mt-n3 grey--text text--darken-3"
+          >
             <nuxt-link to="Forgot">Forgot Password?</nuxt-link>
           </div>
           <v-btn tile text class="red my-3" dark block>Log Me In</v-btn>
         </v-form>
-        <div class="text-left grey--text text--darken-3">
+        <div class="font-weight-medium text-left grey--text text--darken-3">
           Don’t have an account?
           <nuxt-link to="Signup">Sign up here</nuxt-link>
         </div>

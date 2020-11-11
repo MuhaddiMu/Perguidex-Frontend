@@ -17,7 +17,7 @@
             <div class="white--text font-weight-bold display-3">
               It’s All About Managing Yourself
             </div>
-            <div class="white--text py-3">
+            <div class="white--text py-3 font-weight-medium">
               Life can feel overwhelming, but it doesn’t have to. Perguidex lets
               you keep track of everything in one place, so you can get it all
               done and enjoy more peace of mind along the way.
@@ -30,7 +30,7 @@
             >
               Get Started — It’s Free
             </v-btn>
-            <div class="mb-5 white--text caption">
+            <div class="mb-5 white--text caption font-weight-medium">
               Wondering how it works? <a href="#">Watch a video</a>
             </div>
           </v-col>
