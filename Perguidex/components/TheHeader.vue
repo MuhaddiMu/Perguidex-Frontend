@@ -8,13 +8,7 @@
   >
     <v-container class="mx-auto py-0">
       <v-row align="center">
-        <v-img
-          class="mx-2"
-          src="logo.svg"
-          width="160"
-          height="40"
-          max-width="160"
-        ></v-img>
+        <v-img class="mx-2" src="logo.svg" max-width="155" height="40"></v-img>
         <v-spacer />
         <v-btn
           nuxt
