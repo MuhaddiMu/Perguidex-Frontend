@@ -39,9 +39,7 @@
       </v-list>
       <template v-slot:append>
         <v-divider></v-divider>
-        <div class="text-center pa-2 grey--text caption">
-          Perguidex Beta
-        </div>
+        <div class="text-center pa-2 grey--text caption">Perguidex Beta</div>
       </template>
     </v-navigation-drawer>
 
@@ -98,7 +96,7 @@ export default {
       Items: [
         {
           Action: 'mdi-run-fast',
-          Title: 'activities',
+          Title: 'Activities',
           Active: true,
           Items: [
             { Title: 'Tasks', Icon: 'mdi-playlist-check', Route: 'tasks' },

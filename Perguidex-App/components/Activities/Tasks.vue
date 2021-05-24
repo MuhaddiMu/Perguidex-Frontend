@@ -1,7 +1,7 @@
 <template>
   <v-card outlined width="800">
     <v-card-title class="red lighten-1 white--text subtitle-2">
-      <div class="W20 text-left ">
+      <div class="W20 text-left">
         <v-icon class="Cursor" color="white">mdi-printer</v-icon>
       </div>
       <div class="center_date text-center font-weight-bold">
@@ -162,9 +162,7 @@
         dark
         color="red"
       >
-        <v-icon dark>
-          mdi-plus
-        </v-icon>
+        <v-icon dark> mdi-plus </v-icon>
       </v-btn>
       <v-form ref="NewTaskForm" v-if="displayNewTaskForm" lazy-validation>
         <v-text-field
@@ -185,7 +183,7 @@
     <!-- RATE YOUR DAY -->
     <v-container>
       <div class="text-h5 grey--text text--darken-3 text-center">
-        Rate your day({{ dayRating }})
+        Rate your day {{ dayRating && '(' + dayRating + ')' }}
       </div>
       <v-rating
         v-model="dayRating"
