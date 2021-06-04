@@ -1,0 +1,25 @@
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.Link:hover,
+.Link:focus,
+.Link:active {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Cursor:hover,
+.Cursor:focus,
+.Cursor:active {
+  cursor: pointer;
+}

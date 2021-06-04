@@ -5,15 +5,10 @@
   "author": "Muhammad Muhaddis",
   "private": true,
   "scripts": {
-    "Main:dev": "nuxt --config-file Perguidex/nuxt.config.js -p=3000 --hostname 0.0.0.0",
-    "App:dev": "nuxt --config-file Perguidex-App/nuxt.config.js -p=4000 --hostname 0.0.0.0",
-    "dev": "concurrently \"npm run Main:dev\" \"npm run App:dev\"",
-    "Main:build": "nuxt build --config-file Perguidex/nuxt.config.js",
-    "App:build": "nuxt build --config-file Perguidex-App/nuxt.config.js",
-    "Main:start": "nuxt start --config-file Perguidex/nuxt.config.js",
-    "App:start": "nuxt start --config-file Perguidex-App/nuxt.config.js",
-    "Main:generate": "nuxt generate --config-file Perguidex/nuxt.config.js",
-    "App:generate": "nuxt generate --config-file Perguidex-App/nuxt.config.js",
+    "dev": "nuxt --config-file nuxt.config.js -p=3000 --hostname 0.0.0.0",
+    "build": "nuxt build --config-file nuxt.config.js",
+    "start": "nuxt start --config-file nuxt.config.js",
+    "generate": "nuxt generate --config-file nuxt.config.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
@@ -27,20 +22,19 @@
     }
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.13.4",
     "@nuxtjs/pwa": "^3.3.5",
     "aos": "^2.3.4",
     "moment": "^2.29.1",
     "nuxt": "^2.15.6"
   },
   "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.2.0",
     "@nuxtjs/vuetify": "^1.11.3",
     "@vue/test-utils": "^1.2.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
-    "concurrently": "^5.3.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-nuxt": "^0.5.2",
