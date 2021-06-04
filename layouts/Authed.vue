@@ -10,7 +10,7 @@
   </v-app>
 </template>
 <script>
-import TheHeader from '@/components/Header/TheHeader'
+import TheHeader from '@/components/AuthenticatedComponents/Header/TheHeader'
 export default {
   components: {
     TheHeader

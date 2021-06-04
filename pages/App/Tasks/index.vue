@@ -11,8 +11,8 @@
   </v-container>
 </template>
 <script>
-import Tasks from '@/components/Activities/Tasks'
-import Quotes from '@/components/Activities/Quotes'
+import Tasks from '@/components/AuthenticatedComponents/Activities/Tasks'
+import Quotes from '@/components/AuthenticatedComponents/Activities/Quotes'
 export default {
   layout: 'Authed',
 

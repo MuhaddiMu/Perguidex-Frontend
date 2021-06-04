@@ -8,7 +8,7 @@
   </v-container>
 </template>
 <script>
-import Next7Days from '@/components/Activities/Next7Days'
+import Next7Days from '@/components/AuthenticatedComponents/Activities/Next7Days'
 export default {
   layout: 'Authed',
   components: {

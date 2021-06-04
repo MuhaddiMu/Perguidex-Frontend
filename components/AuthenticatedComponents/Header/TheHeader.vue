@@ -79,9 +79,9 @@
   </div>
 </template>
 <script>
-import Search from '@/components/Header/Search'
-import Notifications from '@/components/Header/Notifications'
-import SettingsMenu from '@/components/Header/SettingsMenu'
+import Search from '@/components/AuthenticatedComponents/Header/Search'
+import Notifications from '@/components/AuthenticatedComponents/Header/Notifications'
+import SettingsMenu from '@/components/AuthenticatedComponents/Header/SettingsMenu'
 export default {
   components: {
     Search,

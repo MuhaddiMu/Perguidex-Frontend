@@ -8,7 +8,7 @@
   </v-container>
 </template>
 <script>
-import Activities from '@/components/Activities/Activities'
+import Activities from '@/components/AuthenticatedComponents/Activities/Activities'
 export default {
   layout: 'Authed',
   components: {
