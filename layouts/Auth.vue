@@ -1,3 +1,4 @@
+// Log in, Sign up and Forgot page
 <template>
   <section>
     <v-app light>
