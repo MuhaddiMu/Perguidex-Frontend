@@ -10,7 +10,7 @@
 <script>
 import Activities from '@/components/Activities/Activities'
 export default {
-  layout: 'defaultapp',
+  layout: 'Authed',
   components: {
     Activities
   },

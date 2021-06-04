@@ -10,7 +10,7 @@
 <script>
 import Next7Days from '@/components/Activities/Next7Days'
 export default {
-  layout: 'defaultapp',
+  layout: 'Authed',
   components: {
     Next7Days
   },

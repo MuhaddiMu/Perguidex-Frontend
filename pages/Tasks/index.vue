@@ -14,7 +14,7 @@
 import Tasks from '@/components/Activities/Tasks'
 import Quotes from '@/components/Activities/Quotes'
 export default {
-  layout: 'defaultapp',
+  layout: 'Authed',
 
   components: {
     Tasks,
