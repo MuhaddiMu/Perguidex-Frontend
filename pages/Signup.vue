@@ -1,7 +1,14 @@
 <template>
   <v-container class="text-center">
     <img width="60px" src="icon.png" class="mb-5" />
-    <v-card tile width="480px" outlined class="mx-auto">
+    <v-card
+      :disabled="loading"
+      :loading="loading"
+      tile
+      width="480px"
+      outlined
+      class="mx-auto"
+    >
       <v-card-text>
         <v-btn tile block depressed class="font-weight-regular"
           ><img
@@ -16,24 +23,34 @@
           Sign up with Google Account</v-btn
         >
         <div class="Half-Seperator caption my-3">OR</div>
-        <v-form ref="Form">
+        <v-form ref="Form" v-model="formValid">
           <v-text-field
+            v-model="userData.fullname"
             :min="0"
+            :disabled="loading"
+            :rules="nameValidation"
             outlined
             label="Full Name"
             prepend-inner-icon="mdi-account"
           ></v-text-field>
           <v-text-field
+            v-model="userData.email"
             :min="0"
+            :disabled="loading"
+            :rules="emailValidation"
             outlined
             label="Email"
             prepend-inner-icon="mdi-email"
           ></v-text-field>
           <v-text-field
+            v-model="userData.password"
             :append-icon="TogglePassword ? 'mdi-eye' : 'mdi-eye-off'"
+            :rules="passwordValidation"
             :type="TogglePassword ? 'text' : 'password'"
-            :min="0"
+            :disabled="loading"
+            :min="8"
             @click:append="TogglePassword = !TogglePassword"
+            counter
             outlined
             label="Password"
             prepend-inner-icon="mdi-lock"
@@ -51,7 +68,9 @@
             <a href="#" target="_blank">Terms of Service</a> and
             <a href="#" target="_blank">Privacy Policy</a>.
           </div>
-          <v-btn tile text class="red mt-3" dark block>Create My Account</v-btn>
+          <v-btn @click="clickSignUp()" tile text class="red mt-3" dark block
+            >Create My Account</v-btn
+          >
         </v-form>
         <div
           class="font-weight-regular mt-2 text-left grey--text text--darken-3"
@@ -67,12 +86,41 @@ export default {
   layout: 'Auth',
   data() {
     return {
-      TogglePassword: false
+      loading: false,
+      formValid: true,
+      TogglePassword: false,
+      /* prettier-ignore */
+      /* eslint-disable no-useless-escape */
+      emailValidation: [
+        (v) =>
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+            v
+          ) || 'Email must be valid'
+      ],
+      passwordValidation: [(v) => (v && v.length >= 8) || 'Min 8 characters'],
+      nameValidation: [(v) => !!v || 'Name is required'],
+      userData: [
+        {
+          fullname: null,
+          email: null,
+          password: null
+        }
+      ]
     }
   },
   head() {
     return {
       title: 'Sign Up'
+    }
+  },
+  methods: {
+    clickSignUp() {
+      if (this.$refs.Form.validate()) {
+        this.loading = true
+        setTimeout(() => {
+          this.loading = false
+        }, 5000)
+      }
     }
   }
 }
