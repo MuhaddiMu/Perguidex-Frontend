@@ -1,7 +1,7 @@
 <template>
   <blockquote class="text-center home-quote">
-    <p>Happiness is the consequence of personal effort.</p>
-    <small>Elizabeth Gilbert</small>
+    <p class="grey--text">Happiness is the consequence of personal effort.</p>
+    <small class="grey--text">Elizabeth Gilbert</small>
   </blockquote>
 </template>
 
@@ -11,7 +11,7 @@ export default {}
 
 <style>
 blockquote.home-quote {
-  border: none;
+  /* border: none; */
   padding: 40px 0;
 }
 
@@ -22,9 +22,8 @@ blockquote {
 blockquote.home-quote p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 1.5;
-  color: #ccd4d9;
   margin-bottom: 10px;
 }
 
@@ -37,7 +36,6 @@ blockquote.home-quote p:after {
 }
 
 blockquote.home-quote small {
-  color: #7a8f99;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
