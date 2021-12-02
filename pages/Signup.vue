@@ -82,6 +82,7 @@
   </v-container>
 </template>
 <script>
+import register from '../graphql/auth/registerUser.gql'
 export default {
   layout: 'Auth',
   data() {
@@ -114,12 +115,29 @@ export default {
     }
   },
   methods: {
-    clickSignUp() {
+    // Signup functionality
+    async clickSignUp() {
       if (this.$refs.Form.validate()) {
         this.loading = true
-        setTimeout(() => {
+
+        try {
+          const res = await this.$apollo
+            .mutate({
+              mutation: register,
+              variables: {
+                name: this.userData.fullname,
+                email: this.userData.email,
+                password: this.userData.password
+              }
+            })
+            .then(({ data }) => data && data.register)
           this.loading = false
-        }, 5000)
+          console.log(res)
+          await this.$apolloHelpers.onLogin(res.tokens.access_token)
+        } catch (error) {
+          console.error(error)
+          this.loading = false
+        }
       }
     }
   }

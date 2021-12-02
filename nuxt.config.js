@@ -52,7 +52,8 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/apollo'
   ],
   /*
    ** Axios module configuration
@@ -63,6 +64,16 @@ export default {
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
+
+  // Apollo configuration
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://127.0.0.1:8000/graphql'
+      }
+    }
+  },
+
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     treeShake: false,

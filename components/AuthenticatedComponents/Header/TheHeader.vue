@@ -8,34 +8,22 @@
       app
     >
       <v-list nav dense>
-        <v-list-group
-          v-for="Item in Items"
-          :key="Item.Title"
-          v-model="Item.Active"
-          :prepend-icon="Item.Action"
-          no-action
-        >
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title v-text="Item.Title"></v-list-item-title>
-            </v-list-item-content>
-          </template>
-
+        <v-list-item-group :v-model="true">
           <v-list-item
-            v-for="SubItem in Item.Items"
+            v-for="SubItem in Items"
             :key="SubItem.Title"
             :to="SubItem.Route"
             link
             nuxt
           >
+            <v-list-item-icon>
+              <v-icon v-text="SubItem.Icon"></v-icon>
+            </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>
-                <v-icon v-text="SubItem.Icon" left small></v-icon>
-                {{ SubItem.Title }}</v-list-item-title
-              >
+              <v-list-item-title v-text="SubItem.Title"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-        </v-list-group>
+        </v-list-item-group>
       </v-list>
       <template v-slot:append>
         <v-divider></v-divider>
@@ -94,25 +82,37 @@ export default {
       ToggleSearch: false,
       ToggleDrawer: false,
       Items: [
+        { Title: 'Tasks', Icon: 'mdi-playlist-check', Route: 'tasks' },
         {
-          Action: 'mdi-run-fast',
-          Title: 'Activities',
-          Active: true,
-          Items: [
-            { Title: 'Tasks', Icon: 'mdi-playlist-check', Route: 'tasks' },
-            {
-              Title: 'Next 7 Days',
-              Icon: 'mdi-calendar-week',
-              Route: 'next7days'
-            },
-            {
-              Title: 'All Activities',
-              Icon: 'mdi-calendar-check',
-              Route: 'activities'
-            }
-          ]
+          Title: 'Next 7 Days',
+          Icon: 'mdi-calendar-week',
+          Route: 'next7days'
+        },
+        {
+          Title: 'All Activities',
+          Icon: 'mdi-calendar-check',
+          Route: 'activities'
         }
-      ]
+      ],
+      items: [
+        {
+          icon: 'mdi-inbox',
+          text: 'Inbox'
+        },
+        {
+          icon: 'mdi-star',
+          text: 'Star'
+        },
+        {
+          icon: 'mdi-send',
+          text: 'Send'
+        },
+        {
+          icon: 'mdi-email-open',
+          text: 'Drafts'
+        }
+      ],
+      model: 1
     }
   },
   methods: {
