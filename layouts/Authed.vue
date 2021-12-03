@@ -12,11 +12,13 @@
 <script>
 import TheHeader from '@/components/AuthenticatedComponents/Header/TheHeader'
 export default {
+  middleware: 'authenticated',
   components: {
     TheHeader
   }
 }
 </script>
+
 <style>
 html {
   overflow-y: auto;

@@ -9,6 +9,9 @@
       outlined
       class="mx-auto"
     >
+      <v-card-text
+        ><v-alert text type="error">{{ SignupError }}</v-alert></v-card-text
+      >
       <v-card-text>
         <v-btn tile block depressed class="font-weight-regular"
           ><img
@@ -23,7 +26,7 @@
           Sign up with Google Account</v-btn
         >
         <div class="Half-Seperator caption my-3">OR</div>
-        <v-form ref="Form" v-model="formValid">
+        <v-form ref="Form" v-model="formValid" @submit.prevent="clickSignUp()">
           <v-text-field
             v-model="userData.fullname"
             :min="0"
@@ -68,7 +71,7 @@
             <a href="#" target="_blank">Terms of Service</a> and
             <a href="#" target="_blank">Privacy Policy</a>.
           </div>
-          <v-btn @click="clickSignUp()" tile text class="red mt-3" dark block
+          <v-btn type="submit" tile text class="red mt-3" dark block
             >Create My Account</v-btn
           >
         </v-form>
@@ -106,7 +109,8 @@ export default {
           email: null,
           password: null
         }
-      ]
+      ],
+      SignupError: null
     }
   },
   head() {
@@ -132,11 +136,11 @@ export default {
             })
             .then(({ data }) => data && data.register)
           this.loading = false
-          console.log(res)
           await this.$apolloHelpers.onLogin(res.tokens.access_token)
+          this.$router.push('app/Tasks')
         } catch (error) {
-          console.error(error)
           this.loading = false
+          console.error(error)
         }
       }
     }

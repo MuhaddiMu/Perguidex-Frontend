@@ -67,7 +67,7 @@
             >
           </v-list-item>
           <v-divider class="pt-1"></v-divider>
-          <v-list-item nuxt link to="">
+          <v-list-item @click="LogOut()" nuxt link to="">
             <v-list-item-icon
               ><v-icon left>mdi-logout</v-icon></v-list-item-icon
             >
@@ -100,6 +100,16 @@
 export default {
   data: () => ({
     Menu: false
-  })
+  }),
+
+  methods: {
+    // Logout Functionality
+    async LogOut() {
+      try {
+        await this.$apolloHelpers.onLogout()
+        this.$router.push('/')
+      } catch (error) {}
+    }
+  }
 }
 </script>

@@ -1,4 +1,4 @@
-// Log in, Sign up and Forgot page
+// Log in, Sign up and Forgot page Layout
 <template>
   <section>
     <v-app light>
@@ -14,3 +14,9 @@
     </v-app>
   </section>
 </template>
+
+<script>
+export default {
+  middleware: 'redirectIfAuthenticated'
+}
+</script>
