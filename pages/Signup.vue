@@ -10,7 +10,9 @@
       class="mx-auto"
     >
       <v-card-text
-        ><v-alert text type="error">{{ SignupError }}</v-alert></v-card-text
+        ><v-alert v-if="SignupError" text type="error">{{
+          SignupError
+        }}</v-alert></v-card-text
       >
       <v-card-text>
         <v-btn tile block depressed class="font-weight-regular"
@@ -136,11 +138,12 @@ export default {
             })
             .then(({ data }) => data && data.register)
           this.loading = false
-          await this.$apolloHelpers.onLogin(res.tokens.access_token)
+          await this.$apolloHelpers.onLogin(res.token)
           this.$router.push('app/Tasks')
         } catch (error) {
+          error.message = error.message.replace('GraphQL error: ', '')
           this.loading = false
-          console.error(error)
+          this.SignupError = error
         }
       }
     }

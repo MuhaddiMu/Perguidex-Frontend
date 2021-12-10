@@ -10,7 +10,9 @@
       class="mx-auto"
     >
       <v-card-text
-        ><v-alert text type="error">{{ LoginError }}</v-alert></v-card-text
+        ><v-alert v-if="LoginError" text type="error">{{
+          LoginError
+        }}</v-alert></v-card-text
       >
       <v-card-text>
         <v-btn tile block depressed class="font-weight-regular"
@@ -122,11 +124,12 @@ export default {
             })
             .then(({ data }) => data && data.login)
           this.loading = false
-          await this.$apolloHelpers.onLogin(res.access_token)
+          await this.$apolloHelpers.onLogin(res.token)
           this.$router.push('app/Tasks')
         } catch (error) {
           this.loading = false
-          console.error(error)
+          error.message = error.message.replace('GraphQL error: ', '')
+
           this.LoginError = error
         }
       }

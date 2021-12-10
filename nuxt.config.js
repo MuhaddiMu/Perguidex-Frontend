@@ -68,9 +68,7 @@ export default {
   // Apollo configuration
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: 'http://127.0.0.1:8000/graphql'
-      }
+      default: '~/plugins/apollo-config.js'
     }
   },
 

@@ -19,6 +19,14 @@
       <v-card>
         <v-list dense nav>
           <v-list-item nuxt link to="">
+            <v-list-item-icon><v-icon left>mdi-cogs</v-icon></v-list-item-icon>
+            <v-list-item-title class="ml-n5 font-weight-regular"
+              >Settings</v-list-item-title
+            >
+          </v-list-item>
+          <v-divider class="pt-1"></v-divider>
+
+          <v-list-item nuxt link to="">
             <v-list-item-icon><v-icon left>mdi-sync</v-icon></v-list-item-icon>
             <v-list-item-title class="ml-n5 font-weight-regular"
               >Sync</v-list-item-title
