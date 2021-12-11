@@ -1,8 +1,6 @@
 /* eslint-disable dot-notation */
 /* eslint-disable no-console */
 import { onError } from '@apollo/client/link/error'
-// import Cookies from 'js-cookie'
-// const token = Cookies.get('apollo-token')
 
 export default function(context) {
   const httpEndpoint = 'http://127.0.0.1:8000/graphql'
@@ -25,7 +23,6 @@ export default function(context) {
   return {
     link,
     httpEndpoint,
-    // getAuth: () => 'Bearer ' + token
     tokenName: 'apollo-token',
     authenticationType: 'Bearer'
   }
