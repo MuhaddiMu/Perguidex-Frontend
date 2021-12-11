@@ -1,7 +1,7 @@
 <template>
   <blockquote class="text-center home-quote">
-    <p class="grey--text">Happiness is the consequence of personal effort.</p>
-    <small class="grey--text">Elizabeth Gilbert</small>
+    <p class="grey--text">{{ Quotation.quote }}</p>
+    <small class="grey--text">{{ Quotation.author }}</small>
   </blockquote>
 </template>
 
@@ -47,3 +47,14 @@ blockquote .small:before {
   content: '\2014 \00A0';
 }
 </style>
+
+<script>
+import Quotation from '@/graphql/dailyQuotation.gql'
+export default {
+  apollo: {
+    Quotation: {
+      query: Quotation
+    }
+  }
+}
+</script>

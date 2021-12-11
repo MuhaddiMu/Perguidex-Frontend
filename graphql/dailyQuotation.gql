@@ -1,0 +1,6 @@
+query Quotation {
+  Quotation {
+    quote
+    author
+  }
+}
