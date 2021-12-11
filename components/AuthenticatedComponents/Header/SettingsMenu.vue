@@ -105,6 +105,8 @@
   </div>
 </template>
 <script>
+import logout from '@/graphql/auth/logoutUser.gql'
+
 export default {
   data: () => ({
     Menu: false
@@ -114,6 +116,11 @@ export default {
     // Logout Functionality
     async LogOut() {
       try {
+        await this.$apollo
+          .mutate({
+            mutation: logout
+          })
+          .then(({ data }) => data && data.logout)
         await this.$apolloHelpers.onLogout()
         this.$router.push('/')
       } catch (error) {}
