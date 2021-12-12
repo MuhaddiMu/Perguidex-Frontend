@@ -1,5 +1,5 @@
 <template>
-  <blockquote class="text-center home-quote">
+  <blockquote v-if="Quotation" class="text-center home-quote">
     <p class="grey--text">{{ Quotation.quote }}</p>
     <small class="grey--text">{{ Quotation.author }}</small>
   </blockquote>
@@ -53,7 +53,8 @@ import Quotation from '@/graphql/dailyQuotation.gql'
 export default {
   apollo: {
     Quotation: {
-      query: Quotation
+      query: Quotation,
+      prefetch: false
     }
   }
 }
