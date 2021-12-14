@@ -171,7 +171,9 @@
           label="Task"
           dense
         ></v-text-field>
-        <v-btn tile text depressed dark class="red">Add Task</v-btn>
+        <v-btn @click="AddTask()" tile text depressed dark class="red"
+          >Add Task</v-btn
+        >
         <span
           @click="displayNewTaskForm = false"
           class="ml-1 body-2 grey--text hover-text"
@@ -215,6 +217,7 @@
 
 <script>
 import moment from 'moment'
+import CreateTask from '@/graphql/tasks/createTask'
 export default {
   data: () => ({
     displayNewTaskForm: false,
@@ -243,6 +246,21 @@ export default {
   methods: {
     moment() {
       return moment()
+    },
+
+    async AddTask() {
+      const TaskName = this.newTask
+      try {
+        await this.$apollo
+          .mutate({
+            mutation: CreateTask,
+            variables: {
+              task: TaskName
+            }
+          })
+          .then(({ data }) => data && data.TaskName)
+        this.$refs.NewTaskForm.reset()
+      } catch (error) {}
     }
   }
 }
