@@ -1,0 +1,6 @@
+query Tasks {
+  Tasks {
+    task
+    onDate
+  }
+}

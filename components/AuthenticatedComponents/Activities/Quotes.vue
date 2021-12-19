@@ -1,12 +1,35 @@
 <template>
-  <blockquote v-if="Quotation" class="text-center home-quote">
-    <p class="grey--text">{{ Quotation.quote }}</p>
-    <small class="grey--text">{{ Quotation.author }}</small>
-  </blockquote>
+  <div>
+    <v-skeleton-loader
+      v-if="!Quotation"
+      v-bind="skeletonAttrs"
+      type="paragraph, text"
+    ></v-skeleton-loader>
+    <blockquote v-if="Quotation" class="text-center home-quote">
+      <p class="grey--text">{{ Quotation.quote }}</p>
+      <small class="grey--text">{{ Quotation.author }}</small>
+    </blockquote>
+  </div>
 </template>
 
 <script>
-export default {}
+import Quotation from '@/graphql/dailyQuotation.gql'
+export default {
+  apollo: {
+    Quotation: {
+      query: Quotation,
+      prefetch: false
+    }
+  },
+  data() {
+    return {
+      skeletonAttrs: {
+        class: 'mt-3',
+        boilerplate: false
+      }
+    }
+  }
+}
 </script>
 
 <style>
@@ -47,15 +70,3 @@ blockquote .small:before {
   content: '\2014 \00A0';
 }
 </style>
-
-<script>
-import Quotation from '@/graphql/dailyQuotation.gql'
-export default {
-  apollo: {
-    Quotation: {
-      query: Quotation,
-      prefetch: false
-    }
-  }
-}
-</script>
