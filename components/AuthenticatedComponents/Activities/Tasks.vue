@@ -62,7 +62,7 @@
                             ></v-list-item-title>
                           </v-list-item-content>
                         </v-list-item>
-                        <v-list-item>
+                        <v-list-item @click="DeleteTask(index, Task.id)">
                           <v-list-item-content>
                             <v-list-item-title
                               v-text="'Delete'"
@@ -81,7 +81,7 @@
         <!-- Hide divider on the last one -->
       </v-list>
       <!-- ADD NEW TASK BUTTON -->
-      <v-container>
+      <v-container v-click-outside="cancelTask">
         <v-btn
           v-if="!displayNewTaskForm"
           @click="displayNewTaskForm = !displayNewTaskForm"
@@ -96,12 +96,14 @@
           ref="NewTaskForm"
           @submit.prevent="AddTask()"
           v-if="displayNewTaskForm"
+          lazy-validation
         >
           <v-text-field
             v-model="newTask"
             :rules="TaskRules"
             outlined
             label="Task"
+            autofocus
             dense
             required
           ></v-text-field>
@@ -155,6 +157,7 @@ import moment from 'moment'
 import CreateTask from '@/graphql/tasks/createTask'
 import Tasks from '@/graphql/tasks/Tasks'
 import markTaskComplete from '@/graphql/tasks/markTaskComplete'
+import DeleteTask from '@/graphql/tasks/DeleteTask'
 export default {
   apollo: {
     Tasks: {
@@ -236,6 +239,21 @@ export default {
     cancelTask() {
       this.displayNewTaskForm = false
       this.newTask = ''
+    },
+
+    // Delete Task
+    async DeleteTask(taskIndex, taskID) {
+      this.$delete(this.Tasks, taskIndex)
+      try {
+        await this.$apollo
+          .mutate({
+            mutation: DeleteTask,
+            variables: {
+              id: taskID
+            }
+          })
+          .then(({ data }) => data && data.DeleteTask)
+      } catch (error) {}
     }
   }
 }
