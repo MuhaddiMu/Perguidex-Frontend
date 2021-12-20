@@ -96,13 +96,14 @@
           ref="NewTaskForm"
           @submit.prevent="AddTask()"
           v-if="displayNewTaskForm"
-          lazy-validation
         >
           <v-text-field
             v-model="newTask"
+            :rules="TaskRules"
             outlined
             label="Task"
             dense
+            required
           ></v-text-field>
           <v-btn type="submit" tile text depressed dark class="red"
             >Add Task</v-btn
@@ -164,7 +165,8 @@ export default {
   data: () => ({
     displayNewTaskForm: false,
     Valid: true,
-    newTask: '',
+    TaskRules: [(v) => !!v || 'Task is required'],
+    newTask: null,
     dayRating: null,
     dayRatingMessage: null,
     skeletonAttrs: {
@@ -214,18 +216,20 @@ export default {
     // Add Task Functionality
     async AddTask() {
       const TaskName = this.newTask
-      this.Tasks.push({ task: TaskName, onDate: moment() })
-      try {
-        await this.$apollo
-          .mutate({
-            mutation: CreateTask,
-            variables: {
-              task: TaskName
-            }
-          })
-          .then(({ data }) => data && data.TaskName)
-        this.$refs.NewTaskForm.reset()
-      } catch (error) {}
+      if (this.$refs.NewTaskForm.validate()) {
+        this.Tasks.push({ task: TaskName, onDate: moment() })
+        try {
+          await this.$apollo
+            .mutate({
+              mutation: CreateTask,
+              variables: {
+                task: TaskName
+              }
+            })
+            .then(({ data }) => data && data.TaskName)
+          this.$refs.NewTaskForm.reset()
+        } catch (error) {}
+      }
     },
 
     // Cancel button
