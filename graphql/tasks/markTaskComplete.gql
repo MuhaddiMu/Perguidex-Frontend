@@ -1,0 +1,5 @@
+mutation markTaskComplete($id: Int!) {
+  markTaskComplete(id: $id) {
+    status
+  }
+}

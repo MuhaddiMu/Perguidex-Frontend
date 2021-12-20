@@ -21,15 +21,22 @@
       </v-card-title>
 
       <v-list flat>
-        <div v-for="(Task, index) in Tasks" :key="index">
-          <v-list-item-group>
+        <!-- <v-slide-y-transition class="py-0" group tag="v-list-item-group"> -->
+        <template v-for="(Task, index) in Tasks">
+          <v-list-item-group :key="index">
             <v-list-item :ripple="false">
-              <template v-slot:default="{ active }">
+              <template>
                 <v-list-item-action>
-                  <v-checkbox :input-value="active" color="red"></v-checkbox>
+                  <v-checkbox
+                    @click="markComplete(index, Task.id)"
+                    v-model="Task.status"
+                    color="red"
+                    readonly
+                  ></v-checkbox>
+                  <!-- Readonly, a quick hack to disable the auto selection of the checkbox -->
                 </v-list-item-action>
 
-                <v-list-item-content>
+                <v-list-item-content transition="fade-transition">
                   <v-list-item-title>{{ Task.task }}</v-list-item-title>
                 </v-list-item-content>
 
@@ -67,9 +74,10 @@
                 </v-menu>
               </template>
             </v-list-item>
+            <v-divider></v-divider>
           </v-list-item-group>
-          <v-divider></v-divider>
-        </div>
+        </template>
+        <!-- </v-slide-y-transition> -->
         <!-- Hide divider on the last one -->
       </v-list>
       <!-- ADD NEW TASK BUTTON -->
@@ -145,6 +153,7 @@
 import moment from 'moment'
 import CreateTask from '@/graphql/tasks/createTask'
 import Tasks from '@/graphql/tasks/Tasks'
+import markTaskComplete from '@/graphql/tasks/markTaskComplete'
 export default {
   apollo: {
     Tasks: {
@@ -186,6 +195,22 @@ export default {
       return moment()
     },
 
+    // Complete and remove the task
+    async markComplete(taskIndex, taskID) {
+      this.$delete(this.Tasks, taskIndex)
+
+      try {
+        await this.$apollo
+          .mutate({
+            mutation: markTaskComplete,
+            variables: {
+              id: taskID
+            }
+          })
+          .then(({ data }) => data && data.markTaskComplete)
+      } catch (error) {}
+    },
+
     // Add Task Functionality
     async AddTask() {
       const TaskName = this.newTask
@@ -202,6 +227,8 @@ export default {
         this.$refs.NewTaskForm.reset()
       } catch (error) {}
     },
+
+    // Cancel button
     cancelTask() {
       this.displayNewTaskForm = false
       this.newTask = ''
