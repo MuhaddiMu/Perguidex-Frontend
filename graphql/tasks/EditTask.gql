@@ -1,0 +1,5 @@
+mutation EditTask($id: Int!, $task: String!) {
+  EditTask(id: $id, task: $task) {
+    status
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :key="componentKey">
     <v-skeleton-loader
       v-if="!Tasks"
       v-bind="skeletonAttrs"
@@ -22,7 +22,7 @@
 
       <v-list flat>
         <!-- <v-slide-y-transition class="py-0" group tag="v-list-item-group"> -->
-        <template v-for="(Task, index) in Tasks">
+        <template ref="loopRef" v-for="(Task, index) in Tasks">
           <v-list-item-group :key="index">
             <v-list-item :ripple="false">
               <template>
@@ -36,7 +36,7 @@
                   <!-- Readonly, a quick hack to disable the auto selection of the checkbox -->
                 </v-list-item-action>
 
-                <v-list-item-content transition="fade-transition">
+                <v-list-item-content>
                   <v-list-item-title>{{ Task.task }}</v-list-item-title>
                 </v-list-item-content>
 
@@ -55,7 +55,7 @@
                   <v-card>
                     <v-list dense outlined>
                       <v-list-item-group>
-                        <v-list-item>
+                        <v-list-item @click="EditTaskToggle(index)">
                           <v-list-item-content>
                             <v-list-item-title
                               v-text="'Edit'"
@@ -74,6 +74,30 @@
                 </v-menu>
               </template>
             </v-list-item>
+            <v-container v-show="Task.edit">
+              <v-form
+                ref="EditTaskForm"
+                @submit.prevent="updateTask(index, Task.id, Task.task)"
+                lazy-validation
+              >
+                <v-text-field
+                  v-model="Task.task"
+                  :rules="TaskRules"
+                  outlined
+                  label="Task"
+                  dense
+                  required
+                ></v-text-field>
+                <v-btn type="submit" tile text depressed dark class="red"
+                  >Update</v-btn
+                >
+                <span
+                  @click="EditTaskToggle(index, Task.id)"
+                  class="ml-1 body-2 grey--text hover-text"
+                  >Cancel</span
+                >
+              </v-form>
+            </v-container>
             <v-divider></v-divider>
           </v-list-item-group>
         </template>
@@ -158,6 +182,7 @@ import CreateTask from '@/graphql/tasks/createTask'
 import Tasks from '@/graphql/tasks/Tasks'
 import markTaskComplete from '@/graphql/tasks/markTaskComplete'
 import DeleteTask from '@/graphql/tasks/DeleteTask'
+import EditTask from '@/graphql/tasks/EditTask'
 export default {
   apollo: {
     Tasks: {
@@ -176,7 +201,8 @@ export default {
       class: 'pa-3',
       boilerplate: false,
       elevation: 2
-    }
+    },
+    componentKey: 0
   }),
   computed: {
     dayRatingPrependIcon() {
@@ -254,6 +280,30 @@ export default {
           })
           .then(({ data }) => data && data.DeleteTask)
       } catch (error) {}
+    },
+
+    // Edit Task
+    EditTaskToggle(taskIndex) {
+      this.Tasks[taskIndex].edit = !this.Tasks[taskIndex].edit
+      this.componentKey += 1
+    },
+
+    async updateTask(index, taskID, Task) {
+      if (this.$refs.EditTaskForm[index].validate()) {
+        try {
+          await this.$apollo
+            .mutate({
+              mutation: EditTask,
+              variables: {
+                id: taskID,
+                task: Task
+              }
+            })
+            .then(({ data }) => data && data.EditTask)
+          this.EditTaskToggle(index)
+          this.$refs.EditTaskForm.reset()
+        } catch (error) {}
+      }
     }
   }
 }
