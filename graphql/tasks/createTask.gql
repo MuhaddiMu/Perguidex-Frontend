@@ -1,5 +1,8 @@
 mutation CreateTask($task: String!) {
   CreateTask(input: { task: $task }) {
+    id
     task
+    status
+    onDate
   }
 }

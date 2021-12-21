@@ -248,14 +248,15 @@ export default {
       if (this.$refs.NewTaskForm.validate()) {
         this.Tasks.push({ task: TaskName, onDate: moment() })
         try {
-          await this.$apollo
+          const res = await this.$apollo
             .mutate({
               mutation: CreateTask,
               variables: {
                 task: TaskName
               }
             })
-            .then(({ data }) => data && data.TaskName)
+            .then(({ data }) => data && data.CreateTask)
+          this.Tasks[this.Tasks.length - 1] = res
           this.$refs.NewTaskForm.reset()
         } catch (error) {}
       }
