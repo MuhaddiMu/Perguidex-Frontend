@@ -141,7 +141,7 @@
       </v-container>
       <!--  -->
       <!-- RATE YOUR DAY -->
-      <v-container>
+      <v-container v-if="!TodayRating">
         <div class="text-h5 grey--text text--darken-3 text-center">
           Rate your day {{ dayRating && '(' + dayRating + ')' }}
         </div>
@@ -155,20 +155,44 @@
           large
         ></v-rating>
         <div v-if="dayRating > 0">
-          <v-textarea
-            v-model="dayRatingMessage"
-            :counter="250"
-            :label="'Why you felt your day was ' + dayRating + '?'"
-            :prepend-inner-icon="dayRatingPrependIcon"
-            rows="3"
-            autofocus
-            no-resize
-            dense
-            outlined
-          ></v-textarea>
-          <v-btn tile text depressed dark class="mt-n4 red text-left"
-            >Save</v-btn
-          >
+          <v-form @submit.prevent="saveRating()">
+            <v-textarea
+              v-model="dayRatingMessage"
+              :counter="250"
+              :label="'Why you felt your day was ' + dayRating + '?'"
+              :prepend-inner-icon="dayRatingPrependIcon"
+              rows="3"
+              no-resize
+              dense
+              outlined
+            ></v-textarea>
+            <v-btn
+              type="submit"
+              tile
+              text
+              depressed
+              dark
+              class="mt-n4 red text-left"
+              >Save</v-btn
+            >
+          </v-form>
+        </div>
+      </v-container>
+      <v-container v-else>
+        <div class="text-h5 grey--text text--darken-3 text-center">
+          Today's Review
+        </div>
+        <v-rating
+          :value="Number(TodayRating.rate)"
+          class="text-center"
+          color="yellow darken-2"
+          background-color="grey"
+          half-increments
+          large
+          readonly
+        ></v-rating>
+        <div class="text-center grey--text text--darken-3">
+          {{ TodayRating.reason }}
         </div>
       </v-container>
       <!--  -->
@@ -183,10 +207,16 @@ import Tasks from '@/graphql/tasks/Tasks'
 import markTaskComplete from '@/graphql/tasks/markTaskComplete'
 import DeleteTask from '@/graphql/tasks/DeleteTask'
 import EditTask from '@/graphql/tasks/EditTask'
+import SaveRating from '@/graphql/dayReviews/SaveRating'
+import TodayRating from '@/graphql/dayReviews/TodayRating'
 export default {
   apollo: {
     Tasks: {
       query: Tasks,
+      prefetch: false
+    },
+    TodayRating: {
+      query: TodayRating,
       prefetch: false
     }
   },
@@ -196,7 +226,7 @@ export default {
     TaskRules: [(v) => !!v || 'Task is required'],
     newTask: null,
     dayRating: null,
-    dayRatingMessage: null,
+    dayRatingMessage: '',
     skeletonAttrs: {
       class: 'pa-3',
       boilerplate: false,
@@ -305,6 +335,20 @@ export default {
           this.$refs.EditTaskForm.reset()
         } catch (error) {}
       }
+    },
+    async saveRating() {
+      try {
+        await this.$apollo
+          .mutate({
+            mutation: SaveRating,
+            variables: {
+              rate: this.dayRating.toString(),
+              reason: this.dayRatingMessage
+            }
+          })
+          .then(({ data }) => data && data.SaveRating)
+        this.$apollo.queries.TodayRating.refetch()
+      } catch (error) {}
     }
   }
 }

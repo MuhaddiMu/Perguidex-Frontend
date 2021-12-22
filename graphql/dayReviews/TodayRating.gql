@@ -1,0 +1,6 @@
+query TodayRating {
+  TodayRating {
+    rate
+    reason
+  }
+}

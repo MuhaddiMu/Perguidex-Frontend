@@ -1,0 +1,6 @@
+mutation SaveRating($rate: String!, $reason: String!) {
+  SaveRating(input: { rate: $rate, reason: $reason }) {
+    rate
+    reason
+  }
+}
