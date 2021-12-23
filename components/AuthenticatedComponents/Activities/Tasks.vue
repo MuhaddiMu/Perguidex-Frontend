@@ -181,6 +181,7 @@
       <v-container v-else>
         <div class="text-h5 grey--text text--darken-3 text-center">
           Today's Review
+          {{ User }}
         </div>
         <v-rating
           :value="Number(TodayRating.rate)"
@@ -209,11 +210,18 @@ import DeleteTask from '@/graphql/tasks/DeleteTask'
 import EditTask from '@/graphql/tasks/EditTask'
 import SaveRating from '@/graphql/dayReviews/SaveRating'
 import TodayRating from '@/graphql/dayReviews/TodayRating'
+import User from '@/graphql/user/getUserData.gql'
+
 export default {
   apollo: {
     Tasks: {
       query: Tasks,
       prefetch: false
+    },
+    User: {
+      query: User,
+      prefetch: false,
+      fetchPolicy: 'cache-first'
     },
     TodayRating: {
       query: TodayRating,

@@ -1,6 +1,7 @@
-/* eslint-disable dot-notation */
 /* eslint-disable no-console */
+/* eslint-disable dot-notation */
 import { onError } from '@apollo/client/link/error'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
 export default function(context) {
   const httpEndpoint = 'http://127.0.0.1:8000/graphql'
@@ -20,10 +21,12 @@ export default function(context) {
     })
   })
 
+  const cache = new InMemoryCache()
   return {
     link,
     httpEndpoint,
     tokenName: 'apollo-token',
-    authenticationType: 'Bearer'
+    authenticationType: 'Bearer',
+    cache
   }
 }

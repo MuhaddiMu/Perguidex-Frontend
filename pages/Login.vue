@@ -75,7 +75,8 @@
   </v-container>
 </template>
 <script>
-import login from '../graphql/auth/loginUser.gql'
+import login from '@/graphql/auth/loginUser.gql'
+import User from '@/graphql/user/getUserData.gql'
 
 export default {
   layout: 'Auth',
@@ -126,6 +127,16 @@ export default {
           this.loading = false
           await this.$apolloHelpers.onLogin(res.token)
           this.$router.push('app/Tasks')
+
+          // Get User Data
+          const userData = await this.$apollo
+            .query({
+              query: User,
+              prefetch: false,
+              fetchPolicy: 'cache-first'
+            })
+            .then(({ data }) => data && data.User)
+          console.log(userData)
         } catch (error) {
           this.loading = false
           error.message = error.message.replace('GraphQL error: ', '')
