@@ -129,14 +129,13 @@ export default {
           this.$router.push('app/Tasks')
 
           // Get User Data
-          const userData = await this.$apollo
+          await this.$apollo
             .query({
               query: User,
               prefetch: false,
               fetchPolicy: 'cache-first'
             })
             .then(({ data }) => data && data.User)
-          console.log(userData)
         } catch (error) {
           this.loading = false
           error.message = error.message.replace('GraphQL error: ', '')

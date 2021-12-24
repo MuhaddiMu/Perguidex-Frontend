@@ -15,8 +15,11 @@
             – {{ moment().format('ddd D MMM') }}</small
           >
         </div>
-        <div class="W20 text-right">
-          <v-icon class="Cursor" color="white">mdi-refresh</v-icon>
+        <div @click="Sync()" class="W20 text-right">
+          <v-icon class="Cursor" color="white"
+            ><template v-if="showSyncLoader">mdi-refresh mdi-spin</template
+            ><template v-else> mdi-refresh </template></v-icon
+          >
         </div>
       </v-card-title>
 
@@ -181,7 +184,6 @@
       <v-container v-else>
         <div class="text-h5 grey--text text--darken-3 text-center">
           Today's Review
-          {{ User }}
         </div>
         <v-rating
           :value="Number(TodayRating.rate)"
@@ -231,6 +233,7 @@ export default {
   data: () => ({
     displayNewTaskForm: false,
     Valid: true,
+    showSyncLoader: false,
     TaskRules: [(v) => !!v || 'Task is required'],
     newTask: null,
     dayRating: null,
@@ -356,6 +359,17 @@ export default {
           })
           .then(({ data }) => data && data.SaveRating)
         this.$apollo.queries.TodayRating.refetch()
+      } catch (error) {}
+    },
+
+    async Sync() {
+      try {
+        this.showSyncLoader = true
+        await this.$apollo.queries.Tasks.refetch().then(
+          ({ data }) => data && data.Tasks
+        )
+
+        this.showSyncLoader = false
       } catch (error) {}
     }
   }
