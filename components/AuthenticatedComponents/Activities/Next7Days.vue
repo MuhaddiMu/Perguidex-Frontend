@@ -5,8 +5,11 @@
         <v-icon class="Cursor" color="white">mdi-printer</v-icon>
       </div>
       <div class="center_date text-center font-weight-bold">Next 7 Days</div>
-      <div class="W20 text-right">
-        <v-icon class="Cursor" color="white">mdi-refresh</v-icon>
+      <div @click="fetchAllTasks()" class="W20 text-right">
+        <v-icon class="Cursor" color="white"
+          ><template v-if="showSyncLoader">mdi-refresh mdi-spin</template
+          ><template v-else> mdi-refresh </template></v-icon
+        >
       </div>
     </v-card-title>
 
@@ -200,6 +203,7 @@ export default {
     displayNewTaskForm7: false,
     Valid: true,
     newTask: [],
+    showSyncLoader: false,
     Next7DayTasks: [],
     TaskRules: [(v) => !!v || 'Task is required'],
     componentKey: 0
@@ -214,6 +218,7 @@ export default {
     },
 
     async fetchAllTasks() {
+      this.showSyncLoader = true
       try {
         const self = this
         const Next7DaysReq = await this.$apollo
@@ -230,7 +235,9 @@ export default {
           }
           Next7DayTasks[onDate].push(element)
         })
+
         self.Next7DayTasks = Next7DayTasks
+        self.showSyncLoader = false
         self.componentKey += 1
       } catch (error) {}
     },
