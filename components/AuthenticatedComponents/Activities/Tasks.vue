@@ -25,7 +25,7 @@
 
       <v-list flat>
         <!-- <v-slide-y-transition class="py-0" group tag="v-list-item-group"> -->
-        <template ref="loopRef" v-for="(Task, index) in Tasks">
+        <template v-for="(Task, index) in Tasks">
           <v-list-item-group :key="index">
             <v-list-item :ripple="false">
               <template>
@@ -38,7 +38,6 @@
                   ></v-checkbox>
                   <!-- Readonly, a quick hack to disable the auto selection of the checkbox -->
                 </v-list-item-action>
-
                 <v-list-item-content>
                   <v-list-item-title>{{ Task.task }}</v-list-item-title>
                 </v-list-item-content>
@@ -293,7 +292,8 @@ export default {
             .mutate({
               mutation: CreateTask,
               variables: {
-                task: TaskName
+                task: TaskName,
+                onDate: moment().format()
               }
             })
             .then(({ data }) => data && data.CreateTask)

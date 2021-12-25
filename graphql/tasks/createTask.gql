@@ -1,5 +1,5 @@
-mutation CreateTask($task: String!) {
-  CreateTask(input: { task: $task }) {
+mutation CreateTask($task: String!, $onDate: String!) {
+  CreateTask(input: { task: $task, onDate: $onDate }) {
     id
     task
     status

@@ -1,0 +1,8 @@
+query Next7Days {
+  Next7Days {
+    id
+    task
+    onDate
+    status
+  }
+}
