@@ -5,17 +5,17 @@
       v-bind="skeletonAttrs"
       type="card-heading, list-item-avatar, divider, list-item-avatar, divider, list-item-avatar, divider, list-item-avatar, divider, actions"
     ></v-skeleton-loader>
-    <v-card v-else outlined width="800">
+    <v-card v-else outlined>
       <v-card-title class="red lighten-1 white--text subtitle-2">
-        <div class="W20 text-left">
+        <div @click="PrintTasks()" :class="['W20', 'text-left', noPrintClass]">
           <v-icon class="Cursor" color="white">mdi-printer</v-icon>
         </div>
-        <div class="center_date text-center font-weight-bold">
+        <div :class="[center_date, 'text-center', 'font-weight-bold']">
           Tasks<small class="font-weight-regular">
             – {{ moment().format('ddd D MMM') }}</small
           >
         </div>
-        <div @click="Sync()" class="W20 text-right">
+        <div @click="Sync()" :class="['W20', 'text-right', noPrintClass]">
           <v-icon class="Cursor" color="white"
             ><template v-if="showSyncLoader">mdi-refresh mdi-spin</template
             ><template v-else> mdi-refresh </template></v-icon
@@ -107,7 +107,7 @@
         <!-- Hide divider on the last one -->
       </v-list>
       <!-- ADD NEW TASK BUTTON -->
-      <v-container v-click-outside="cancelTask">
+      <v-container :class="[noPrintClass]" v-click-outside="cancelTask">
         <v-btn
           v-if="!displayNewTaskForm"
           @click="displayNewTaskForm = !displayNewTaskForm"
@@ -143,7 +143,7 @@
       </v-container>
       <!--  -->
       <!-- RATE YOUR DAY -->
-      <v-container v-if="!TodayRating">
+      <v-container :class="[noPrintClass]" v-if="!TodayRating">
         <div class="text-h5 grey--text text--darken-3 text-center">
           Rate your day {{ dayRating && '(' + dayRating + ')' }}
         </div>
@@ -198,6 +198,9 @@
         </div>
       </v-container>
       <!--  -->
+      <div v-if="noPrintClass == 'no-print'" class="py-3 text-center ">
+        Provided by Perguidex
+      </div>
     </v-card>
   </div>
 </template>
@@ -242,7 +245,9 @@ export default {
       boilerplate: false,
       elevation: 2
     },
-    componentKey: 0
+    componentKey: 0,
+    noPrintClass: '',
+    center_date: 'center_date'
   }),
   computed: {
     dayRatingPrependIcon() {
@@ -261,9 +266,26 @@ export default {
       }
     }
   },
+  mounted() {
+    if (this.$route.path.toLowerCase() === '/app/tasks/print') {
+      this.noPrintClass = 'no-print'
+      this.center_date = 'center_date-no-print'
+      this.printDoc()
+    }
+  },
   methods: {
     moment() {
       return moment()
+    },
+
+    printDoc() {
+      setTimeout(() => {
+        window.print()
+      }, 1000)
+    },
+
+    PrintTasks() {
+      window.open(this.$route.path + '/print')
     },
 
     // Complete and remove the task
@@ -380,6 +402,9 @@ export default {
 .center_date {
   width: 80%;
 }
+.center_date-no-print {
+  width: 100%;
+}
 .W20 {
   width: 10%;
 }
@@ -390,5 +415,9 @@ export default {
 
 .hover-text:hover {
   text-decoration: underline;
+}
+
+.no-print {
+  display: none;
 }
 </style>

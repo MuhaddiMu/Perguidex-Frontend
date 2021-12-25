@@ -1,11 +1,16 @@
 <template>
   <v-card :key="componentKey" outlined>
     <v-card-title class="red lighten-1 white--text subtitle-2">
-      <div class="W20 text-left">
+      <div @click="PrintTasks()" :class="['W20', 'text-left', noPrintClass]">
         <v-icon class="Cursor" color="white">mdi-printer</v-icon>
       </div>
-      <div class="center_date text-center font-weight-bold">Next 7 Days</div>
-      <div @click="fetchAllTasks()" class="W20 text-right">
+      <div :class="[center_date, 'text-center', 'font-weight-bold']">
+        Next 7 Days
+      </div>
+      <div
+        @click="fetchAllTasks()"
+        :class="['W20', 'text-right', noPrintClass]"
+      >
         <v-icon class="Cursor" color="white"
           ><template v-if="showSyncLoader">mdi-refresh mdi-spin</template
           ><template v-else> mdi-refresh </template></v-icon
@@ -143,7 +148,7 @@
           </v-list-item-group>
         </template>
         <!-- ADD NEW TASK BUTTON -->
-        <v-container>
+        <v-container :class="[noPrintClass]">
           <v-btn
             v-if="!isFormActive(Day)"
             @click="activateForm(Day)"
@@ -181,6 +186,9 @@
         </v-container>
       </v-list>
     </template>
+    <div v-if="noPrintClass == 'no-print'" class="py-3 text-center ">
+      Provided by Perguidex
+    </div>
   </v-card>
 </template>
 
@@ -206,11 +214,20 @@ export default {
     showSyncLoader: false,
     Next7DayTasks: [],
     TaskRules: [(v) => !!v || 'Task is required'],
-    componentKey: 0
+    componentKey: 0,
+    noPrintClass: '',
+    center_date: 'center_date'
   }),
 
   created() {
     this.fetchAllTasks()
+  },
+  mounted() {
+    if (this.$route.path.toLowerCase() === '/app/next7days/print') {
+      this.noPrintClass = 'no-print'
+      this.center_date = 'center_date-no-print'
+      this.printDoc()
+    }
   },
   methods: {
     moment() {
@@ -218,8 +235,8 @@ export default {
     },
 
     async fetchAllTasks() {
-      this.showSyncLoader = true
       try {
+        this.showSyncLoader = true
         const self = this
         const Next7DaysReq = await this.$apollo
           .query({ query: Next7Days })
@@ -237,7 +254,9 @@ export default {
         })
 
         self.Next7DayTasks = Next7DayTasks
+
         self.showSyncLoader = false
+
         self.componentKey += 1
       } catch (error) {}
     },
@@ -362,6 +381,15 @@ export default {
           })
           .then(({ data }) => data && data.markTaskComplete)
       } catch (error) {}
+    },
+
+    PrintTasks() {
+      window.open(this.$route.path + '/print')
+    },
+    printDoc() {
+      setTimeout(() => {
+        window.print()
+      }, 1000)
     }
   }
 }
@@ -370,6 +398,10 @@ export default {
 <style>
 .center_date {
   width: 80%;
+}
+
+.center_date-no-print {
+  width: 100%;
 }
 .W20 {
   width: 10%;
@@ -381,5 +413,9 @@ export default {
 
 .hover-text:hover {
   text-decoration: underline;
+}
+
+.no-print {
+  display: none;
 }
 </style>
