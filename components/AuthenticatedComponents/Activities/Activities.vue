@@ -188,7 +188,7 @@
             <v-card>
               <v-list dense outlined>
                 <v-list-item-group>
-                  <v-list-item>
+                  <v-list-item @click="DeleteReview(index, Review.id)">
                     <v-list-item-content>
                       <v-list-item-title v-text="'Remove'"></v-list-item-title>
                     </v-list-item-content>
@@ -222,6 +222,7 @@
 import moment from 'moment'
 import GetAllTasks from '@/graphql/tasks/GetAllTasks'
 import DeleteTask from '@/graphql/tasks/DeleteTask'
+import DeleteReview from '@/graphql/dayReviews/DeleteReview'
 import GetAllReviews from '@/graphql/dayReviews/getAllReviews'
 
 export default {
@@ -309,7 +310,7 @@ export default {
     },
     // Delete Task
     async DeleteTask(taskIndex, taskID) {
-      this.$delete(this.GetAllTasks.data, taskIndex)
+      this.$delete(this.GetAllTasks, taskIndex)
       try {
         await this.$apollo
           .mutate({
@@ -339,6 +340,22 @@ export default {
         if (res.length < 20 || res.length === 0) {
           this.hasMoreRevs = false
         }
+      } catch (error) {}
+    },
+
+    // Delete Review
+    async DeleteReview(revIndex, revID) {
+      this.$delete(this.GetAllReviews, revIndex)
+      console.log(revID)
+      try {
+        await this.$apollo
+          .mutate({
+            mutation: DeleteReview,
+            variables: {
+              id: revID
+            }
+          })
+          .then(({ data }) => data && data.DeleteReview)
       } catch (error) {}
     }
   }
