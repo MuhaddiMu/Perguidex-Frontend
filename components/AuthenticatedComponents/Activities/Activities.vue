@@ -103,7 +103,7 @@
       </template>
       <v-row class="my-3" align="center" justify="space-around">
         <v-btn
-          v-if="hasMorePagesTasks"
+          v-if="hasMorePagesTasks && GetAllTasks && GetAllTasks.length >= 20"
           :loading="LoadMoreTasks"
           :disabled="LoadMoreTasks"
           @click="LoadMore()"
@@ -201,7 +201,7 @@
       </v-list>
       <v-row class="my-3" align="center" justify="space-around">
         <v-btn
-          v-if="hasMoreRevs"
+          v-if="hasMoreRevs && GetAllReviews && GetAllReviews.length >= 20"
           :loading="loadMoreRevs"
           :disabled="loadMoreRevs"
           @click="LoadMoreRevs()"
@@ -260,8 +260,8 @@ export default {
     }
   },
   methods: {
-    moment() {
-      return moment()
+    moment(date) {
+      return moment(date)
     },
     getRatingEmoji(e) {
       if (e <= 1) {
@@ -346,7 +346,6 @@ export default {
     // Delete Review
     async DeleteReview(revIndex, revID) {
       this.$delete(this.GetAllReviews, revIndex)
-      console.log(revID)
       try {
         await this.$apollo
           .mutate({
