@@ -418,4 +418,8 @@ export default {
 .no-print {
   display: none;
 }
+@page {
+  size: auto; /* auto is the initial value */
+  margin: 0; /* this affects the margin in the printer settings */
+}
 </style>
