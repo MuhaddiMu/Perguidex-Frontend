@@ -1,5 +1,13 @@
 <template>
-  <v-card :key="componentKey" outlined>
+  <!-- eslint-disable -->
+  <v-card
+    v-shortkey="{ mac: ['meta', 'p'], windows: ['ctrl', 'p'] }"
+    @shortkey.propagate="PrintTasks()"
+    :key="componentKey"
+    outlined
+  >
+  <!-- eslint-enable -->
+
     <v-card-title class="red lighten-1 white--text subtitle-2">
       <div @click="PrintTasks()" :class="['W20', 'text-left', noPrintClass]">
         <v-icon class="Cursor" color="white">mdi-printer</v-icon>

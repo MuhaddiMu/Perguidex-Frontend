@@ -38,7 +38,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['./plugins/Components.js'],
+  plugins: [
+    { src: './plugins/Components.js' },
+    { src: '~/plugins/shortcut-keys.js', mode: 'client' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */

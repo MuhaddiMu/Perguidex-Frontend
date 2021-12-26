@@ -1,5 +1,11 @@
 <template>
-  <div :key="componentKey">
+  <!-- eslint-disable -->
+  <div
+    v-shortkey="{ mac: ['meta', 'p'], windows: ['ctrl', 'p'] }"
+    @shortkey.propagate="PrintTasks()"
+    :key="componentKey"
+  >
+  <!-- eslint-enable -->
     <v-skeleton-loader
       v-if="!Tasks"
       v-bind="skeletonAttrs"

@@ -1,4 +1,3 @@
-// Authenticated Views
 <template>
   <v-app light>
     <TheHeader />
