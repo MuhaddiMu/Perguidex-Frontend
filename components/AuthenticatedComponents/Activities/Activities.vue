@@ -48,43 +48,74 @@
           label="Quick Search"
         ></v-autocomplete>
       </v-container>
-      <v-list v-for="(i, index) in 10" :key="i" flat dense subheader>
-        <v-list-item :ripple="false">
-          <v-list-item-action>
-            <v-checkbox input-value="true" readonly color="red"></v-checkbox>
-          </v-list-item-action>
+      <template v-if="GetAllTasks">
+        <v-list
+          v-for="(Task, index) in GetAllTasks"
+          :key="index"
+          flat
+          dense
+          subheader
+        >
+          <v-list-item :ripple="false">
+            <v-list-item-action>
+              <v-checkbox
+                v-model="Task.status"
+                readonly
+                color="red"
+              ></v-checkbox>
+            </v-list-item-action>
 
-          <v-list-item-content>
-            <v-list-item-title>{{ i }} </v-list-item-title>
-            <v-list-item-subtitle>Jan 28, 2014 </v-list-item-subtitle>
-          </v-list-item-content>
+            <v-list-item-content>
+              <v-list-item-title>{{ Task.task }} </v-list-item-title>
+              <v-list-item-subtitle
+                >{{ moment(Task.onDate).format('D MMM Y') }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
 
-          <v-menu
-            transition="scale-transition"
-            close-on-content-click
-            offset-y
-            origin="top right"
-            right
-          >
-            <template v-slot:activator="{ on }">
-              <v-list-item-action>
-                <v-icon v-on="on" color="grey">mdi-dots-vertical</v-icon>
-              </v-list-item-action>
-            </template>
-            <v-card>
-              <v-list dense outlined>
-                <v-list-item-group>
-                  <v-list-item>
-                    <v-list-item-content>
-                      <v-list-item-title v-text="'Remove'"></v-list-item-title>
-                    </v-list-item-content>
-                  </v-list-item> </v-list-item-group
-              ></v-list>
-            </v-card>
-          </v-menu>
-        </v-list-item>
-        <v-divider v-if="index != 10 - 1" />
-      </v-list>
+            <v-menu
+              transition="scale-transition"
+              close-on-content-click
+              offset-y
+              origin="top right"
+              right
+            >
+              <template v-slot:activator="{ on }">
+                <v-list-item-action>
+                  <v-icon v-on="on" color="grey">mdi-dots-vertical</v-icon>
+                </v-list-item-action>
+              </template>
+              <v-card>
+                <v-list dense outlined>
+                  <v-list-item-group>
+                    <v-list-item @click="DeleteTask(index, Task.id)">
+                      <v-list-item-content>
+                        <v-list-item-title
+                          v-text="'Remove'"
+                        ></v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item> </v-list-item-group
+                ></v-list>
+              </v-card>
+            </v-menu>
+          </v-list-item>
+          <v-divider v-if="index != Object.keys(GetAllTasks).length - 1" />
+        </v-list>
+      </template>
+      <v-row class="my-3" align="center" justify="space-around">
+        <v-btn
+          v-if="hasMorePagesTasks"
+          :loading="LoadMoreTasks"
+          :disabled="LoadMoreTasks"
+          @click="LoadMore()"
+          tile
+          text
+          depressed
+          dark
+          class="red mt-1"
+        >
+          Load more
+        </v-btn>
+      </v-row>
     </v-card>
     <v-card v-if="selectedActivity == 'Rated Days'" outlined>
       <v-card-title
@@ -110,33 +141,36 @@
           label="Quick Search"
         ></v-autocomplete>
       </v-container>
-      <v-list v-for="(i, index) in 10" :key="i" subheader flat dense>
+      <v-list
+        v-for="(Review, index) in GetAllReviews"
+        :key="index"
+        subheader
+        flat
+        dense
+      >
         <v-list-item :ripple="false">
           <v-list-item-avatar>
             <v-icon class="grey lighten-1" dark>
-              {{ getRatingEmoji(1) }}
+              {{ getRatingEmoji(parseFloat(Review.rate)) }}
             </v-icon>
           </v-list-item-avatar>
 
           <v-list-item-content>
-            <v-list-item-title
-              >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
-              dolore distinctio dignissimos ipsum, recusandae expedita saepe
-              maxime autem aspernatur nostrum provident, repudiandae libero
-              quisquam corporis optio ad illo voluptas repellat!
-            </v-list-item-title>
+            <v-list-item-title>{{ Review.reason }} </v-list-item-title>
             <v-list-item-subtitle
               ><v-rating
+                :value="parseFloat(Review.rate)"
                 color="yellow darken-2"
                 background-color="grey"
                 readonly
                 half-increments
                 length="5"
-                value="2.5"
                 small
               ></v-rating>
             </v-list-item-subtitle>
-            <v-list-item-subtitle>Jan 28, 2014 </v-list-item-subtitle>
+            <v-list-item-subtitle>
+              {{ moment(Review.created_at).format('D MMM Y') }}
+            </v-list-item-subtitle>
           </v-list-item-content>
 
           <v-menu
@@ -163,13 +197,33 @@
             </v-card>
           </v-menu>
         </v-list-item>
-        <v-divider v-if="index != 10 - 1" />
+        <v-divider v-if="index != Object.keys(GetAllReviews).length - 1" />
       </v-list>
+      <v-row class="my-3" align="center" justify="space-around">
+        <v-btn
+          v-if="hasMoreRevs"
+          :loading="loadMoreRevs"
+          :disabled="loadMoreRevs"
+          @click="LoadMoreRevs()"
+          tile
+          text
+          depressed
+          dark
+          class="red mt-1"
+        >
+          Load more
+        </v-btn>
+      </v-row>
     </v-card>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
+import GetAllTasks from '@/graphql/tasks/GetAllTasks'
+import DeleteTask from '@/graphql/tasks/DeleteTask'
+import GetAllReviews from '@/graphql/dayReviews/getAllReviews'
+
 export default {
   data: () => ({
     Activities: [{ type: 'All Tasks' }, { type: 'Rated Days' }],
@@ -178,14 +232,36 @@ export default {
     SearchModel: null,
     Search: null,
     SearchLoading: false,
-    SearchItems: []
+    SearchItems: [],
+    currentPageTasks: 1,
+    LoadMoreTasks: false,
+    hasMorePagesTasks: true,
+    currentPageRevs: 1,
+    hasMoreRevs: true,
+    loadMoreRevs: false
   }),
+
   watch: {
     Search(val) {
       val && val !== this.SearchModel && this.querySelections(val)
     }
   },
+  apollo: {
+    GetAllTasks: {
+      query: GetAllTasks,
+      prefetch: false,
+      variables: { page: 1 }
+    },
+    GetAllReviews: {
+      query: GetAllReviews,
+      prefetch: false,
+      variables: { page: 1 }
+    }
+  },
   methods: {
+    moment() {
+      return moment()
+    },
     getRatingEmoji(e) {
       if (e <= 1) {
         return 'mdi-emoticon-dead'
@@ -210,6 +286,60 @@ export default {
         })
         this.SearchLoading = false
       }, 500)
+    },
+
+    // Load More tasks
+    async LoadMore() {
+      try {
+        this.LoadMoreTasks = true
+        this.currentPageTasks += 1
+        const res = await this.$apollo
+          .query({
+            query: GetAllTasks,
+            variables: { page: this.currentPageTasks }
+          })
+
+          .then(({ data }) => data && data.GetAllTasks)
+        this.GetAllTasks.push(...res)
+        this.LoadMoreTasks = false
+        if (res.length < 20 || res.length === 0) {
+          this.hasMorePagesTasks = false
+        }
+      } catch (error) {}
+    },
+    // Delete Task
+    async DeleteTask(taskIndex, taskID) {
+      this.$delete(this.GetAllTasks.data, taskIndex)
+      try {
+        await this.$apollo
+          .mutate({
+            mutation: DeleteTask,
+            variables: {
+              id: taskID
+            }
+          })
+          .then(({ data }) => data && data.DeleteTask)
+      } catch (error) {}
+    },
+
+    // Load More Reviews
+    async LoadMoreRevs() {
+      try {
+        this.loadMoreRevs = true
+        this.currentPageRevs += 1
+        const res = await this.$apollo
+          .query({
+            query: GetAllReviews,
+            variables: { page: this.currentPageRevs }
+          })
+
+          .then(({ data }) => data && data.GetAllReviews)
+        this.GetAllReviews.push(...res)
+        this.loadMoreRevs = false
+        if (res.length < 20 || res.length === 0) {
+          this.hasMoreRevs = false
+        }
+      } catch (error) {}
     }
   }
 }

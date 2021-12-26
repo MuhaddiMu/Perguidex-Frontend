@@ -1,0 +1,8 @@
+query GetAllTasks($page: Int!) {
+  GetAllTasks(first: 20, page: $page) {
+    id
+    task
+    onDate
+    status
+  }
+}

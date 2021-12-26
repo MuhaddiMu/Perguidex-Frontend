@@ -1,0 +1,8 @@
+query GetAllReviews($page: Int!) {
+  GetAllReviews(first: 20, page: $page) {
+    id
+    rate
+    reason
+    created_at
+  }
+}
