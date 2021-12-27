@@ -1,5 +1,9 @@
 <template>
   <div class="text-center">
+    <ShortcutKey
+      v-if="showKeyboardShortcuts"
+      :showProp="showKeyboardShortcuts"
+    />
     <v-menu
       v-model="Menu"
       transition="scale-transition"
@@ -58,7 +62,7 @@
               >Support</v-list-item-title
             >
           </v-list-item>
-          <v-list-item nuxt link to="">
+          <v-list-item @click="fnShowKeyboardShortCuts()" nuxt link to="">
             <v-list-item-icon
               ><v-icon left>mdi-keyboard-outline</v-icon></v-list-item-icon
             >
@@ -106,10 +110,14 @@
 </template>
 <script>
 import logout from '@/graphql/auth/logoutUser.gql'
-
+import ShortcutKey from '@/components/AuthenticatedComponents/Utils/ShortcutKey.vue'
 export default {
+  components: {
+    ShortcutKey
+  },
   data: () => ({
-    Menu: false
+    Menu: false,
+    showKeyboardShortcuts: false
   }),
 
   methods: {
@@ -124,6 +132,9 @@ export default {
         await this.$apolloHelpers.onLogout()
         this.$router.push('/')
       } catch (error) {}
+    },
+    fnShowKeyboardShortCuts() {
+      this.showKeyboardShortcuts = !this.showKeyboardShortcuts
     }
   }
 }

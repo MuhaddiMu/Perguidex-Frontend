@@ -11,6 +11,7 @@
 <script>
 import TheHeader from '@/components/AuthenticatedComponents/Header/TheHeader'
 export default {
+  name: 'AuthedLayout',
   middleware: 'authenticated',
   components: {
     TheHeader
