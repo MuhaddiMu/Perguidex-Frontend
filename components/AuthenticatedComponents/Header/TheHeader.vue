@@ -12,7 +12,7 @@
           <v-list-item
             v-for="SubItem in Items"
             :key="SubItem.Title"
-            :to="SubItem.Route"
+            :to="'/app/' + SubItem.Route"
             link
             nuxt
           >

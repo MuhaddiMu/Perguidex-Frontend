@@ -494,7 +494,7 @@
               </div>
               <v-btn
                 nuxt
-                to="Signup"
+                to="signup"
                 class="red mt-5 white--text font-weight-bold"
                 text
                 x-large

@@ -21,7 +21,7 @@
         <div
           class="font-weight-regular mt-2 text-left grey--text text--darken-3"
         >
-          Already have an account? <nuxt-link to="Login">Log in here</nuxt-link>
+          Already have an account? <nuxt-link to="login">Log in here</nuxt-link>
         </div>
         <div class="font-weight-regular text-left grey--text text--darken-3">
           Don’t have an account?

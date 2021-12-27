@@ -1,0 +1,5 @@
+mutation UpdateProfile($name: String!, $timezone: String!) {
+  UpdateProfile(input: { name: $name, timezone: $timezone }) {
+    status
+  }
+}

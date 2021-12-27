@@ -22,7 +22,7 @@
 
       <v-card>
         <v-list dense nav>
-          <v-list-item nuxt link to="">
+          <v-list-item nuxt link to="/app/settings">
             <v-list-item-icon><v-icon left>mdi-cogs</v-icon></v-list-item-icon>
             <v-list-item-title class="ml-n5 font-weight-regular"
               >Settings</v-list-item-title

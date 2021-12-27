@@ -24,7 +24,7 @@
             </div>
             <v-btn
               nuxt
-              to="Signup"
+              to="signup"
               class="white mt-5 red--text font-weight-bold"
               x-large
             >

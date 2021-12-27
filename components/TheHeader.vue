@@ -12,7 +12,7 @@
         <v-spacer />
         <v-btn
           nuxt
-          to="Login"
+          to="login"
           text
           class="font-weight-regular d-none d-sm-flex white--text"
         >
@@ -21,7 +21,7 @@
 
         <v-btn
           nuxt
-          to="Signup"
+          to="signup"
           depressed
           class="white red--text font-weight-bold"
         >

@@ -80,7 +80,7 @@
         <div
           class="font-weight-regular mt-2 text-left grey--text text--darken-3"
         >
-          Already have an account? <nuxt-link to="Login">Log in here</nuxt-link>
+          Already have an account? <nuxt-link to="login">Log in here</nuxt-link>
         </div>
       </v-card-text>
     </v-card>
@@ -139,7 +139,7 @@ export default {
             .then(({ data }) => data && data.register)
           this.loading = false
           await this.$apolloHelpers.onLogin(res.token)
-          this.$router.push('app/Tasks')
+          this.$router.push('app/tasks')
         } catch (error) {
           error.message = error.message.replace('GraphQL error: ', '')
           this.loading = false

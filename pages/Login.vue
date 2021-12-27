@@ -60,7 +60,7 @@
               text--darken-3
             "
           >
-            <nuxt-link to="Forgot">Forgot Password?</nuxt-link>
+            <nuxt-link to="forgot">Forgot Password?</nuxt-link>
           </div>
           <v-btn type="submit" tile text class="red my-3" dark block
             >Log Me In</v-btn
@@ -68,7 +68,7 @@
         </v-form>
         <div class="font-weight-regular text-left grey--text text--darken-3">
           Don’t have an account?
-          <nuxt-link to="Signup">Sign up here</nuxt-link>
+          <nuxt-link to="signup">Sign up here</nuxt-link>
         </div>
       </v-card-text>
     </v-card>
@@ -126,7 +126,7 @@ export default {
             .then(({ data }) => data && data.login)
           this.loading = false
           await this.$apolloHelpers.onLogin(res.token)
-          this.$router.push('app/Tasks')
+          this.$router.push('app/tasks')
 
           // Get User Data
           await this.$apollo
