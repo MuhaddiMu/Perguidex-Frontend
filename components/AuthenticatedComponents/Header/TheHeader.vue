@@ -48,7 +48,7 @@
 
         <v-spacer></v-spacer>
         <v-slide-x-reverse-transition>
-          <Search v-if="ToggleSearch" class="d-none d-sm-flex" />
+          <!-- <Search v-if="ToggleSearch" class="d-none d-sm-flex" /> -->
         </v-slide-x-reverse-transition>
         <v-btn
           @click.stop="ToggleSearch = !ToggleSearch"
@@ -67,12 +67,12 @@
   </div>
 </template>
 <script>
-import Search from '@/components/AuthenticatedComponents/Header/Search'
+// import Search from '@/components/AuthenticatedComponents/Header/Search'
 import Notifications from '@/components/AuthenticatedComponents/Header/Notifications'
 import SettingsMenu from '@/components/AuthenticatedComponents/Header/SettingsMenu'
 export default {
   components: {
-    Search,
+    // Search,
     SettingsMenu,
     Notifications
   },

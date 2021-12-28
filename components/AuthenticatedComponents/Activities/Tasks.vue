@@ -282,6 +282,10 @@ export default {
     this.$root.$on('SyncTasks', () => {
       this.Sync()
     })
+
+    this.$root.$on('Print', () => {
+      this.PrintTasks()
+    })
   },
   methods: {
     moment() {

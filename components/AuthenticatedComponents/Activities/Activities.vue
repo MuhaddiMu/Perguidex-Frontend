@@ -16,7 +16,12 @@
           <v-list dense outlined>
             <v-list-item-group>
               <v-list-item v-for="Type in Activities" :key="Type.type">
-                <v-list-item-content @click="selectedActivity = Type.type">
+                <v-list-item-content
+                  @click="
+                    selectedActivity = Type.type
+                    SearchModel = ''
+                  "
+                >
                   <v-list-item-title v-text="Type.type"></v-list-item-title>
                 </v-list-item-content>
               </v-list-item> </v-list-item-group
@@ -33,7 +38,6 @@
       <v-container>
         <v-autocomplete
           v-model="SearchModel"
-          :loading="SearchLoading"
           :items="SearchItems"
           :search-input.sync="Search"
           color="grey"
@@ -126,7 +130,6 @@
       <v-container>
         <v-autocomplete
           v-model="SearchModel"
-          :loading="SearchLoading"
           :items="SearchItems"
           :search-input.sync="Search"
           color="grey"
@@ -264,6 +267,11 @@ export default {
       this.$apollo.queries.GetAllTasks.refetch()
       this.$apollo.queries.GetAllReviews.refetch()
     })
+    this.$root.$on('Print', () => {
+      setTimeout(() => {
+        window.print()
+      }, 500)
+    })
   },
   methods: {
     moment(date) {
@@ -285,14 +293,17 @@ export default {
       }
     },
     querySelections(v) {
-      this.SearchLoading = true
-      const States = ['Alaska', 'New York', 'Arizona', 'California', 'Colorado']
-      setTimeout(() => {
-        this.SearchItems = States.filter((e) => {
-          return (e || '').toLowerCase().includes((v || '').toLowerCase()) > -1
-        })
-        this.SearchLoading = false
-      }, 500)
+      const Items = []
+
+      if (this.selectedActivity === 'All Tasks') {
+        this.GetAllTasks.filter((val) => Items.push(val.task))
+      } else if (this.selectedActivity === 'Rated Days') {
+        this.GetAllReviews.filter((val) => Items.push(val.reason))
+      }
+
+      this.SearchItems = Items.filter((e) => {
+        return (e || '').toLowerCase().includes((v || '').toLowerCase()) > -1
+      })
     },
 
     // Load More tasks

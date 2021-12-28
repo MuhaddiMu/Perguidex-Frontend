@@ -36,15 +36,15 @@
               >Sync</v-list-item-title
             >
           </v-list-item>
-          <v-list-item nuxt link to="">
+          <!-- <v-list-item nuxt link to="">
             <v-list-item-icon
               ><v-icon left>mdi-history</v-icon></v-list-item-icon
             >
             <v-list-item-title class="ml-n5 font-weight-regular"
               >View Activity Log</v-list-item-title
             >
-          </v-list-item>
-          <v-list-item nuxt link to="">
+          </v-list-item> -->
+          <v-list-item @click="Print()" nuxt link to="">
             <v-list-item-icon
               ><v-icon left>mdi-printer</v-icon></v-list-item-icon
             >
@@ -139,6 +139,10 @@ export default {
     },
     SyncEverything() {
       this.$root.$emit('SyncTasks')
+    },
+    Print() {
+      this.Menu = false
+      this.$root.$emit('Print')
     }
   }
 }

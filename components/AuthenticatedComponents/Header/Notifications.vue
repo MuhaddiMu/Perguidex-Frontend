@@ -85,15 +85,9 @@ export default {
     Notifications: [
       {
         Action: '15 min',
-        Title: 'Call notification',
+        Title: 'Welcome to Perguidex',
         Subtitle: "I'll be in your neighborhood doing errands this weekend.",
         View: false
-      },
-      {
-        Action: '2 hr',
-        Title: 'Another productive notification',
-        Subtitle: "Wish I could come, but I'm out of town this weekend.",
-        View: true
       }
     ]
   })
