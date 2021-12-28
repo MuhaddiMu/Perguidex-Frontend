@@ -59,6 +59,7 @@
 <script>
 import FeaturesIndex from '@/components/FeaturesIndex'
 export default {
+  layout: 'Homepage',
   components: {
     FeaturesIndex
   },

@@ -1,4 +1,3 @@
-// Landing Pages
 <template>
   <section>
     <v-app light>
