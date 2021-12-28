@@ -4,7 +4,6 @@ import { onError } from '@apollo/client/link/error'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 export default function({ $config: { API } }) {
-  console.log(API)
   const httpEndpoint = API
 
   const link = onError(({ graphQLErrors }) => {

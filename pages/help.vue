@@ -14,6 +14,11 @@ import TheBlogPost from '@/components/TheBlogPost.vue'
 export default {
   components: { TheBlogPost },
   layout: 'Homepage',
+  head() {
+    return {
+      title: 'Support'
+    }
+  },
 
   data() {
     return {

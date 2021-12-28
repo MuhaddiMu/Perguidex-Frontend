@@ -7,6 +7,11 @@
 <script>
 import TheBlogPost from '@/components/TheBlogPost.vue'
 export default {
+  head() {
+    return {
+      title: 'Terms and Conditions'
+    }
+  },
   components: { TheBlogPost },
   layout: 'Homepage',
 
