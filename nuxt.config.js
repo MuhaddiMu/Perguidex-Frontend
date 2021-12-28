@@ -1,6 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  publicRuntimeConfig: {
+    API: process.env.API
+  },
+  privateRuntimeConfig: {
+    API: process.env.API
+  },
+
   srcDir: __dirname,
   buildDir: '.nuxt',
   /*
