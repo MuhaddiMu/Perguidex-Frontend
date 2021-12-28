@@ -94,7 +94,7 @@
                 class="font-weight-regular grey--text text--darken-1"
               >
                 <small>
-                  Version 1.
+                  Beta Version 1.0.0
                   <!-- <nuxt-link class="grey--text text--darken-3 Link" to="/"
                     >View changelog</nuxt-link
                   > -->
