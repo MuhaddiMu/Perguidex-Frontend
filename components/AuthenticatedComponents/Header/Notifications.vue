@@ -2,16 +2,12 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="500">
       <v-card>
-        <v-card-title class="">
-          Welcome to Perguidex ✨
+        <v-card-title>
+          {{ Notifications[notificationDialog].Title }}
         </v-card-title>
 
         <v-card-text>
-          We are so happy you're here. Perguidex is founded for people like you
-          to reflect upon their lives and manage their life like never before.
-          We are in the beta version and we will be releasing new features every
-          week. If you find any issues with the app, we encourage you to mail us
-          at ask@perguidex.io and become the early adopters of the Perguidex.
+          {{ Notifications[notificationDialog].Subtitle }}
         </v-card-text>
 
         <v-divider></v-divider>
@@ -47,7 +43,14 @@
             ><span class="Link">Mark all as read</span></v-subheader
           >
           <template v-for="(Notification, index) in Notifications">
-            <v-list-item @click="dialog = true" :key="Notification.Title" link>
+            <v-list-item
+              @click="
+                dialog = true
+                notificationDialog = index
+              "
+              :key="Notification.Title"
+              link
+            >
               <v-list-item-avatar>
                 <v-icon class="red lighten-1 white--text">mdi-bell</v-icon>
               </v-list-item-avatar>
@@ -104,6 +107,7 @@
 <script>
 export default {
   data: () => ({
+    notificationDialog: 0,
     Menu: false,
     dialog: false,
     Notifications: [
@@ -111,7 +115,7 @@ export default {
         Action: '16 min',
         Title: 'Welcome to Perguidex ✨',
         Subtitle:
-          "We are so happy you're here. Perguidex is founded for people like you to reflect upon their lives and manage their life like never before. We are in the beta version and we will be releasing new features every week. If you find any issues with the app, we encourage you to mail us at ask@perguidex.io and become the early adopters of the Perguidex.",
+          "We are so happy you're here. Perguidex is founded for people like you to reflect upon their lives and manage their life like never before. We are in the beta version and we will be releasing new features every week. If you find any issues with the app, we encourage you to mail us at ask@perguidex.io and become the early adopters of the Perguidex. ",
         View: false
       }
     ]
