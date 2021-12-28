@@ -15,7 +15,7 @@
         }}</v-alert></v-card-text
       >
       <v-card-text>
-        <v-btn tile block depressed class="font-weight-regular"
+        <v-btn disabled tile block depressed class="font-weight-regular"
           ><img
             width="16px"
             class="mr-2"
@@ -23,7 +23,7 @@
           />
           Sign up with Facebook Account</v-btn
         >
-        <v-btn tile class="mt-2 font-weight-regular" block depressed
+        <v-btn disabled tile class="mt-2 font-weight-regular" block depressed
           ><img width="16px" class="mr-2" src="~/assets/images/GoogleIco.png" />
           Sign up with Google Account</v-btn
         >

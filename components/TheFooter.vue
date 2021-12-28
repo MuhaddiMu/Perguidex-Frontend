@@ -63,13 +63,25 @@
             ></v-select>
           </div>
           <div class="mb-5 text-center">
-            <v-btn icon fab class="grey lighten-2">
+            <v-btn
+              href="https://facebook.com/perguidex"
+              icon
+              fab
+              class="grey lighten-2"
+            >
               <v-icon class="black--text">mdi-facebook</v-icon>
             </v-btn>
             <v-btn icon fab class="grey lighten-2">
-              <v-icon class="black--text">mdi-twitter</v-icon>
+              <v-icon href="https://twitter.com/perguidex/" class="black--text"
+                >mdi-twitter</v-icon
+              >
             </v-btn>
-            <v-btn icon fab class="grey lighten-2">
+            <v-btn
+              href="https://instagram.com/perguidex/"
+              icon
+              fab
+              class="grey lighten-2"
+            >
               <v-icon class="black--text">mdi-instagram</v-icon>
             </v-btn>
           </div>
