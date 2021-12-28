@@ -1,11 +1,6 @@
 <template>
   <v-container>
-    <the-blog-post
-      :featuredImage="featuredImage"
-      :body="body"
-      :date="date"
-      :title="title"
-    />
+    <the-blog-post :body="body" :title="title" />
   </v-container>
 </template>
 
