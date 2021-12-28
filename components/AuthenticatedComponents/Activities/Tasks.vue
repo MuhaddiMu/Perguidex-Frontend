@@ -278,6 +278,10 @@ export default {
       this.center_date = 'center_date-no-print'
       this.printDoc()
     }
+
+    this.$root.$on('SyncTasks', () => {
+      this.Sync()
+    })
   },
   methods: {
     moment() {

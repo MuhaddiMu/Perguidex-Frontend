@@ -15,10 +15,7 @@
       <div :class="[center_date, 'text-center', 'font-weight-bold']">
         Next 7 Days
       </div>
-      <div
-        @click="fetchAllTasks()"
-        :class="['W20', 'text-right', noPrintClass]"
-      >
+      <div @click="Sync()" :class="['W20', 'text-right', noPrintClass]">
         <v-icon class="Cursor" color="white"
           ><template v-if="showSyncLoader">mdi-refresh mdi-spin</template
           ><template v-else> mdi-refresh </template></v-icon
@@ -228,7 +225,7 @@ export default {
   }),
 
   created() {
-    this.fetchAllTasks()
+    this.Sync()
   },
   mounted() {
     if (this.$route.path.toLowerCase() === '/app/next7days/print') {
@@ -236,13 +233,18 @@ export default {
       this.center_date = 'center_date-no-print'
       this.printDoc()
     }
+
+    this.$root.$on('SyncTasks', () => {
+      this.Sync()
+    })
   },
+
   methods: {
     moment() {
       return moment()
     },
 
-    async fetchAllTasks() {
+    async Sync() {
       try {
         this.showSyncLoader = true
         const self = this

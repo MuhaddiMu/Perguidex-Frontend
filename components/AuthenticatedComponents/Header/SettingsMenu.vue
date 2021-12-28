@@ -30,7 +30,7 @@
           </v-list-item>
           <v-divider class="pt-1"></v-divider>
 
-          <v-list-item nuxt link to="">
+          <v-list-item @click="SyncEverything()" nuxt link to="">
             <v-list-item-icon><v-icon left>mdi-sync</v-icon></v-list-item-icon>
             <v-list-item-title class="ml-n5 font-weight-regular"
               >Sync</v-list-item-title
@@ -54,7 +54,7 @@
           </v-list-item>
 
           <v-divider class="pt-1"></v-divider>
-          <v-list-item nuxt link to="">
+          <v-list-item nuxt link to="/help">
             <v-list-item-icon
               ><v-icon left>mdi-help-circle-outline</v-icon></v-list-item-icon
             >
@@ -70,14 +70,14 @@
               >Keyboard Shortcuts</v-list-item-title
             >
           </v-list-item>
-          <v-list-item nuxt link to="">
+          <!-- <v-list-item nuxt link to="">
             <v-list-item-icon
               ><v-icon left>mdi-lightbulb-on-outline</v-icon></v-list-item-icon
             >
             <v-list-item-title class="ml-n5 font-weight-regular"
               >What's New</v-list-item-title
             >
-          </v-list-item>
+          </v-list-item> -->
           <v-divider class="pt-1"></v-divider>
           <v-list-item @click="LogOut()" nuxt link to="">
             <v-list-item-icon
@@ -95,10 +95,11 @@
               >
                 <small>
                   Version 1.
-                  <nuxt-link class="grey--text text--darken-3 Link" to="/"
+                  <!-- <nuxt-link class="grey--text text--darken-3 Link" to="/"
                     >View changelog</nuxt-link
-                  ><br />
-                  Last successful sync: 25 minutes ago</small
+                  > -->
+                  <br />
+                  Last successful sync: 6 seconds ago</small
                 >
               </v-list-item-subtitle>
             </v-list-item-content>
@@ -135,6 +136,9 @@ export default {
     },
     fnShowKeyboardShortCuts() {
       this.showKeyboardShortcuts = !this.showKeyboardShortcuts
+    },
+    SyncEverything() {
+      this.$root.$emit('SyncTasks')
     }
   }
 }

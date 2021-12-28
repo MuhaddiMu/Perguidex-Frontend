@@ -259,6 +259,12 @@ export default {
       variables: { page: 1 }
     }
   },
+  mounted() {
+    this.$root.$on('SyncTasks', () => {
+      this.$apollo.queries.GetAllTasks.refetch()
+      this.$apollo.queries.GetAllReviews.refetch()
+    })
+  },
   methods: {
     moment(date) {
       return moment(date)
