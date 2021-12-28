@@ -12,6 +12,7 @@ export default {
 
   data() {
     return {
+      title: 'About Perguidex',
       featuredImage: '/images/blogs/about/feature.png',
       body: `
           <p>

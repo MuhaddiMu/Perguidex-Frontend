@@ -70,8 +70,8 @@
             "
           >
             By creating an account, you agree to the Perguidex
-            <a href="#" target="_blank">Terms of Service</a> and
-            <a href="#" target="_blank">Privacy Policy</a>.
+            <a href="/terms" target="_blank">Terms of Service</a> and
+            <a href="/privacy" target="_blank">Privacy Policy</a>.
           </div>
           <v-btn type="submit" tile text class="red mt-3" dark block
             >Create My Account</v-btn

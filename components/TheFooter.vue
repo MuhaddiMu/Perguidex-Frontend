@@ -10,17 +10,17 @@
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Product</div>
           <div class="my-2 grey--text text--darken-2 font-weight-regular">
-            <nuxt-link to="signup">Get Started</nuxt-link>
+            <nuxt-link to="/signup">Get Started</nuxt-link>
           </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Support</div>
           <div class="my-2 grey--text text--darken-2 font-weight-regular">
-            <a href="#">Help Center</a>
+            <nuxt-link to="help">Help Center</nuxt-link>
           </div>
-          <div class="my-2 grey--text text--darken-2 font-weight-regular">
+          <!-- <div class="my-2 grey--text text--darken-2 font-weight-regular">
             <a href="#">FAQs</a>
-          </div>
+          </div> -->
           <div class="my-2 grey--text text--darken-2 font-weight-regular">
             <a href="#">Translations</a>
           </div>
@@ -28,21 +28,21 @@
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">About</div>
           <div class="my-2 grey--text text--darken-2 font-weight-regular">
-            <a href="#">About Us</a>
+            <nuxt-link to="/about">About Us</nuxt-link>
           </div>
           <div class="my-2 grey--text text--darken-2 font-weight-regular">
-            <a href="#">Contact Us</a>
+            <nuxt-link to="/help">Contact Us</nuxt-link>
           </div>
         </v-col>
         <v-col cols="12" md="2" sm="4">
           <div class="title font-weight-bold mb-5">Legal</div>
           <div class="my-2 grey--text text--darken-2 font-weight-regular">
-            <a href="#">Terms</a>
+            <nuxt-link to="terms">Terms</nuxt-link>
           </div>
           <div class="my-2 grey--text text--darken-2 font-weight-regular">
-            <a href="#">Privacy</a>
+            <nuxt-link to="/privacy">Privacy</nuxt-link>
             <div class="my-2 grey--text text--darken-2 font-weight-regular">
-              <a href="#">Security</a>
+              <nuxt-link to="/security">Security</nuxt-link>
             </div>
           </div>
         </v-col>
