@@ -1,37 +1,165 @@
 <template>
-  <v-form ref="FirstForm" @submit.prevent="UpdateAccount()">
-    <v-row v-if="User">
-      <v-col cols="6">
-        <v-text-field
-          v-model="User.name"
-          :rules="nameValidation"
-          :min="0"
-          outlined
-          label="Full Name"
-          prepend-inner-icon="mdi-account"
-          dense
+  <div>
+    <v-form ref="FirstForm" @submit.prevent="UpdateAccount()" class="mb-5">
+      <v-row v-if="User" dense>
+        <v-col cols="6">
+          <v-text-field
+            v-model="User.name"
+            :rules="nameValidation"
+            :min="0"
+            outlined
+            label="Full Name"
+            prepend-inner-icon="mdi-account"
+            dense
+          >
+          </v-text-field>
+        </v-col>
+        <v-col cols="6"> </v-col>
+        <v-col cols="6">
+          <v-select
+            v-model="User.timezone"
+            :items="timezones"
+            auto
+            menu-props="auto"
+            label="Timezone"
+            prepend-icon="mdi-map-clock"
+          ></v-select>
+        </v-col>
+        <v-col cols="12"
+          ><v-btn type="submit" tile text class="red" dark
+            >Update Account</v-btn
+          ></v-col
         >
-        </v-text-field>
-      </v-col>
-      <v-col cols="6"> </v-col>
-      <v-col cols="6">
-        <v-select
-          v-model="User.timezone"
-          :items="timezones"
-          auto
-          menu-props="auto"
-          label="Timezone"
-          prepend-icon="mdi-map-clock"
-        ></v-select>
-      </v-col>
-      <v-col cols="6"> </v-col>
-      <v-col cols="6">
-        <v-btn type="submit" tile text class="red mt-3" dark
-          >Update Account</v-btn
-        >
-      </v-col>
-    </v-row>
-  </v-form>
+      </v-row>
+    </v-form>
+
+    <v-divider class="mb-5"></v-divider>
+    <v-form ref="EmailUpdateForm" @submit.prevent="UpdateEmail()" class="mb-5">
+      <v-row v-if="User" dense>
+        <v-col cols="12">
+          <span class="font-weight-bold"> Email <br /></span>
+          <span>{{ User.email }}</span>
+        </v-col>
+        <v-col cols="12">
+          <v-btn
+            v-if="showEmailChangeForm == false"
+            @click="showEmailChangeForm = !showEmailChangeForm"
+            tile
+            text
+            class="grey"
+            small
+            dark
+            >Chang Email</v-btn
+          >
+        </v-col>
+        <template v-if="showEmailChangeForm">
+          <v-col cols="6">
+            <v-text-field
+              v-model="userNewEmailAddress"
+              :min="0"
+              :rules="emailValidation"
+              outlined
+              label="New Email"
+              prepend-inner-icon="mdi-email"
+              dense
+            ></v-text-field>
+          </v-col>
+          <v-col cols="6"></v-col>
+          <v-col cols="6">
+            <v-text-field
+              v-model="userCurrentPasswordEmail"
+              :append-icon="
+                userCurrentPasswordToggleEmail ? 'mdi-eye' : 'mdi-eye-off'
+              "
+              :rules="passwordValidation"
+              :type="userCurrentPasswordToggleEmail ? 'text' : 'password'"
+              :min="8"
+              @click:append="
+                userCurrentPasswordToggleEmail = !userCurrentPasswordToggleEmail
+              "
+              counter
+              outlined
+              label="Current Password"
+              dense
+              prepend-inner-icon="mdi-lock"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12"
+            ><v-btn type="submit" tile text class="red" dark
+              >Update Email</v-btn
+            ></v-col
+          >
+        </template>
+      </v-row>
+    </v-form>
+
+    <v-divider class="mb-5"></v-divider>
+    <v-form
+      ref="PasswordUpdateForm"
+      @submit.prevent="UpdatePassword()"
+      class="mb-5"
+    >
+      <v-row v-if="User" dense>
+        <v-col class="font-weight-bold" cols="12">
+          Password
+        </v-col>
+        <v-col cols="12">
+          <v-btn
+            v-if="showPasswordChangeForm == false"
+            @click="showPasswordChangeForm = !showPasswordChangeForm"
+            tile
+            text
+            class="grey "
+            small
+            dark
+            >Chang Password</v-btn
+          >
+        </v-col>
+        <template v-if="showPasswordChangeForm">
+          <v-col cols="6">
+            <v-text-field
+              v-model="userCurrentPassword"
+              :append-icon="
+                userCurrentPasswordToggle ? 'mdi-eye' : 'mdi-eye-off'
+              "
+              :rules="passwordValidation"
+              :type="userCurrentPasswordToggle ? 'text' : 'password'"
+              :min="8"
+              @click:append="
+                userCurrentPasswordToggle = !userCurrentPasswordToggle
+              "
+              counter
+              outlined
+              label="Current Password"
+              dense
+              prepend-inner-icon="mdi-lock"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="6"></v-col>
+          <v-col cols="6">
+            <v-text-field
+              v-model="userNewPassword"
+              :append-icon="userNewPasswordToggle ? 'mdi-eye' : 'mdi-eye-off'"
+              :rules="passwordValidation"
+              :type="userNewPasswordToggle ? 'text' : 'password'"
+              :min="8"
+              @click:append="userNewPasswordToggle = !userNewPasswordToggle"
+              counter
+              outlined
+              label="New Password"
+              dense
+              prepend-inner-icon="mdi-lock"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12"
+            ><v-btn type="submit" tile text class="red" dark
+              >Update Password</v-btn
+            ></v-col
+          >
+        </template>
+      </v-row>
+    </v-form>
+  </div>
 </template>
 
 <script>
@@ -48,7 +176,34 @@ export default {
   },
   data() {
     return {
+      // Email
+      userNewEmailAddress: null,
+      showEmailChangeForm: false,
+
+      userCurrentPasswordEmail: null,
+      userCurrentPasswordToggleEmail: false,
+
+      // Password
+      userCurrentPassword: null,
+      userCurrentPasswordToggle: false,
+      showPasswordChangeForm: false,
+
+      // New Password
+      userNewPassword: null,
+      userNewPasswordToggle: false,
+
+      // Timezone
+
+      passwordValidation: [(v) => (v && v.length >= 8) || 'Min 8 characters'],
       nameValidation: [(v) => !!v || 'Name is required'],
+      /* prettier-ignore */
+      /* eslint-disable no-useless-escape */
+      emailValidation: [
+        (v) =>
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+            v
+          ) || 'Email must be valid'
+      ],
       timezones: [
         'Africa/Abidjan',
         'Africa/Accra',
@@ -491,6 +646,41 @@ export default {
               }
             })
             .then(({ data }) => data && data.UpdateProfile)
+        } catch (error) {}
+      }
+    },
+    async UpdateEmail() {
+      if (this.$refs.EmailUpdateForm.validate()) {
+        try {
+          await this.$apollo
+            .mutate({
+              mutation: UpdateProfile,
+              variables: {
+                email: this.userNewEmailAddress,
+                currentPassword: this.userCurrentPasswordEmail
+              }
+            })
+            .then(({ data }) => data && data.UpdateProfile)
+          this.User.email = this.userNewEmailAddress
+          this.$refs.EmailUpdateForm.reset()
+          this.showEmailChangeForm = await !this.showEmailChangeForm
+        } catch (error) {}
+      }
+    },
+    async UpdatePassword() {
+      if (this.$refs.PasswordUpdateForm.validate()) {
+        try {
+          await this.$apollo
+            .mutate({
+              mutation: UpdateProfile,
+              variables: {
+                currentPassword: this.userCurrentPassword,
+                newPassword: this.userNewPassword
+              }
+            })
+            .then(({ data }) => data && data.UpdateProfile)
+          this.$refs.PasswordUpdateForm.reset()
+          this.showPasswordChangeForm = await !this.showPasswordChangeForm
         } catch (error) {}
       }
     }

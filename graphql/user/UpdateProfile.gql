@@ -1,5 +1,19 @@
-mutation UpdateProfile($name: String!, $timezone: String!) {
-  UpdateProfile(input: { name: $name, timezone: $timezone }) {
+mutation UpdateProfile(
+  $name: String
+  $timezone: String
+  $email: String
+  $currentPassword: String
+  $newPassword: String
+) {
+  UpdateProfile(
+    input: {
+      name: $name
+      timezone: $timezone
+      email: $email
+      currentPassword: $currentPassword
+      newPassword: $newPassword
+    }
+  ) {
     status
   }
 }
