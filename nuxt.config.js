@@ -8,6 +8,10 @@ export default {
     API: process.env.API
   },
 
+  googleAnalytics: {
+    id: 'G-5BQFKD02L8'
+  },
+
   srcDir: __dirname,
   buildDir: '.nuxt',
   /*
@@ -55,7 +59,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/google-analytics'
   ],
   /*
    ** Nuxt.js modules
