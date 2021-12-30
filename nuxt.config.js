@@ -8,10 +8,6 @@ export default {
     API: process.env.API
   },
 
-  googleAnalytics: {
-    id: 'G-5BQFKD02L8'
-  },
-
   srcDir: __dirname,
   buildDir: '.nuxt',
   /*
@@ -36,6 +32,12 @@ export default {
         href:
           'https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@300;400;500;600;700&display=swap'
       }
+    ],
+    script: [
+      {
+        src: 'https://cdn.splitbee.io/sb.js',
+        async: true
+      }
     ]
   },
   /*
@@ -59,8 +61,7 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/vuetify'
   ],
   /*
    ** Nuxt.js modules

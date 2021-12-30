@@ -15,7 +15,7 @@
         }}</v-alert></v-card-text
       >
       <v-card-text>
-        <v-btn disabled tile block depressed class="font-weight-regular"
+        <!-- <v-btn disabled tile block depressed class="font-weight-regular"
           ><img
             width="16px"
             class="mr-2"
@@ -27,7 +27,7 @@
           ><img width="16px" class="mr-2" src="~/assets/images/GoogleIco.png" />
           Sign up with Google Account</v-btn
         >
-        <div class="Half-Seperator caption my-3">OR</div>
+        <div class="Half-Seperator caption my-3">OR</div> -->
         <v-form ref="Form" v-model="formValid" @submit.prevent="clickSignUp()">
           <v-text-field
             v-model="userData.fullname"
