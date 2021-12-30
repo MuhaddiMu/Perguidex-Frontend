@@ -24,6 +24,7 @@
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/sentry": "^5.1.6",
     "aos": "^2.3.4",
     "graphql-tag": "^2.12.6",
     "moment": "^2.29.1",
