@@ -67,20 +67,22 @@
               href="https://facebook.com/perguidex"
               icon
               fab
-              class="grey lighten-2"
+              class="grey lighten-2 social-link"
             >
               <v-icon class="black--text">mdi-facebook</v-icon>
             </v-btn>
-            <v-btn icon fab class="grey lighten-2">
-              <v-icon href="https://twitter.com/perguidex/" class="black--text"
+            <!-- <v-btn icon fab class="grey lighten-2">
+              <v-icon
+                href="https://twitter.com/perguidex/"
+                class="grey lighten-2"
                 >mdi-twitter</v-icon
               >
-            </v-btn>
+            </v-btn> -->
             <v-btn
               href="https://instagram.com/perguidex/"
               icon
               fab
-              class="grey lighten-2"
+              class="grey lighten-2 social-link"
             >
               <v-icon class="black--text">mdi-instagram</v-icon>
             </v-btn>
@@ -113,5 +115,9 @@ a:focus,
 a:active {
   color: #424242 !important;
   text-decoration: underline;
+}
+
+.social-link {
+  text-decoration: none !important;
 }
 </style>
