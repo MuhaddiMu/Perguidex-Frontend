@@ -44,7 +44,12 @@
         class="white--text"
       />
       <v-container class="px-12" d-flex>
-        <v-toolbar-title v-text="'Perguidex'" class="pt-1 d-none d-sm-flex" />
+        <nuxt-link to="/app/tasks">
+          <v-toolbar-title
+            v-text="'Perguidex'"
+            class="font-weight-bold pt-1 white--text d-none d-sm-flex"
+          />
+        </nuxt-link>
 
         <v-spacer></v-spacer>
         <v-slide-x-reverse-transition>

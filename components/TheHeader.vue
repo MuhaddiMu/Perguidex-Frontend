@@ -8,7 +8,19 @@
   >
     <v-container class="mx-auto py-0">
       <v-row align="center">
-        <v-img class="mx-2" src="logo.svg" max-width="155" height="40"></v-img>
+        <nuxt-link to="/">
+          <v-img
+            class="mx-2"
+            src="logo.svg"
+            max-height="50"
+            max-width="50"
+          ></v-img>
+        </nuxt-link>
+        <nuxt-link to="/">
+          <v-toolbar-title class="white--text font-weight-bold ml-n1">
+            perguidex
+          </v-toolbar-title>
+        </nuxt-link>
         <v-spacer />
         <v-btn
           nuxt
@@ -42,8 +54,4 @@ export default {
 }
 </script>
 
-<style scoped>
-a {
-  text-decoration: none;
-}
-</style>
+<style scoped></style>
