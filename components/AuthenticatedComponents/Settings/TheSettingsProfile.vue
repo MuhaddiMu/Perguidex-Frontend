@@ -2,7 +2,7 @@
   <div>
     <v-form ref="FirstForm" @submit.prevent="UpdateAccount()" class="mb-5">
       <v-row v-if="User" dense>
-        <v-col cols="6">
+        <v-col cols="6" class="col-12 col-md-6">
           <v-text-field
             v-model="User.name"
             :rules="nameValidation"
@@ -15,7 +15,7 @@
           </v-text-field>
         </v-col>
         <v-col cols="6"> </v-col>
-        <v-col cols="6">
+        <v-col cols="6" class="col-12 col-md-6">
           <v-select
             v-model="User.timezone"
             :items="timezones"
@@ -53,7 +53,7 @@
           >
         </v-col>
         <template v-if="showEmailChangeForm">
-          <v-col cols="6">
+          <v-col cols="6" class="col-12 col-md-6">
             <v-text-field
               v-model="userNewEmailAddress"
               :min="0"
@@ -65,7 +65,7 @@
             ></v-text-field>
           </v-col>
           <v-col cols="6"></v-col>
-          <v-col cols="6">
+          <v-col cols="6" class="col-12 col-md-6">
             <v-text-field
               v-model="userCurrentPasswordEmail"
               :append-icon="
@@ -116,7 +116,7 @@
           >
         </v-col>
         <template v-if="showPasswordChangeForm">
-          <v-col cols="6">
+          <v-col cols="6" class="col-12 col-md-6">
             <v-text-field
               v-model="userCurrentPassword"
               :append-icon="
@@ -136,7 +136,7 @@
             ></v-text-field>
           </v-col>
           <v-col cols="6"></v-col>
-          <v-col cols="6">
+          <v-col cols="6" class="col-12 col-md-6">
             <v-text-field
               v-model="userNewPassword"
               :append-icon="userNewPasswordToggle ? 'mdi-eye' : 'mdi-eye-off'"

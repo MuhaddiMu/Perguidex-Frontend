@@ -6,7 +6,8 @@
           <v-list-item>
             <v-list-item-content>
               <v-list-item-title class="text-h6">
-                Account Settings
+                <span class="d-none d-md-flex">Account Settings</span>
+                <v-icon class="d-md-none">mdi mdi-cog</v-icon>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
