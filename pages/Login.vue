@@ -15,7 +15,7 @@
         }}</v-alert></v-card-text
       >
       <v-card-text>
-        <div class="g-signin2" data-onsuccess="onSignIn()"></div>
+        <!-- <div class="g-signin2" data-onsuccess="onSignIn()"></div> -->
 
         <!-- <v-btn disabled tile block depressed class="font-weight-regular"
           ><img
@@ -107,11 +107,7 @@ export default {
       LoginError: null
     }
   },
-  mounted() {
-    this.gapi = window.gapi
-    console.log(this.gapi)
-    this.GoogleAuthInit()
-  },
+
   head() {
     return {
       title: 'Log In',
@@ -168,12 +164,6 @@ export default {
           this.LoginError = error
         }
       }
-    },
-    GoogleAuthInit() {
-      this.gapi.load('auth2', function() {
-        /* Ready. Make a call to gapi.auth2.init or some other API */
-        console.log('OADED')
-      })
     }
   }
 }
