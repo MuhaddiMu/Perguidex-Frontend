@@ -15,6 +15,8 @@
         }}</v-alert></v-card-text
       >
       <v-card-text>
+        <div class="g-signin2" data-onsuccess="onSignIn()"></div>
+
         <!-- <v-btn disabled tile block depressed class="font-weight-regular"
           ><img
             width="16px"
@@ -80,11 +82,13 @@ import User from '@/graphql/user/getUserData.gql'
 
 export default {
   layout: 'Auth',
+
   data() {
     return {
       loading: false,
       formValid: true,
       TogglePassword: false,
+      gapi: null,
       /* prettier-ignore */
       /* eslint-disable no-useless-escape */
       emailValidation: [
@@ -103,9 +107,30 @@ export default {
       LoginError: null
     }
   },
+  mounted() {
+    this.gapi = window.gapi
+    console.log(this.gapi)
+    this.GoogleAuthInit()
+  },
   head() {
     return {
-      title: 'Log In'
+      title: 'Log In',
+      script: [
+        {
+          hid: 'loginGoogleAuthScript',
+          src: 'https://apis.google.com/js/platform.js?onload=init',
+          async: true,
+          defer: true
+        }
+      ],
+      meta: [
+        {
+          hid: 'loginGoogleAuthMeta',
+          content:
+            '883487214577-fnvik82i1ea2p6lai3h2qg62p6eusd04.apps.googleusercontent.com',
+          name: 'google-signin-client_id'
+        }
+      ]
     }
   },
   methods: {
@@ -143,6 +168,12 @@ export default {
           this.LoginError = error
         }
       }
+    },
+    GoogleAuthInit() {
+      this.gapi.load('auth2', function() {
+        /* Ready. Make a call to gapi.auth2.init or some other API */
+        console.log('OADED')
+      })
     }
   }
 }
