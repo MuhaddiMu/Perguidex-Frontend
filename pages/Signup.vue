@@ -9,10 +9,13 @@
       outlined
       class="mx-auto"
     >
-      <v-card-text
-        ><v-alert v-if="SignupError" text type="error">{{
-          SignupError
-        }}</v-alert></v-card-text
+      <v-card-title
+        primary-title
+        class="justify-center grey--text text--darken-3 font-weight-bold text-h4"
+        >Sign up</v-card-title
+      >
+      <v-card-text v-if="SignupError"
+        ><v-alert text type="error">{{ SignupError }}</v-alert></v-card-text
       >
       <v-card-text>
         <!-- <v-btn disabled tile block depressed class="font-weight-regular"
@@ -28,7 +31,12 @@
           Sign up with Google Account</v-btn
         >
         <div class="Half-Seperator caption my-3">OR</div> -->
-        <v-form ref="Form" v-model="formValid" @submit.prevent="clickSignUp()">
+        <v-form
+          ref="Form"
+          v-model="formValid"
+          @submit.prevent="clickSignUp()"
+          data-splitbee-event="Signup Form"
+        >
           <v-text-field
             v-model="userData.fullname"
             :min="0"

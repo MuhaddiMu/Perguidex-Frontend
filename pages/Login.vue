@@ -9,10 +9,13 @@
       outlined
       class="mx-auto"
     >
-      <v-card-text
-        ><v-alert v-if="LoginError" text type="error">{{
-          LoginError
-        }}</v-alert></v-card-text
+      <v-card-title
+        primary-title
+        class="justify-center grey--text text--darken-3 font-weight-bold text-h4"
+        >Login</v-card-title
+      >
+      <v-card-text v-if="LoginError"
+        ><v-alert text type="error">{{ LoginError }}</v-alert></v-card-text
       >
       <v-card-text>
         <!-- <div class="g-signin2" data-onsuccess="onSignIn()"></div> -->
@@ -30,7 +33,12 @@
           Log In with Google Account</v-btn
         >
         <div class="Half-Seperator caption my-3">OR</div> -->
-        <v-form ref="Form" v-model="formValid" @submit.prevent="clickLogIn()">
+        <v-form
+          ref="Form"
+          v-model="formValid"
+          @submit.prevent="clickLogIn()"
+          data-splitbee-event="Login Form"
+        >
           <v-text-field
             v-model="userData.email"
             :min="0"

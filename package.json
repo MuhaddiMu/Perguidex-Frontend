@@ -26,6 +26,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/sentry": "^5.1.6",
     "aos": "^2.3.4",
+    "cookie-universal-nuxt": "^2.1.5",
     "graphql-tag": "^2.12.6",
     "moment": "^2.29.1",
     "nuxt": "^2.15.7",

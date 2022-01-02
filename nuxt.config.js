@@ -80,7 +80,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
-    '@nuxtjs/apollo'
+    '@nuxtjs/apollo',
+    'cookie-universal-nuxt'
   ],
   /*
    ** Axios module configuration

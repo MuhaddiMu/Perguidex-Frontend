@@ -3,12 +3,22 @@
 import { onError } from '@apollo/client/link/error'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
-export default function({ $config: { API } }) {
-  const httpEndpoint = API
+export default function(context) {
+  const httpEndpoint = context.$config.API
 
   const link = onError(({ graphQLErrors }) => {
     graphQLErrors.forEach((err) => {
       const newErrors = []
+
+      // Logout
+      if (process.client) {
+        if (err['message'] === 'Unauthenticated.') {
+          // Delete all Cookies
+          context.app.$cookies.removeAll()
+          localStorage.clear()
+          context.redirect('/')
+        }
+      }
 
       const validationErrors = err['extensions']['validation']
       const validationType = err['path'][0]

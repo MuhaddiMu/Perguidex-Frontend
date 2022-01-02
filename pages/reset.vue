@@ -3,11 +3,20 @@
     <img width="60px" src="icon.png" class="mb-5" />
     <v-card :loading="loading" tile width="480px" outlined class="mx-auto">
       <v-card-text>
+        <v-card-title
+          primary-title
+          class="justify-center grey--text text--darken-3 font-weight-bold text-h4"
+          >Reset Password</v-card-title
+        >
         <div class="mb-3 grey--text text--darken-3 font-weight-regular">
           To reset your password, please enter the new password
         </div>
 
-        <v-form ref="Form" @submit.prevent="updatePassword()">
+        <v-form
+          ref="Form"
+          @submit.prevent="updatePassword()"
+          data-splitbee-event="Reset Form"
+        >
           <v-text-field
             :min="0"
             v-model="Email"
@@ -54,8 +63,12 @@ export default {
     }
   },
   mounted() {
-    this.Email = this.$route.query.email
-    this.token = this.$route.query.token
+    if (this.$route.query.email && this.$route.query.token) {
+      this.Email = this.$route.query.email
+      this.token = this.$route.query.token
+    } else {
+      this.$router.push('/')
+    }
   },
   head() {
     return {

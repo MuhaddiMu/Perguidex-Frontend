@@ -2,6 +2,11 @@
   <v-container class="text-center">
     <img width="60px" src="icon.png" class="mb-5" />
     <v-card :loading="loading" tile width="480px" outlined class="mx-auto">
+      <v-card-title
+        primary-title
+        class="justify-center grey--text text--darken-3 font-weight-bold text-h4"
+        >Forgot Password?</v-card-title
+      >
       <v-card-text>
         <v-alert v-if="isEmailSend" text type="success"
           >Email sent successfully. Please check your email and update your
@@ -12,7 +17,12 @@
           reset your password, please enter the email address of your Perguidex
           account.
         </div>
-        <v-form ref="Form" @submit.prevent="sendResetLink()">
+
+        <v-form
+          ref="Form"
+          @submit.prevent="sendResetLink()"
+          data-splitbee-event="Forgot Form"
+        >
           <v-text-field
             :min="0"
             v-model="Email"
