@@ -31,8 +31,18 @@
               Get Started — It’s Free
             </v-btn>
             <div class="mb-5 white--text caption font-weight-regular">
-              Wondering how it works? <a href="#">Watch a video</a>
+              <!-- Wondering how it works? <a href="#">Watch a video</a> -->
             </div>
+            <a
+              href="https://www.producthunt.com/posts/perguidex?utm_source=badge-review&utm_medium=badge&utm_souce=badge-perguidex#discussion-body"
+              target="_blank"
+              ><img
+                src="https://api.producthunt.com/widgets/embed-image/v1/review.svg?post_id=325160&theme=dark"
+                alt="Perguidex - Organized Task Management and Daily Reviews | Product Hunt"
+                style="width: 250px; height: 54px;"
+                width="250"
+                height="54"
+            /></a>
           </v-col>
           <v-col
             cols="12"
